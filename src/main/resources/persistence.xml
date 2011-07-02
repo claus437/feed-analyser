@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias type="org.wooddog.dao.typehandlers.UrlTypeHandler" alias="UrlTypeHandler"/>
+    </typeAliases>
+
+    <typeHandlers>
+        <typeHandler javaType="java.net.URL" jdbcType="VARCHAR" handler="org.wooddog.dao.typehandlers.UrlTypeHandler"/>
+    </typeHandlers>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="org.hsqldb.jdbcDriver"/>
+                <property name="url" value="jdbc:hsqldb:db/test"/>
+                <property name="username" value="sa"/>
+                <property name="password" value=""/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="mappers/articles.xml"/>
+        <mapper resource="mappers/channels.xml"/>
+        <mapper resource="mappers/companies.xml"/>
+        <mapper resource="mappers/scorings.xml"/>
+    </mappers>
+</configuration>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.wooddog.dao.mapper.ArticleMapper">
+    <resultMap id="ArticleResultMap" type="org.wooddog.domain.Article">
+        <result column="ID" property="id"/>
+        <result column="SOURCE" property="source"/>
+        <result column="PUBLISHED" property="published"/>
+        <result column="TITLE" property="title"/>
+        <result column="DESCRIPTION" property="description"/>
+        <result column="LINK" property="link"/>
+    </resultMap>
+
+    <insert id="store" parameterType="org.wooddog.domain.Article" useGeneratedKeys="true" keyProperty="id">
+        insert into articles (
+            source,
+            published,
+            title,
+            description,
+            link
+        ) values (
+            #{source},
+            #{published},
+            #{title},
+            #{description},
+            #{link}
+        )
+    </insert>
+    <select id="selectFeedEntry" resultType="org.wooddog.domain.Article">
+        select * from aricles
+    </select>
+
+    <select id="selectFromId" parameterType="int" resultMap="ArticleResultMap">
+        select * from articles where id > #{value}
+    </select>
+
+    <delete id="delete">
+        DELETE FROM ARTICLES
+    </delete>
+</mapper>

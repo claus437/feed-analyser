@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.wooddog.dao.mapper.ChannelMapper">
+
+    <resultMap id="ChannelMap" type="org.wooddog.domain.Channel">
+        <result column="ID" property="id"/>
+        <result column="URL" property="url" typeHandler="UrlTypeHandler"/>
+        <result column="FETCHED" property="fetched"/>
+    </resultMap>
+
+    <select id="select" resultMap="ChannelMap">
+        SELECT * FROM CHANNELS
+    </select>
+
+    <select id="selectById" parameterType="int" resultMap="ChannelMap">
+        SELECT * FROM CHANNELS WHERE ID = #{value}
+    </select>
+
+    <insert id="insert" parameterType="org.wooddog.domain.Channel" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO CHANNELS (URL, FETCHED) values (#{url,typeHandler=UrlTypeHandler}, #{fetched})
+    </insert>
+
+    <update id="updateFetched" parameterType="Map">
+        UPDATE CHANNELS SET FETCHED = #{1} WHERE ID = #{0}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM CHANNELS
+    </delete>
+
+    <delete id="deleteById" parameterType="int">
+        delete from channels where id=#{value}
+    </delete>
+</mapper>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.wooddog.dao.mapper.ScoringMapper">
+    <delete id="delete">
+        delete from scorings
+    </delete>
+
+    <insert id="store" parameterType="org.wooddog.domain.Scoring" useGeneratedKeys="true" keyProperty="id">
+        insert into scoreings (
+            DATE,
+            SCORE,
+            ARTICLE-ID,
+            COMPANY_ID
+        ) values (
+            #{date},
+            #{score},
+            #{articleId},
+            #{companyId}
+        )
+    </insert>
+
+    <select id="getLastScoredArticle" resultType="org.wooddog.domain.Scoring">
+        select * from scorings where rownum = 1 order by id desc
+    </select>
+</mapper>

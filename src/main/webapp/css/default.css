@@ -1,0 +1,58 @@
+body {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #505050;
+}
+
+div.content {
+    width: 700px;
+    margin: 0 auto 0 auto;
+}
+
+h1 {
+    font-size: 42px;
+    //text-decoration: underline;
+    font-weight: bolder;
+    color: #808080;
+}
+
+h1:first-letter {
+    font-size: 54px;
+}
+
+th {
+    text-align: left;
+    border-bottom: 1px solid #999999;
+}
+
+th:first-child {
+    width: 100%;
+}
+
+input {
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+label {
+    font-weight: bolder;
+}
+
+a.navigation {
+    text-decoration: none;
+    color: #505050;
+}
+
+a.navigation:hover {
+    text-decoration: underline;
+}
+
+div.error {
+    padding:  10px;
+    border:  1px dotted #AA5050;
+    margin-top: 40px;
+    font-weight: bold;
+    color: #AA5050;
+}
+
