@@ -16,4 +16,5 @@ public interface ArticleMapper {
     void delete();
     void store(Article article);
     List<Article> selectFromId(int id);
+    List<Article> getLastScoredArticle();
 }

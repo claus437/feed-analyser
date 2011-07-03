@@ -2,15 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.wooddog.dao.mapper.ScoringMapper">
+    <resultMap id="ScoreMap" type="org.wooddog.domain.Scoring">
+        <result column="ID" property="id"/>
+        <result column="DATE" property="date"/>
+        <result column="ARTICLE_ID" property="articleId"/>
+        <result column="COMPANY_ID" property="companyId"/>
+    </resultMap>
+
+
     <delete id="delete">
         delete from scorings
     </delete>
 
     <insert id="store" parameterType="org.wooddog.domain.Scoring" useGeneratedKeys="true" keyProperty="id">
-        insert into scoreings (
+        insert into scorings (
             DATE,
             SCORE,
-            ARTICLE-ID,
+            ARTICLE_ID,
             COMPANY_ID
         ) values (
             #{date},
@@ -20,7 +28,11 @@
         )
     </insert>
 
-    <select id="getLastScoredArticle" resultType="org.wooddog.domain.Scoring">
-        select * from scorings where rownum = 1 order by id desc
+    <select id="getScorings" resultMap="ScoreMap">
+        select * from scorings
+    </select>
+
+    <select id="getLastScoredArticleIdForCompanyId" parameterType="int" resultType="Integer">
+        SELECT MAX(ARTICLE_ID) FROM SCORINGS WHERE COMPANY_ID = #{value}
     </select>
 </mapper>

@@ -26,6 +26,7 @@
             #{link}
         )
     </insert>
+
     <select id="selectFeedEntry" resultType="org.wooddog.domain.Article">
         select * from aricles
     </select>
@@ -37,4 +38,6 @@
     <delete id="delete">
         DELETE FROM ARTICLES
     </delete>
+
+
 </mapper>

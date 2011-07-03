@@ -3,6 +3,8 @@ package org.wooddog.dao.mapper;
 import org.wooddog.domain.Article;
 import org.wooddog.domain.Scoring;
 
+import java.util.List;
+
 /**
  * Created by IntelliJ IDEA.
  * User: claus
@@ -12,5 +14,6 @@ import org.wooddog.domain.Scoring;
  */
 public interface ScoringMapper {
     void store(Scoring scoring);
-    Article getLastScoredArticle();
+    List<Scoring> getScorings();
+    Integer getLastScoredArticleIdForCompanyId(int companyId);
 }

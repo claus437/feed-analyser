@@ -1,11 +1,16 @@
 package org.wooddog.servlets;
 
+import org.apache.ibatis.ognl.SetPropertyAccessor;
 import org.wooddog.ChannelManager;
+import org.wooddog.Config;
+import org.wooddog.ScoreRunner;
 import org.wooddog.dao.Service;
+import sun.rmi.transport.Channel;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
+import java.io.IOException;
 import java.sql.SQLException;
 
 /**
@@ -21,14 +26,28 @@ public class ConfigServlet extends HttpServlet {
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
 
+        Config.load("org/wooddog/config/hsql.properties");
+
         ChannelManager.getInstance().start();
+        ScoreRunner.getInstance().start();
     }
 
     @Override
     public void destroy() {
         super.destroy();
+        ScoreRunner scoreRunner;
 
+        scoreRunner = ScoreRunner.getInstance();
+        scoreRunner.kill();
         ChannelManager.getInstance().stop();
+
+        while (scoreRunner.isAlive()) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException x) {
+                throw new RuntimeException(x);
+            }
+        }
 
         try {
             Service.getInstance().shutdown();

@@ -42,17 +42,32 @@ public class ScoringService {
         }
     }
 
-    public Article getLastScoredArticle() {
+    public List<Scoring> getScorings() {
         SqlSession session;
-        Article article;
+        List<Scoring> scorings;
 
         session = factory.openSession();
         try {
-            article = session.getMapper(ScoringMapper.class).getLastScoredArticle();
+            scorings = session.getMapper(ScoringMapper.class).getScorings();
         } finally {
             session.close();
         }
 
-        return article;
+        return scorings;
     }
+
+    public Integer getLastScoredArticleIdForCompany(int companyId) {
+        SqlSession session;
+        Integer articleId;
+
+        session = factory.openSession();
+        try {
+            articleId = session.getMapper(ScoringMapper.class).getLastScoredArticleIdForCompanyId(companyId);
+        } finally {
+            session.close();
+        }
+
+        return articleId;
+    }
+
 }

@@ -1,0 +1,5 @@
+<dataset>
+    <ARTICLES ID="4" SOURCE="http://dr.dk" PUBLISHED="2011-01-01" TITLE="Telia got new brand" DESCRIPTION="A new brand for telia" LINK="http://dr.dk/tela"/>
+    <ARTICLES ID="5" SOURCE="http://dr.dk" PUBLISHED="2011-01-02" TITLE="Fujitsu buys IBM" DESCRIPTION="One day fujitsu..." LINK="http.//dr.dk/fujitsu"/>
+    <ARTICLES ID="6" SOURCE="http://dr.dk" PUBLISHED="2011-02-01" TITLE="Telia launches new product" DESCRIPTION="A new product from Telia will..." LINK="http://dr.dk/telia2"/>
+</dataset>

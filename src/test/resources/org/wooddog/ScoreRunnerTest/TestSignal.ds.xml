@@ -1,0 +1,8 @@
+<dataset>
+    <COMPANIES ID="1" NAME="2"/>
+    <COMPANIES ID="2" NAME="3"/>
+
+    <ARTICLES ID="1" SOURCE="http://dr.dk" PUBLISHED="2011-01-13 12:11:10" TITLE="Anything" DESCRIPTION="anywhere" LINK="http://dr.dk/dr1"/>
+    <ARTICLES ID="2" SOURCE="http://dr.dk" PUBLISHED="2011-01-14 12:11:10" TITLE="Anything" DESCRIPTION="anywhere" LINK="http://dr.dk/dr1"/>
+</dataset>
+

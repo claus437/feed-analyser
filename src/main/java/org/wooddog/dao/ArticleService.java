@@ -3,6 +3,7 @@ package org.wooddog.dao;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.wooddog.dao.mapper.ArticleMapper;
+import org.wooddog.dao.mapper.ScoringMapper;
 import org.wooddog.domain.Article;
 
 import java.util.List;
@@ -86,4 +87,25 @@ public class ArticleService {
 
         return articles;
     }
+
+    public Article getLastScoredArticle() {
+        SqlSession session;
+        List<Article> articles;
+        Article article;
+
+        session = factory.openSession();
+        try {
+            articles = session.getMapper(ArticleMapper.class).getLastScoredArticle();
+            if (articles.isEmpty()) {
+                article = null;
+            } else {
+                article = articles.get(0);
+            }
+        } finally {
+            session.close();
+        }
+
+        return article;
+    }
+
 }

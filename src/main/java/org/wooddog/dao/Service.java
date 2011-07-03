@@ -4,6 +4,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.wooddog.Config;
 import org.wooddog.domain.Article;
 import org.wooddog.domain.Channel;
 
@@ -38,13 +39,7 @@ public class Service {
             throw new RuntimeException(x.getMessage(), x);
         }
 
-        factory = new SqlSessionFactoryBuilder().build(reader);
-
-        try {
-            service.createDb();
-        } catch (Throwable x) {
-            x.printStackTrace();
-        }
+        factory = new SqlSessionFactoryBuilder().build(reader, Config.getProperties());
     }
 
     public static SqlSessionFactory getFactory() {
@@ -60,22 +55,26 @@ public class Service {
         return service;
     }
 
-    private void createDb() throws IOException, SQLException, ClassNotFoundException {
-        Connection connection;
+    public static void execute(Connection connection, String resource) throws IOException, SQLException, ClassNotFoundException {
         Statement statement;
+        InputStream stream;
         BufferedReader reader;
         String command;
+        int line;
 
-        new File("db").deleteOnExit();
-        Class.forName("org.hsqldb.jdbcDriver");
-        connection = DriverManager.getConnection("jdbc:hsqldb:db/test");
+        line = 0;
+        stream = Service.class.getClassLoader().getResourceAsStream(Config.get(Config.DB_SCHEMA_DEFINITION));
+        reader = new BufferedReader(new InputStreamReader(stream));
 
-        reader = new BufferedReader(new InputStreamReader(getClass().getClassLoader().getResourceAsStream("database-schema.xml")));
         while ((command = reader.readLine()) != null) {
+            line ++;
             if (!command.isEmpty() && !command.startsWith("#")) {
                 statement = connection.createStatement();
-                statement.execute(command);
-                System.out.println("created " + command);
+                try {
+                    statement.execute(command);
+                } catch (SQLException x) {
+                    throw new RuntimeException("pos #" + line + "@" + Config.get(Config.DB_SCHEMA_DEFINITION) + " failed execution statement " + command + ", " + x.getMessage(), x);
+                }
             }
         }
     }

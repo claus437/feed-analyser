@@ -51,41 +51,6 @@ public class ServiceTest {
     }
 
     @Test
-    public void testSelectChannel() throws Exception {
-        Channel expected;
-        Channel actual;
-
-        expected = new Channel();
-        expected.setFetched(new Date());
-        expected.setUrl(new URL("http://www.amiga.dk"));
-        ChannelService.getInstance().storeChannel(expected);
-
-        actual = ChannelService.getInstance().getChannelById(expected.getId());
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void testUpdateFetched() throws Exception {
-        Date expected;
-        Channel channel;
-
-
-        channel = new Channel();
-        channel.setFetched(new Date());
-        channel.setUrl(new URL("http://www.amiga.dk"));
-        channel.setFetched(new Date());
-
-        ChannelService.getInstance().storeChannel(channel);
-
-        expected = new Date(System.currentTimeMillis() + 1000);
-        ChannelService.getInstance().setChannelFetched(channel.getId(), expected);
-
-        channel = ChannelService.getInstance().getChannelById(channel.getId());
-        Assert.assertEquals(expected, channel.getFetched());
-    }
-
-
-    @Test
     public void testGetArticlesFromId() {
         List<Article> actuals;
         Article article;

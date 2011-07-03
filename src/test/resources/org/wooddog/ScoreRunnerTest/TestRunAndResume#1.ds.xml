@@ -1,0 +1,8 @@
+<dataset>
+    <SCORINGS/>
+    <COMPANIES ID="1" NAME="Telia"/>
+    <COMPANIES ID="2" NAME="Fujitsu"/>
+    <ARTICLES ID="1" SOURCE="http://dr.dk" PUBLISHED="2011-01-01" TITLE="Telia got new brand" DESCRIPTION="A new brand for telia" LINK="http://dr.dk/tela"/>
+    <ARTICLES ID="2" SOURCE="http://dr.dk" PUBLISHED="2011-01-02" TITLE="Fujitsu buys IBM" DESCRIPTION="One day fujitsu..." LINK="http.//dr.dk/fujitsu"/>
+    <ARTICLES ID="3" SOURCE="http://dr.dk" PUBLISHED="2011-02-01" TITLE="Telia launches new product" DESCRIPTION="A new product from Telia will..." LINK="http://dr.dk/telia2"/>
+</dataset>
