@@ -48,6 +48,7 @@ public class ChannelThread {
         Worker(ChannelFetcher channelFetcher) {
             this.channelFetcher = channelFetcher;
         }
+
         @Override
         public void run() {
             List<Article> articles;

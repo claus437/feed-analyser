@@ -9,7 +9,10 @@ import org.wooddog.domain.Article;
 import org.wooddog.domain.Scoring;
 
 import javax.mail.internet.NewsAddress;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -68,6 +71,23 @@ public class ScoringService {
         }
 
         return articleId;
+    }
+
+    public List<Scoring> getScoringsInPeriodForCompany(int companyId, Date from, Date to) {
+        SqlSession session;
+        List<Scoring> scorings;
+        Map<Integer, Object> parameters;
+
+        parameters = Service.createParameterMap(companyId, from, to);
+
+        session = factory.openSession();
+        try {
+            scorings = session.getMapper(ScoringMapper.class).getScoringsInPeriodForCompany(parameters);
+        } finally {
+            session.close();
+        }
+
+        return scorings;
     }
 
 }

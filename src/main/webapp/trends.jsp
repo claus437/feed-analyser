@@ -1,32 +1,90 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
 <%@ page import="org.wooddog.domain.Channel" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="org.wooddog.dao.Service" %>
-<%@ page import="java.util.Map" %>
-<%@ page import="java.util.HashMap" %>
 <%@ page import="org.wooddog.servlets.PageActionFactory" %>
 <%@ page import="org.wooddog.servlets.PageAction" %>
 <%@ page import="org.wooddog.servlets.JspTool" %>
 <%@ page import="org.wooddog.dao.ChannelService" %>
-<%
-    List<Channel> channels;
-    PageAction action;
+<%@ page import="org.wooddog.domain.Company" %>
+<%@ page import="org.wooddog.dao.CompanyService" %>
+<%@ page import="org.wooddog.domain.Scoring" %>
+<%@ page import="org.wooddog.dao.ScoringService" %>
+<%@ page import="java.util.*" %>
 
-    action = PageActionFactory.getInstance().getAction(request.getParameter("action"));
-    if (action != null) {
-        try {
-            action.execute(request.getParameterMap());
-        } catch (Throwable x) {
-            session.setAttribute("error", x.getMessage());
-        }
-        response.sendRedirect("feeds.jsp");
-        return;
+<%!
+    Date getLowerDate(int dayOffset) {
+        Calendar lower;
+
+        lower = Calendar.getInstance();
+        lower.add(Calendar.DAY_OF_MONTH, dayOffset);
+        lower.set(Calendar.HOUR_OF_DAY, 0);
+        lower.set(Calendar.MINUTE, 0);
+        lower.set(Calendar.SECOND, 0);
+        lower.set(Calendar.MILLISECOND, 0);
+
+        return lower.getTime();
     }
 
-    channels = ChannelService.getInstance().getChannels();
+    Date getUpperDate(int dayOffset) {
+        Calendar upper;
+
+        upper = Calendar.getInstance();
+        upper.add(Calendar.DAY_OF_MONTH, dayOffset);
+        upper.set(Calendar.HOUR_OF_DAY, 23);
+        upper.set(Calendar.MINUTE, 59);
+        upper.set(Calendar.SECOND, 59);
+        upper.set(Calendar.MILLISECOND, 999);
+
+        return upper.getTime();
+    }
+
+    int getScore(int companyId, int dayOffset) {
+        List<Scoring> scoreList;
+        Date from;
+        Date to;
+        int score;
+
+        from = getLowerDate(dayOffset);
+        to = getUpperDate(dayOffset);
+        score = 0;
+
+        scoreList = ScoringService.getInstance().getScoringsInPeriodForCompany(companyId, from, to);
+        for (Scoring scoring : scoreList) {
+            score += scoring.getScore();
+        }
+
+        return score;
+    }
+
+    int getMentioned(int companyId, int dayOffset) {
+        List<Scoring> scoreList;
+        Date from;
+        Date to;
+        int mentioned;
+
+        from = getLowerDate(dayOffset);
+        to = getUpperDate(dayOffset);
+        mentioned = 0;
+
+        scoreList = ScoringService.getInstance().getScoringsInPeriodForCompany(companyId, from, to);
+        for (Scoring scoring : scoreList) {
+            if (scoring.getScore() != 0) {
+                mentioned ++;
+            }
+
+        }
+
+        return mentioned;
+    }
+
+%>
+
+<%
+    List<Company> companyList;
+
+    companyList = CompanyService.getInstance().getCompanies();
 %>
 <html>
     <head>
@@ -64,159 +122,39 @@
 
             <jsp:include page="error.jsp"/>
 
-            <table style="margin-top: 40px; border-left: 2px solid #DDDDDD">
-
-                <tr class="header">
-                    <td width="100px" style="vertical-align: top"><b>FUJITSU</b></td>
-                    <td></td>
-                    <td colspan="14">LAST 7 DAYS</td>
-                    <td colspan="2">7 days</td>
-                    <td colspan="2">30 days</td>
-                    <td colspan="2">90 days</td>
-                    <td colspan="2">180 days</td>
-                    <td colspan="2">360 days</td>
-
-                </tr>
-                <tr class="rate-header">
-                    <td></td>
-                    <td></td>
-                    <td>S</td><td class="split">M</td>
-                    <td>S</td><td class="split">M</td>
-                    <td>S</td><td class="split">M</td>
-                    <td>S</td><td class="split">M</td>
-                    <td>S</td><td class="split">M</td>
-                    <td>S</td><td class="split">M</td>
-                    <td>S</td><td class="hard-split">M</td>
-                    <td>S</td><td class="hard-split">M</td>
-                    <td>S</td><td class="hard-split">M</td>
-                    <td>S</td><td class="hard-split">M</td>
-                    <td>S</td><td class="hard-split">M</td>
-                    <td>S</td><td class="hard-split">M</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>TREND</td>
-                    <td>0</td><td class="split">2</td>
-                    <td>0</td><td class="split">3</td>
-                    <td>0</td><td class="split">4</td>
-                    <td>0</td><td class="split">3</td>
-                    <td>0</td><td class="split">4</td>
-                    <td>0</td><td class="split">3</td>
-                    <td>0</td><td class="hard-split">3</td>
-                    <td>0</td><td class="hard-split">1</td>
-                    <td>0</td><td class="hard-split">6</td>
-                    <td>0</td><td class="hard-split">8</td>
-                    <td>0</td><td class="hard-split">5</td>
-                    <td>0</td><td class="hard-split">5</td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td>SHARE</td>
-                    <td colspan="2" class="split">+1</td>
-                    <td colspan="2" class="split">+1</td>
-                    <td colspan="2" class="split">+1</td>
-                    <td colspan="2" class="split">+1</td>
-                    <td colspan="2" class="split">+1</td>
-                    <td colspan="2" class="split">+1</td>
-                    <td colspan="2" class="hard-split">+1</td>
-                    <td colspan="2" class="hard-split">+1</td>
-                    <td colspan="2" class="hard-split">+1</td>
-                    <td colspan="2" class="hard-split">+1</td>
-                    <td colspan="2" class="hard-split">+1</td>
-                    <td colspan="2" class="hard-split">+1</td>
-                </tr>
-
-            </table>
-
-            <table style="margin-top: 40px; border-left: 2px solid #DDDDDD">
-
-                <tr class="header">
-                    <td width="100px" style="vertical-align: top"><b>TELIA SONERA</b></td>
-                    <td></td>
-                    <td colspan="14">LAST 7 DAYS</td>
-                    <td colspan="2">7 days</td>
-                    <td colspan="2">30 days</td>
-                    <td colspan="2">90 days</td>
-                    <td colspan="2">180 days</td>
-                    <td colspan="2">360 days</td>
-
-                </tr>
-                <tr class="rate-header">
-                    <td></td>
-                    <td></td>
-                    <td>S</td><td class="split">M</td>
-                    <td>S</td><td class="split">M</td>
-                    <td>S</td><td class="split">M</td>
-                    <td>S</td><td class="split">M</td>
-                    <td>S</td><td class="split">M</td>
-                    <td>S</td><td class="split">M</td>
-                    <td>S</td><td class="hard-split">M</td>
-                    <td>S</td><td class="hard-split">M</td>
-                    <td>S</td><td class="hard-split">M</td>
-                    <td>S</td><td class="hard-split">M</td>
-                    <td>S</td><td class="hard-split">M</td>
-                    <td>S</td><td class="hard-split">M</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>TREND</td>
-                    <td>0</td><td class="split">2</td>
-                    <td>0</td><td class="split">3</td>
-                    <td>0</td><td class="split">4</td>
-                    <td>0</td><td class="split">3</td>
-                    <td>0</td><td class="split">4</td>
-                    <td>0</td><td class="split">3</td>
-                    <td>0</td><td class="hard-split">3</td>
-                    <td>0</td><td class="hard-split">1</td>
-                    <td>0</td><td class="hard-split">6</td>
-                    <td>0</td><td class="hard-split">8</td>
-                    <td>0</td><td class="hard-split">5</td>
-                    <td>0</td><td class="hard-split">5</td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td>SHARE</td>
-                    <td colspan="2" class="split">+1</td>
-                    <td colspan="2" class="split">+1</td>
-                    <td colspan="2" class="split">+1</td>
-                    <td colspan="2" class="split">+1</td>
-                    <td colspan="2" class="split">+1</td>
-                    <td colspan="2" class="split">+1</td>
-                    <td colspan="2" class="hard-split">+1</td>
-                    <td colspan="2" class="hard-split">+1</td>
-                    <td colspan="2" class="hard-split">+1</td>
-                    <td colspan="2" class="hard-split">+1</td>
-                    <td colspan="2" class="hard-split">+1</td>
-                    <td colspan="2" class="hard-split">+1</td>
-                </tr>
-
-            </table>
-
-
-
-            <!--
-                <tr>
-                    <th>URL</th>
-                    <th>FETCHED</th>
-                    <th></th>
-                </tr>
-                <% for (Channel channel : channels) { %>
-                    <tr>
-                        <td><%=channel.getUrl()%></td>
-                        <td><nobr><%=JspTool.formatFullDate(channel.getFetched())%></nobr></td>
-                        <td><a href="?action=DeleteChannel&id=<%=channel.getId()%>">delete</a></td>
+            <% for (Company company : companyList) { %>
+                <table style="margin-top: 40px; border-left: 2px solid #DDDDDD">
+                    <tr class="header">
+                        <td width="100px" style="vertical-align: top" colspan="49"><b><%=company.getName()%></b></td>
                     </tr>
-                <% } %>
-            </table>
 
-            <form action="?action=AddChannel" method="POST">
-                <table style="margin-top: 10px; background-color: #FEFEFE; width: 100%">
-                    <tr><td style="background-color: #DDDDDD;width: 100%; text-align: right"><label for="url">ADD CHANNEL</label> <input type="text" name="url" id="url"  style="border: 1px solid #DDDDDD; width: 560px"/> <input type="submit" value="ADD" style="float:right; border: 1px solid #DDDDDD"/></td></tr>
+                    <tr>
+                        <td></td>
+                        <%
+                            Calendar date = Calendar.getInstance();
+                            for (int i = 0; i > -24; i--) {
+                                out.println("<td colspan=\"2\" style=\"border-right: 1px solid #DDDDDD;\">" + date.get(Calendar.DAY_OF_MONTH) + ".</td>");
+                                date.add(Calendar.DAY_OF_MONTH, -1);
+                            }
+                        %>
+                    </tr>
+                    <tr>
+                        <td>Score</td>
+                        <% for (int i = 0; i > -24; i--) { %>
+                            <td><%=getScore(company.getId(), i)%></td>
+                            <td style="border-right: 1px solid #DDDDDD;"><%=getMentioned(company.getId(), i)%></td>
+                        <% } %>
+                    </tr>
+
+                    <tr>
+                        <td>Share</td>
+                        <% for (int i = 0; i > -24; i--) { %>
+                            <td style="border-right: 1px solid #DDDDDD;" colspan="2">n/a</td>
+                        <% } %>
+                    </tr>
+
                 </table>
-            </form>
-            -->
-        </div>
+            <% }%>
+         </div>
     </body>
 </html>

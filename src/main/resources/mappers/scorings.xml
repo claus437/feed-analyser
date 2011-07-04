@@ -35,4 +35,11 @@
     <select id="getLastScoredArticleIdForCompanyId" parameterType="int" resultType="Integer">
         SELECT MAX(ARTICLE_ID) FROM SCORINGS WHERE COMPANY_ID = #{value}
     </select>
+
+    <select id="getScoringsInPeriodForCompany" parameterType="Map" resultMap="ScoreMap">
+        select * from scorings where
+            company_id = #{0} and
+            date &gt;= #{1} and
+            date &lt;=#{2}
+    </select>
 </mapper>

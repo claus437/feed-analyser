@@ -26,10 +26,10 @@ public class ConfigServlet extends HttpServlet {
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
 
-        Config.load("org/wooddog/config/hsql.properties");
+        Config.load("org/wooddog/config/mysql.properties");
 
-        ChannelManager.getInstance().start();
         ScoreRunner.getInstance().start();
+        ChannelManager.getInstance().start();
     }
 
     @Override

@@ -1,5 +1,6 @@
 package org.wooddog;
 
+import org.apache.log4j.Logger;
 import org.wooddog.dao.ArticleService;
 import org.wooddog.dao.CompanyService;
 import org.wooddog.dao.ScoringService;
@@ -11,6 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 public class ScoreRunner extends Thread {
+    private static final Logger LOGGER = Logger.getLogger(ScoreRunner.class);
     private static final ScoreRunner INSTANCE = new ScoreRunner();
     private ScoringService scoreService = ScoringService.getInstance();
     private ArticleService articleService = ArticleService.getInstance();
@@ -32,6 +34,7 @@ public class ScoreRunner extends Thread {
             rator = ScoreRatorFactory.getScoreRator();
 
             for (int i = 0; !signal && i < companies.size(); i++) {
+                LOGGER.info("rating " + companies.get(i));
                 rate(companies.get(i));
             }
 

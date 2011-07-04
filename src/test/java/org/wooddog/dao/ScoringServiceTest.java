@@ -1,15 +1,14 @@
 package org.wooddog.dao;
 
+
 import junit.framework.Assert;
 import org.dbunit.Assertion;
-import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.ITable;
 import org.dbunit.operation.DatabaseOperation;
-import org.hsqldb.Database;
-import org.junit.Before;
 import org.junit.Test;
 import org.wooddog.domain.Scoring;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -67,4 +66,33 @@ public class ScoringServiceTest extends DaoTestCase {
         Assert.assertNotNull(articleId);
         Assert.assertEquals(6, articleId.intValue());
     }
+
+    @Test
+    public void testScoringsInPeriod() throws Exception {
+        List<Scoring> scorings;
+        Calendar from;
+        Calendar to;
+
+        execute(DatabaseOperation.CLEAN_INSERT, "ScoringsInPeriod");
+
+        from  = Calendar.getInstance();
+        from.set(2011, Calendar.JANUARY, 1, 0, 0, 0);
+        from.set(Calendar.MILLISECOND, 0);
+
+        to = Calendar.getInstance();
+        to.set(2011, Calendar.JANUARY, 1, 23, 59, 59);
+        to.set(Calendar.MILLISECOND, 59);
+
+        scorings = service.getScoringsInPeriodForCompany(1, from.getTime(), to.getTime());
+        Assert.assertEquals(2, scorings.size());
+
+        for (Scoring scoring : scorings) {
+            Assert.assertEquals(1, scoring.getCompanyId());
+            Assert.assertTrue("scoring after given period " + scoring.getDate(), scoring.getDate().getTime() >= from.getTimeInMillis());
+            Assert.assertTrue("scoring before given period", scoring.getDate().before(to.getTime()));
+        }
+    }
+
+
+
 }
