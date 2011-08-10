@@ -58,7 +58,7 @@ public class ChannelThread {
 
             while (!signal) {
                 try {
-                    System.out.println("-- FETCHING " + channelFetcher.getChannel().getUrl().toExternalForm());
+                    LOGGER.info("fetching " + channelFetcher.getChannel().getUrl().toExternalForm());
                     channelFetcher.fetch();
                     articles = channelFetcher.getArticles();
                     LOGGER.info("fetched " + articles.size());
@@ -69,10 +69,10 @@ public class ChannelThread {
 
                     channelFetcher.getChannel().setFetched(new Date());
                     ChannelService.getInstance().setChannelFetched(channelFetcher.getChannel().getId(), channelFetcher.getChannel().getFetched());
-                    System.out.println("-- FETCHING UPDATED " + channelFetcher.getChannel().getUrl().toExternalForm());
+                    LOGGER.info("fetching updated " + channelFetcher.getChannel().getUrl().toExternalForm());
 
                 } catch (Throwable x) {
-                    System.out.println(x.getMessage());
+                    LOGGER.error(x.getMessage(), x);
                 }
                 try {
                     Thread.sleep(1000 * 60);
