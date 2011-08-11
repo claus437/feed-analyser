@@ -11,11 +11,11 @@
 
 
     <delete id="delete">
-        delete from scorings
+        DELETE FROM SCORINGS
     </delete>
 
     <insert id="store" parameterType="org.wooddog.domain.Scoring" useGeneratedKeys="true" keyProperty="id">
-        insert into scorings (
+        INSERT INTO SCORINGS (
             DATE,
             SCORE,
             ARTICLE_ID,
@@ -29,7 +29,7 @@
     </insert>
 
     <select id="getScorings" resultMap="ScoreMap">
-        select * from scorings
+        SELECT * FROM SCORINGS
     </select>
 
     <select id="getLastScoredArticleIdForCompanyId" parameterType="int" resultType="Integer">
@@ -37,9 +37,9 @@
     </select>
 
     <select id="getScoringsInPeriodForCompany" parameterType="Map" resultMap="ScoreMap">
-        select * from scorings where
-            company_id = #{0} and
-            date &gt;= #{1} and
-            date &lt;=#{2}
+        SELECT * FROM SCORINGS WHERE
+            COMPANY_ID = #{0} and
+            DATE &gt;= #{1} and
+            DATE &lt;=#{2}
     </select>
 </mapper>

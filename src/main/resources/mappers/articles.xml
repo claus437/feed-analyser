@@ -12,12 +12,12 @@
     </resultMap>
 
     <insert id="store" parameterType="org.wooddog.domain.Article" useGeneratedKeys="true" keyProperty="id">
-        insert into articles (
-            source,
-            published,
-            title,
-            description,
-            link
+        INSERT INTO ARTICLES (
+            SOURCE,
+            PUBLISHED,
+            TITLE,
+            DESCRIPTION,
+            LINK
         ) values (
             #{source},
             #{published},
@@ -28,16 +28,14 @@
     </insert>
 
     <select id="selectFeedEntry" resultType="org.wooddog.domain.Article">
-        select * from aricles
+        SELECT * FROM ARICLES
     </select>
 
     <select id="selectFromId" parameterType="int" resultMap="ArticleResultMap">
-        select * from articles where id > #{value}
+        SELECT * FROM ARTICLES WHERE ID > #{value}
     </select>
 
     <delete id="delete">
         DELETE FROM ARTICLES
     </delete>
-
-
 </mapper>

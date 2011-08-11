@@ -30,6 +30,6 @@
     </delete>
 
     <delete id="deleteById" parameterType="int">
-        delete from channels where id=#{value}
+        DELETE FROM CHANNELS WHERE ID = #{value}
     </delete>
 </mapper>
