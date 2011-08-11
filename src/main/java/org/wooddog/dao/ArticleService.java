@@ -3,7 +3,6 @@ package org.wooddog.dao;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.wooddog.dao.mapper.ArticleMapper;
-import org.wooddog.dao.mapper.ScoringMapper;
 import org.wooddog.domain.Article;
 
 import java.util.List;

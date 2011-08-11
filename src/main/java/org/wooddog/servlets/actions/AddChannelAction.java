@@ -2,11 +2,9 @@ package org.wooddog.servlets.actions;
 
 import org.wooddog.ChannelManager;
 import org.wooddog.dao.ChannelService;
-import org.wooddog.dao.Service;
 import org.wooddog.domain.Channel;
 import org.wooddog.servlets.PageAction;
 
-import javax.servlet.http.HttpServletRequest;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;

@@ -2,17 +2,12 @@ package org.wooddog;
 
 import junit.framework.Assert;
 import org.dbunit.Assertion;
-import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.ITable;
 import org.dbunit.dataset.filter.DefaultColumnFilter;
 import org.dbunit.operation.DatabaseOperation;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.rules.Timeout;
 import org.wooddog.dao.DaoTestCase;
 import support.Wait;
-
-import java.sql.Time;
 
 /**
  * Created by IntelliJ IDEA.

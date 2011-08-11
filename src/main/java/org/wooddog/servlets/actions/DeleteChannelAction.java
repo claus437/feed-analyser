@@ -1,9 +1,8 @@
 package org.wooddog.servlets.actions;
 
+import org.wooddog.ChannelManager;
 import org.wooddog.dao.ChannelService;
 import org.wooddog.domain.Channel;
-import org.wooddog.ChannelManager;
-import org.wooddog.dao.Service;
 import org.wooddog.servlets.PageAction;
 
 import java.util.Map;

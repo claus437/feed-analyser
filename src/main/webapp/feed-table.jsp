@@ -1,8 +1,6 @@
-<%@ page import="org.wooddog.dao.Service" %>
 <%@ page import="org.wooddog.dao.ServiceInMemory" %>
-<%@ page import="java.util.List" %>
-<%@ page import="org.wooddog.servlets.PageActionFactory" %>
 <%@ page import="org.wooddog.servlets.PageAction" %>
+<%@ page import="org.wooddog.servlets.PageActionFactory" %>
 
 <%
     PageActionFactory actionFactory;

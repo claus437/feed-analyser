@@ -2,7 +2,6 @@ package org.wooddog.dao.mapper;
 
 import org.wooddog.domain.Article;
 
-import java.util.Date;
 import java.util.List;
 
 /**

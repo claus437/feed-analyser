@@ -1,15 +1,11 @@
 package support;
 
-import com.sun.corba.se.spi.ior.IdentifiableFactory;
 import org.apache.log4j.Logger;
 import org.dbunit.database.IDatabaseConnection;
-import sun.util.LocaleServiceProviderPool;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.concurrent.TimeoutException;
 
 /**
  * Created by IntelliJ IDEA.

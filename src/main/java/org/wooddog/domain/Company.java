@@ -1,7 +1,5 @@
 package org.wooddog.domain;
 
-import sun.net.www.protocol.http.NTLMAuthSequence;
-
 /**
  * Created by IntelliJ IDEA.
  * User: claus

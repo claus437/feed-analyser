@@ -1,7 +1,5 @@
 package org.wooddog;
 
-import org.wooddog.domain.Scoring;
-
 /**
  * Created by IntelliJ IDEA.
  * User: claus

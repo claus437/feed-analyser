@@ -1,12 +1,10 @@
 package org.wooddog;
 
+import org.wooddog.dao.ChannelService;
+import org.wooddog.domain.Channel;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import org.wooddog.dao.ChannelService;
-import org.wooddog.dao.Service;
-import org.wooddog.domain.Channel;
-import sun.awt.windows.ThemeReader;
 
 /**
  * Created by IntelliJ IDEA.

@@ -7,18 +7,13 @@ import org.dbunit.dataset.DataSetException;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.xml.FlatXmlDataSet;
 import org.dbunit.operation.DatabaseOperation;
-import org.hsqldb.Database;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.wooddog.Config;
-import sun.reflect.generics.tree.VoidDescriptor;
 
-import java.io.*;
-import java.sql.Connection;
-import java.sql.ResultSet;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 /**
  * Created by IntelliJ IDEA.

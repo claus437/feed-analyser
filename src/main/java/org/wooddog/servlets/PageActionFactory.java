@@ -1,12 +1,9 @@
 package org.wooddog.servlets;
 
-import org.apache.bcel.generic.INSTANCEOF;
 import org.wooddog.servlets.actions.AddChannelAction;
 import org.wooddog.servlets.actions.DeleteChannelAction;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**

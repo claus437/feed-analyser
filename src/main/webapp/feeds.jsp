@@ -1,16 +1,11 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
-<%@ page import="org.wooddog.domain.Channel" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.Date" %>
-<%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="org.wooddog.dao.Service" %>
-<%@ page import="java.util.Map" %>
-<%@ page import="java.util.HashMap" %>
-<%@ page import="org.wooddog.servlets.PageActionFactory" %>
-<%@ page import="org.wooddog.servlets.PageAction" %>
-<%@ page import="org.wooddog.servlets.JspTool" %>
 <%@ page import="org.wooddog.dao.ChannelService" %>
+<%@ page import="org.wooddog.domain.Channel" %>
+<%@ page import="org.wooddog.servlets.JspTool" %>
+<%@ page import="org.wooddog.servlets.PageAction" %>
+<%@ page import="org.wooddog.servlets.PageActionFactory" %>
+<%@ page import="java.util.List" %>
 <%
     List<Channel> channels;
     PageAction action;

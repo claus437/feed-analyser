@@ -1,16 +1,11 @@
 package org.wooddog.dao;
 
-import org.apache.bcel.generic.INSTANCEOF;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.wooddog.dao.mapper.ChannelMapper;
 import org.wooddog.dao.mapper.ScoringMapper;
-import org.wooddog.domain.Article;
 import org.wooddog.domain.Scoring;
 
-import javax.mail.internet.NewsAddress;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

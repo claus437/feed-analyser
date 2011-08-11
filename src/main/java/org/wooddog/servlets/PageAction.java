@@ -1,7 +1,5 @@
 package org.wooddog.servlets;
 
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 /**

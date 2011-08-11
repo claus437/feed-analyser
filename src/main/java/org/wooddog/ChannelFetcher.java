@@ -5,7 +5,6 @@ import org.wooddog.domain.Article;
 import org.wooddog.domain.Channel;
 
 import java.io.IOException;
-import java.net.URL;
 import java.text.ParseException;
 import java.util.List;
 

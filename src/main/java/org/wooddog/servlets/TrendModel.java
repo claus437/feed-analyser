@@ -5,11 +5,8 @@ import org.wooddog.dao.ScoringService;
 import org.wooddog.domain.Company;
 import org.wooddog.domain.Scoring;
 
-import java.awt.*;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.

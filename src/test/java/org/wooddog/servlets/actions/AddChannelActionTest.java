@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.wooddog.dao.ChannelService;
-import org.wooddog.dao.Service;
 import org.wooddog.domain.Channel;
 import org.wooddog.servlets.PageAction;
 import org.wooddog.servlets.PageActionFactory;

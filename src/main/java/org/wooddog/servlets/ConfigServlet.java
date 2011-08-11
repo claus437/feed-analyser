@@ -1,16 +1,13 @@
 package org.wooddog.servlets;
 
-import org.apache.ibatis.ognl.SetPropertyAccessor;
 import org.wooddog.ChannelManager;
 import org.wooddog.Config;
 import org.wooddog.ScoreRunner;
 import org.wooddog.dao.Service;
-import sun.rmi.transport.Channel;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
-import java.io.IOException;
 import java.sql.SQLException;
 
 /**

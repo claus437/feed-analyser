@@ -1,12 +1,9 @@
 package org.wooddog.dao;
 
 import junit.framework.Assert;
-import org.dbunit.dataset.IDataSet;
 import org.dbunit.operation.DatabaseOperation;
-import org.junit.Before;
 import org.junit.Test;
 import org.wooddog.domain.Company;
-import sun.reflect.generics.tree.VoidDescriptor;
 
 import java.util.List;
 
