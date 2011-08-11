@@ -37,6 +37,11 @@
 
             <jsp:include page="error.jsp"/>
 
+
+            <div style="border-left: 1px solid #505050; border-right: 1px solid #505050">
+                <input type="text">
+            </div>
+
             <table width="100%" style="margin-top: 40px;">
                 <tr>
                     <th>URL</th>

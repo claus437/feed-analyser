@@ -1,5 +1,6 @@
 package org.wooddog.servlets.actions;
 
+import org.apache.log4j.Logger;
 import org.wooddog.ChannelManager;
 import org.wooddog.dao.ChannelService;
 import org.wooddog.domain.Channel;
@@ -15,6 +16,8 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public class DeleteChannelAction implements PageAction {
+    private static final Logger LOGGER = Logger.getLogger(DeleteChannelAction.class);
+
     public void execute(Map<String, String[]> parameters) {
         Channel channel;
         int id;
@@ -23,11 +26,9 @@ public class DeleteChannelAction implements PageAction {
 
         channel = ChannelService.getInstance().getChannelById(id);
 
-        System.out.println("loaded channel" + channel.getId() + " " + channel.getUrl());
+        LOGGER.info("loaded channel" + channel.getId() + " " + channel.getUrl());
 
         ChannelService.getInstance().deleteChannel(id);
-        System.out.println("after delete" + channel.getId() + " " + channel.getUrl());
-
         ChannelManager.getInstance().removeChannel(channel);
     }
 }
