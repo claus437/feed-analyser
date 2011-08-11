@@ -37,7 +37,14 @@
 
             <jsp:include page="error.jsp"/>
 
-            <table width="100%" style="margin-top: 40px;">
+            <form action="?action=AddChannel" method="POST" style="margin-top: 30px;">
+                <div style="float: right; background-color: #505050; color: white; border: 1px solid #505050">
+                    <input type="text" name="url" style="border: 0; height: 20px"/>
+                    <input type="submit" value="ADD" style="border: 0px; background-color: #505050; color: #FFFFFF; height: 20px;">
+                </div>
+            </form>
+
+            <table style="margin-top: 40px; width: 100%">
                 <tr>
                     <th>URL</th>
                     <th>FETCHED</th>
@@ -51,13 +58,6 @@
                     </tr>
                 <% } %>
             </table>
-
-            <form action="?action=AddChannel" method="POST">
-                <table style="margin-top: 10px; background-color: #FEFEFE; width: 100%">
-                    <tr><td style="background-color: #DDDDDD;width: 100%; text-align: right"><label for="url">ADD CHANNEL</label> <input type="text" name="url" id="url"  style="border: 1px solid #DDDDDD; width: 560px"/> <input type="submit" value="ADD" style="float:right; border: 1px solid #DDDDDD"/></td></tr>
-                </table>
-            </form>
-
         </div>
     </body>
 </html>
