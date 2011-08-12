@@ -77,10 +77,11 @@ public class TrentModel {
         currentScore = 0;
 
         for (int i = 0; i < historyCount; i++) {
+            calendar.add(Calendar.DAY_OF_MONTH, 1);
+
             score = getScore(companyId, calendar.getTime());
             direction = score > currentScore ? "+" : "-";
             scores.add(direction + " / " + score);
-            calendar.add(Calendar.DAY_OF_MONTH, 1);
             currentScore = score;
         }
 
