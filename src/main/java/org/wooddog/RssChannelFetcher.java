@@ -26,6 +26,7 @@ import java.util.Locale;
  */
 public class RssChannelFetcher implements ChannelFetcher {
     private static final String DATE_FORMAT = "EEE, d MMM yyyy HH:mm:ss Z";
+    private static final String RFC3339_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'";
     private Document feed;
     private Channel channel;
     private Date updated;
@@ -68,27 +69,41 @@ public class RssChannelFetcher implements ChannelFetcher {
         return document;
     }
 
+    @SuppressWarnings("unchecked")
     private void createFeedItems() throws ParseException {
         Article article;
         SimpleDateFormat format;
         List<Element> items;
         Date publishDate;
         Date latest;
+        String pubName;
 
         latest = updated;
-        format = new SimpleDateFormat(DATE_FORMAT, Locale.UK);
+
 
         articles.clear();
 
-        items = feed.selectNodes("rss/channel/item");
+        if ("rss".equals(feed.getRootElement().getName())) {
+            items = feed.selectNodes("rss/channel/item");
+            format = new SimpleDateFormat(DATE_FORMAT, Locale.UK);
+            pubName = "pubDate";
+        } else if ("feed".equals(feed.getRootElement().getName())) {
+            items = feed.selectNodes("/feed/*[local-name() = 'entry']");
+            format = new SimpleDateFormat(RFC3339_FORMAT, Locale.UK);
+            pubName = "published";
+        } else {
+            return;
+        }
+
         for (Element item : items) {
-            publishDate = format.parse(item.element("pubDate").getText());
+
+            publishDate = format.parse(item.element(pubName).getText());
 
             if (publishDate.after(latest)) {
                 article = new Article();
-                article.setTitle(item.element("title").getText());
-                article.setDescription(item.element("description").getText());
-                article.setLink(item.element("link").getText());
+                article.setTitle(getText(item, "title"));
+                article.setDescription(getText(item, "summary"));
+                article.setLink(getText(item, "link"));
                 article.setPublished(publishDate);
                 articles.add(article);
             }
@@ -97,5 +112,12 @@ public class RssChannelFetcher implements ChannelFetcher {
                 updated = publishDate;
             }
         }
+    }
+
+    private String getText(Element element, String elementName) {
+        Element item;
+
+        item = element.element(elementName);
+        return item == null ? null : item.getText();
     }
 }

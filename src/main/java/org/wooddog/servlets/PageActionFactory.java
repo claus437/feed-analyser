@@ -1,6 +1,7 @@
 package org.wooddog.servlets;
 
 import org.wooddog.servlets.actions.AddChannelAction;
+import org.wooddog.servlets.actions.AddCompanyAction;
 import org.wooddog.servlets.actions.DeleteChannelAction;
 
 import java.util.HashMap;
@@ -21,6 +22,7 @@ public class PageActionFactory {
         actions = new HashMap<String, Class<? extends PageAction>>();
         actions.put("AddChannel", AddChannelAction.class);
         actions.put("DeleteChannel", DeleteChannelAction.class);
+        actions.put("AddCompany", AddCompanyAction.class);
     }
 
     public static PageActionFactory getInstance() {

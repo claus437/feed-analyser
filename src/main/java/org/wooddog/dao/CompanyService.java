@@ -43,4 +43,16 @@ public class CompanyService {
         return companies;
     }
 
+    public void storeCompany(Company company) {
+        SqlSession session;
+
+        session = factory.openSession();
+        try {
+            session.getMapper(CompanyMapper.class).storeCompany(company);
+            session.commit();
+        } finally {
+            session.close();
+        }
+    }
+
 }

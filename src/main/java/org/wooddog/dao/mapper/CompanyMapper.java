@@ -13,4 +13,5 @@ import java.util.List;
  */
 public interface  CompanyMapper {
     List<Company> getCompanies();
+    void storeCompany(Company company);
 }
