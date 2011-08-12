@@ -58,10 +58,10 @@ public class ChannelThread {
 
             while (!signal) {
                 try {
-                    LOGGER.info("fetching " + channelFetcher.getChannel().getUrl().toExternalForm());
+                    LOGGER.debug("fetching " + channelFetcher.getChannel().getUrl().toExternalForm());
                     channelFetcher.fetch();
                     articles = channelFetcher.getArticles();
-                    LOGGER.info("fetched " + articles.size());
+                    LOGGER.debug("fetched " + articles.size());
 
                     if (!articles.isEmpty()) {
                         ArticleService.getInstance().storeArticles(articles);
@@ -69,7 +69,7 @@ public class ChannelThread {
 
                     channelFetcher.getChannel().setFetched(new Date());
                     ChannelService.getInstance().setChannelFetched(channelFetcher.getChannel().getId(), channelFetcher.getChannel().getFetched());
-                    LOGGER.info("fetching updated " + channelFetcher.getChannel().getUrl().toExternalForm());
+                    LOGGER.debug("fetching updated " + channelFetcher.getChannel().getUrl().toExternalForm());
 
                 } catch (Throwable x) {
                     LOGGER.error(x.getMessage(), x);

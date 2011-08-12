@@ -164,7 +164,6 @@
         try {
             action.execute(request.getParameterMap());
         } catch (Throwable x) {
-            System.out.println(x.getMessage());
             session.setAttribute("error", "failed adding company, " + x.getMessage());
         }
         response.sendRedirect("trends.jsp");
@@ -172,7 +171,6 @@
     }
 
     companyList = CompanyService.getInstance().getCompanies();
-    //companyList = new ArrayList<Company>();
 %>
 <html>
     <head>

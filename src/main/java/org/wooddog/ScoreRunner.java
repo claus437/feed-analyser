@@ -34,7 +34,7 @@ public class ScoreRunner extends Thread {
             rator = ScoreRatorFactory.getScoreRator();
 
             for (int i = 0; !signal && i < companies.size(); i++) {
-                LOGGER.info("rating " + companies.get(i));
+                LOGGER.debug("rating " + companies.get(i));
                 rate(companies.get(i));
             }
 
