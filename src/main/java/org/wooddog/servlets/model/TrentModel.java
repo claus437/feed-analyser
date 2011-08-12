@@ -8,6 +8,7 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -83,6 +84,7 @@ public class TrentModel {
             currentScore = score;
         }
 
+        Collections.reverse(scores);
         return scores;
     }
 
