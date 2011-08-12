@@ -6,6 +6,7 @@ import org.dbunit.Assertion;
 import org.dbunit.dataset.ITable;
 import org.dbunit.operation.DatabaseOperation;
 import org.junit.Test;
+import org.wooddog.dao.service.ScoringServiceDao;
 import org.wooddog.domain.Scoring;
 
 import java.util.Calendar;
@@ -14,7 +15,7 @@ import java.util.List;
 
 public class ScoringServiceTest extends DaoTestCase {
     private static final Date JAN132011_101213 = new Date(1307952733000L);
-    private ScoringService service = ScoringService.getInstance();
+    private ScoringServiceDao service = ScoringServiceDao.getInstance();
 
 
     @Test

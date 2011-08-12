@@ -5,6 +5,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.wooddog.Config;
+import org.wooddog.dao.service.ScoringServiceDao;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -46,11 +47,6 @@ public class Service {
         return factory;
     }
 
-    public static ScoringService getScoringService() {
-        return scoringService;
-    }
-
-
     public static Service getInstance() {
         return service;
     }
@@ -88,7 +84,7 @@ public class Service {
     }
 
 
-    static Map createParameterMap(Object... parameters) {
+    public static Map createParameterMap(Object... parameters) {
         Map<String, Object> parameterMap;
 
         parameterMap = new HashMap<String, Object>();

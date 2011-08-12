@@ -1,163 +1,23 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
 <%@ page import="org.wooddog.dao.CompanyService" %>
-<%@ page import="org.wooddog.dao.ScoringService" %>
 <%@ page import="org.wooddog.domain.Company" %>
-<%@ page import="org.wooddog.domain.Scoring" %>
-<%@ page import="java.util.Calendar" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.util.List" %>
 <%@ page import="org.wooddog.servlets.PageAction" %>
 <%@ page import="org.wooddog.servlets.PageActionFactory" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.util.Locale" %>
+<%@ page import="org.wooddog.servlets.model.TrentModel" %>
 
 <%!
     static final int HISTORY_COUNT = 10;
-
-    Date getLowerDate(Date date) {
-        Calendar lower;
-
-        lower = Calendar.getInstance();
-        lower.setTime(date);
-        lower.set(Calendar.HOUR_OF_DAY, 0);
-        lower.set(Calendar.MINUTE, 0);
-        lower.set(Calendar.SECOND, 0);
-        lower.set(Calendar.MILLISECOND, 0);
-
-        return lower.getTime();
-    }
-
-    Date getUpperDate(Date date) {
-        Calendar upper;
-
-        upper = Calendar.getInstance();
-        upper.setTime(date);
-        upper.set(Calendar.HOUR_OF_DAY, 23);
-        upper.set(Calendar.MINUTE, 59);
-        upper.set(Calendar.SECOND, 59);
-        upper.set(Calendar.MILLISECOND, 999);
-
-        return upper.getTime();
-    }
-
-    int getScore(int companyId, Date date) {
-        List<Scoring> scoreList;
-        Date from;
-        Date to;
-        int score;
-
-        from = getLowerDate(date);
-        to = getUpperDate(date);
-        score = 0;
-
-        scoreList = ScoringService.getInstance().getScoringsInPeriodForCompany(companyId, from, to);
-        for (Scoring scoring : scoreList) {
-            score += scoring.getScore();
-        }
-
-        return score;
-    }
-
-    /*
-    int getMentioned(int companyId, int dayOffset) {
-        List<Scoring> scoreList;
-        Date from;
-        Date to;
-        int mentioned;
-
-        from = getLowerDate(dayOffset);
-        to = getUpperDate(dayOffset);
-        mentioned = 0;
-
-        scoreList = ScoringService.getInstance().getScoringsInPeriodForCompany(companyId, from, to);
-        for (Scoring scoring : scoreList) {
-            if (scoring.getScore() != 0) {
-                mentioned ++;
-            }
-
-        }
-
-        return mentioned;
-    }
-    */
-
-    List<String> getMonths(Date now) {
-        List<String> months;
-        Calendar calendar;
-        SimpleDateFormat format;
-
-        format = new SimpleDateFormat("MMM dd", Locale.UK);
-        calendar = Calendar.getInstance();
-        calendar.setTime(now);
-
-        months = new ArrayList<String>();
-        for (int i = 0; i < HISTORY_COUNT; i++) {
-            months.add(format.format(calendar.getTime()).toLowerCase());
-            calendar.add(Calendar.DAY_OF_MONTH, -1);
-        }
-
-        return months;
-    }
-
-    List<String> getScores(int companyId, Date now) {
-        List<String> scores;
-        int score;
-        Calendar calendar;
-        int currentScore;
-
-        scores = new ArrayList<String>();
-        calendar = Calendar.getInstance();
-        calendar.setTime(now);
-
-        currentScore = 1;
-
-        for (int i = 0; i < HISTORY_COUNT; i++) {
-            score = getScore(companyId, calendar.getTime());
-
-            if (currentScore == 0) {
-                currentScore = 1;
-            }
-
-            scores.add(Integer.toString(((score - currentScore) / currentScore) / 100) + " / " + Integer.toString(score));
-            calendar.add(Calendar.DAY_OF_MONTH, -1);
-            currentScore = score;
-        }
-
-        return scores;
-    }
-
-    List<String> getStocks(int companyId, Date now) {
-        List<String> stocks;
-
-        stocks = new ArrayList<String>();
-        for (int i = 0; i < HISTORY_COUNT; i++) {
-            stocks.add("n/a");
-        }
-
-        return stocks;
-    }
-
-    List<String> getRecommendations(int companyId, Date now) {
-        List<String> recommendations;
-
-        recommendations = new ArrayList<String>();
-        for (int i = 0; i < HISTORY_COUNT; i++) {
-            recommendations.add("n/a");
-        }
-
-        return recommendations;
-    }
-
 %>
 
 <%
     List<Company> companyList;
+    TrentModel model;
     PageAction action;
-    Date now;
 
-    now = new Date();
+    model = new TrentModel(new Date(), 10);
 
     action = PageActionFactory.getInstance().getAction(request.getParameter("action"));
     if (action != null) {
@@ -269,25 +129,25 @@
                     </tr>
                     <tr class="month">
                         <td></td>
-                        <% for (String month : getMonths(now)) { %>
+                        <% for (String month : model.getMonths()) { %>
                             <td><%=month%></td>
                         <% } %>
                     </tr>
                     <tr class="score">
                         <td>SCORE</td>
-                        <% for (String score : getScores(company.getId(), now)) { %>
+                        <% for (String score : model.getScores(company.getId())) { %>
                             <td><%=score%></td>
                         <% } %>
                     </tr>
                     <tr class="stock">
                         <td>STOCK</td>
-                        <% for (String stock : getStocks(company.getId(), now)) { %>
+                        <% for (String stock : model.getStocks(company.getId())) { %>
                             <td><%=stock%></td>
                         <% } %>
                     </tr>
                     <tr class="recommendation">
                         <td>RECOMMENDATION</td>
-                        <% for (String recommendation : getRecommendations(company.getId(), now)) { %>
+                        <% for (String recommendation : model.getRecommendations(company.getId())) { %>
                             <td><%=recommendation%></td>
                         <% } %>
                     </tr>

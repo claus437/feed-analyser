@@ -1,7 +1,7 @@
 package org.wooddog.servlets;
 
 import org.wooddog.dao.CompanyService;
-import org.wooddog.dao.ScoringService;
+import org.wooddog.dao.service.ScoringServiceDao;
 import org.wooddog.domain.Company;
 import org.wooddog.domain.Scoring;
 
@@ -46,7 +46,7 @@ public class TrendModel {
         to.set(Calendar.SECOND, 59);
         to.set(Calendar.MILLISECOND, 999);
 
-        scoringList = ScoringService.getInstance().getScoringsInPeriodForCompany(companyId, from.getTime(), to.getTime());
+        scoringList = ScoringServiceDao.getInstance().getScoringsInPeriodForCompany(companyId, from.getTime(), to.getTime());
         for (Scoring scoring : scoringList) {
 
 

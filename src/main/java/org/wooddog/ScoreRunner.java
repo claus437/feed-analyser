@@ -3,7 +3,7 @@ package org.wooddog;
 import org.apache.log4j.Logger;
 import org.wooddog.dao.ArticleService;
 import org.wooddog.dao.CompanyService;
-import org.wooddog.dao.ScoringService;
+import org.wooddog.dao.service.ScoringServiceDao;
 import org.wooddog.domain.Article;
 import org.wooddog.domain.Company;
 import org.wooddog.domain.Scoring;
@@ -14,7 +14,7 @@ import java.util.List;
 public class ScoreRunner extends Thread {
     private static final Logger LOGGER = Logger.getLogger(ScoreRunner.class);
     private static final ScoreRunner INSTANCE = new ScoreRunner();
-    private ScoringService scoreService = ScoringService.getInstance();
+    private ScoringServiceDao scoreService = ScoringServiceDao.getInstance();
     private ArticleService articleService = ArticleService.getInstance();
     private boolean signal;
     private ScoreRator rator;
