@@ -62,12 +62,9 @@ public class TrentModel {
         int score;
         Calendar calendar;
         int currentScore;
-        DecimalFormat format;
-        String direction;
+        int diff;
+        String text;
 
-        format = new DecimalFormat();
-        format.setMaximumFractionDigits(2);
-        format.setMinimumFractionDigits(2);
 
         scores = new ArrayList<String>();
         calendar = Calendar.getInstance();
@@ -80,8 +77,10 @@ public class TrentModel {
             calendar.add(Calendar.DAY_OF_MONTH, 1);
 
             score = getScore(companyId, calendar.getTime());
-            direction = score > currentScore ? "+" : "-";
-            scores.add(direction + " / " + score);
+            diff = score - currentScore;
+
+            text = diff > 0 ? "+" + diff : "" + diff;
+            scores.add(text + " / " + score);
             currentScore = score;
         }
 
@@ -162,6 +161,4 @@ public class TrentModel {
 
         return score;
     }
-
-
 }

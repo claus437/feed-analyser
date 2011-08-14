@@ -32,8 +32,8 @@ public class TrentModelTest {
         date = Calendar.getInstance();
         date.set(2011, 8, 12, 14, 30, 10);
 
-        model =  new TrentModel(date.getTime(), 3);
-        model.setScoringService(new MockScoringService(new int[][]{{1, 1, 1}, {2, 2, 2}, {3, 3, 3}}));
+        model =  new TrentModel(date.getTime(), 4);
+        model.setScoringService(new MockScoringService(new int[][]{{1, 1, 1}, {2, 2, 2}, {3, 3, 3}, {2, 2, 2}}));
 
         scores = model.getScores(1);
         for (String score : scores) {
