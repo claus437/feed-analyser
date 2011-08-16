@@ -92,10 +92,11 @@
 
                 table.company td {
                     padding: 3px;
+                    vertical-align: top;
                 }
 
                 tr.month td {
-                    width: 50px;
+                    width: 70px;
                     border-right: 1px solid #999999;
                     font-weight: bold;
                 }
@@ -124,8 +125,8 @@
             <% for (Company company : companyList) { %>
                 <table class="company">
                     <tr class="header">
-                        <td colspan="2"><%=company.getName()%></td>
-                        <td colspan="<%=HISTORY_COUNT - 1%>"></td>
+                        <td colspan="4"><%=company.getName()%></td>
+                        <td colspan="<%=HISTORY_COUNT - 3%>"></td>
                     </tr>
                     <tr class="month">
                         <td></td>
@@ -134,19 +135,19 @@
                         <% } %>
                     </tr>
                     <tr class="score">
-                        <td>SCORE</td>
+                        <td>P</td>
                         <% for (String score : model.getScores(company.getId())) { %>
                             <td><%=score%></td>
                         <% } %>
                     </tr>
                     <tr class="stock">
-                        <td>STOCK</td>
+                        <td>S</td>
                         <% for (String stock : model.getStocks(company.getName())) { %>
                             <td><%=stock%></td>
                         <% } %>
                     </tr>
                     <tr class="recommendation">
-                        <td>RECOMMENDATION</td>
+                        <td>R</td>
                         <% for (String recommendation : model.getRecommendations(company.getId())) { %>
                             <td><%=recommendation%></td>
                         <% } %>
