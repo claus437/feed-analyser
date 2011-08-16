@@ -16,6 +16,6 @@
     </select>
 
     <insert id="storeCompany" parameterType="org.wooddog.domain.Company" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO COMPANIES (NAME) VALUES (#{name})
+        INSERT INTO COMPANIES (NAME) VALUES (#{company})
     </insert>
 </mapper>

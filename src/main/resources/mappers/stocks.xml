@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.wooddog.dao.mapper.StockMapper">
+    <resultMap id="StockMap" type="org.wooddog.domain.Stock">
+        <result column="ID" property="id"/>
+        <result column="COMPANY" property="company"/>
+        <result column="DIFF" property="diff"/>
+        <result column="VALUE" property="value"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="org.wooddog.domain.Stock" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO STOCKS (
+            COMPANY,
+            VALUE,
+            DIFF,
+            DATE
+        ) values (
+            #{company},
+            #{value},
+            #{diff},
+            #{date}
+        )
+    </insert>
+
+    <update id="update" parameterType="org.wooddog.domain.Stock">
+        UPDATE STOCKS set
+            COMPANY = #{company},
+            VALUE = #{value},
+            DIFF = #{diff},
+            DATE = #{date}
+        WHERE ID = #{id}
+    </update>
+
+    <select id="selectStockHistory" parameterType="Map" resultMap="StockMap">
+        SELECT * FROM STOCKS WHERE COMPANY=#{company} AND DATE &lt;= #{from} ORDER BY DATE LIMIT #{count}
+    </select>
+
+    <select id="selectByDate" parameterType="Date" resultMap="StockMap">
+        SELECT * FROM STOCKS WHERE DATE=#{date}
+    </select>
+
+</mapper>

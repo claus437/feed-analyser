@@ -27,5 +27,6 @@
         <mapper resource="mappers/channels.xml"/>
         <mapper resource="mappers/companies.xml"/>
         <mapper resource="mappers/scorings.xml"/>
+        <mapper resource="mappers/stocks.xml"/>
     </mappers>
 </configuration>

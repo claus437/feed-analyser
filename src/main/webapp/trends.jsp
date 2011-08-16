@@ -141,7 +141,7 @@
                     </tr>
                     <tr class="stock">
                         <td>STOCK</td>
-                        <% for (String stock : model.getStocks(company.getId())) { %>
+                        <% for (String stock : model.getStocks(company.getName())) { %>
                             <td><%=stock%></td>
                         <% } %>
                     </tr>

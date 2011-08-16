@@ -4,6 +4,7 @@ import org.wooddog.ChannelManager;
 import org.wooddog.Config;
 import org.wooddog.ScoreRunner;
 import org.wooddog.dao.Service;
+import org.wooddog.stock.StockJob;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -27,12 +28,15 @@ public class ConfigServlet extends HttpServlet {
 
         ScoreRunner.getInstance().start();
         ChannelManager.getInstance().start();
+        StockJob.getInstance().start();
     }
 
     @Override
     public void destroy() {
         super.destroy();
         ScoreRunner scoreRunner;
+
+        StockJob.getInstance().kill();
 
         scoreRunner = ScoreRunner.getInstance();
         scoreRunner.kill();

@@ -1,8 +1,12 @@
 package org.wooddog.servlets.model;
 
+import org.wooddog.DateUtil;
 import org.wooddog.dao.ScoringService;
+import org.wooddog.dao.StockService;
 import org.wooddog.dao.service.ScoringServiceDao;
+import org.wooddog.dao.service.StockServiceDao;
 import org.wooddog.domain.Scoring;
+import org.wooddog.domain.Stock;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -24,11 +28,13 @@ public class TrentModel {
     private int historyCount;
     private Date date;
     private ScoringService scoringService;
+    private StockService stockService;
 
     public TrentModel(Date date, int historyCount) {
         this.date = date;
         this.historyCount = historyCount;
         this.scoringService = ScoringServiceDao.getInstance();
+        this.stockService = StockServiceDao.getInstance();
     }
 
     public ScoringService getScoringService() {
@@ -95,15 +101,36 @@ public class TrentModel {
         return diff / oldScore * 100;
     }
 
-    public List<String> getStocks(int companyId) {
+    public List<String> getStocks(String companyName) {
         List<String> stocks;
+        List<Stock> stockList;
+        Date ago;
+        int index;
+
 
         stocks = new ArrayList<String>();
-        for (int i = 0; i < historyCount; i++) {
+
+        stockList = stockService.getStockHistory(companyName, date, historyCount);
+
+        if (!stockList.isEmpty()) {
+            if (DateUtil.sameDate(stockList.get(0).getDate(), date)) {
+                stockList.set(0, stockList.get(0));
+            }
+        }
+
+        for (index = 0; index < stockList.size(); index++) {
+            stocks.add(format(stockList.get(index)));
+        }
+
+        for (;index < historyCount; index++) {
             stocks.add("n/a");
         }
 
         return stocks;
+    }
+
+    private String format(Stock stock) {
+        return stock.getDiff() + " / " + stock.getValue();
     }
 
     public List<String> getRecommendations(int companyId) {
@@ -160,5 +187,19 @@ public class TrentModel {
         }
 
         return score;
+    }
+
+    private Date flatten(Date date) {
+        Calendar calendar;
+
+        calendar = Calendar.getInstance();
+        calendar.setTime(date);
+
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+
+        return date;
     }
 }
