@@ -1,5 +1,6 @@
 package org.wooddog.servlets;
 
+import org.apache.log4j.Logger;
 import org.wooddog.ChannelManager;
 import org.wooddog.Config;
 import org.wooddog.ScoreRunner;
@@ -19,16 +20,30 @@ import java.sql.SQLException;
  * To change this template use File | Settings | File Templates.
  */
 public class ConfigServlet extends HttpServlet {
-
+    private static final Logger LOGGER = Logger.getLogger(ConfigServlet.class);
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
 
         Config.load("org/wooddog/config/mysql.properties");
 
-        ScoreRunner.getInstance().start();
-        ChannelManager.getInstance().start();
-        StockJob.getInstance().start();
+        try {
+            StockJob.getInstance().start();
+        } catch (RuntimeException x) {
+            LOGGER.error("failed starting stock job " + x.getMessage(), x);
+        }
+
+        try {
+            ScoreRunner.getInstance().start();
+        } catch (RuntimeException x) {
+            LOGGER.error("failed starting score job, " + x.getMessage(), x);
+        }
+
+        try {
+            ChannelManager.getInstance().start();
+        } catch (RuntimeException x) {
+            LOGGER.error("failed starting channel fetcher, " + x.getMessage(), x);
+        }
     }
 
     @Override

@@ -23,7 +23,7 @@ public class ChannelManager {
 
         channels = ChannelService.getInstance().getChannels();
         for (Channel channel : channels) {
-            addChannel(channel);
+            channelFetchers.add(new ChannelThread(new RssChannelFetcher(channel)));
         }
     }
 
