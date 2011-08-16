@@ -80,7 +80,7 @@ public class ScoreRunner extends Thread {
             score.setDate(new Date());
             score.setScore(rator.rate(company.getName(), article.getTitle() + " " + article.getDescription()));
 
-            LOGGER.info("rated article " + article.getId() + " " + article.getPublished() + " for company " + company.getName() + " scored: " + score.getScore());
+            LOGGER.debug("rated article " + article.getId() + " " + article.getPublished() + " for company " + company.getName() + " scored: " + score.getScore());
             scoreService.store(score);
         }
     }

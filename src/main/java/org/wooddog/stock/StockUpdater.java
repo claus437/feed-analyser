@@ -1,5 +1,6 @@
 package org.wooddog.stock;
 
+import org.apache.log4j.Logger;
 import org.wooddog.dao.StockService;
 import org.wooddog.dao.service.StockServiceDao;
 import org.wooddog.domain.Stock;
@@ -15,6 +16,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class StockUpdater {
+    private static final Logger LOGGER = Logger.getLogger(StockUpdater.class);
     private StockService stockService = StockServiceDao.getInstance();
     private StockFetcher fetcher = new StockFetcher();
 
@@ -26,7 +28,9 @@ public class StockUpdater {
         now = new Date();
 
         currentStockList = stockService.getStocksByDate(now);
+        LOGGER.info("current stocks for " + now.toGMTString() + ": " + currentStockList.size() + " ");
         latestStockList = fetcher.getStocks();
+        LOGGER.info("found stocks for " + now.toGMTString() + ": " + latestStockList.size() + " ");
 
         copyIds(currentStockList, latestStockList);
 

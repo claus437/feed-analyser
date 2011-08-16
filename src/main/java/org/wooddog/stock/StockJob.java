@@ -1,13 +1,9 @@
 package org.wooddog.stock;
 
-import com.sun.org.apache.bcel.internal.generic.INSTANCEOF;
+import org.apache.log4j.Logger;
 import org.wooddog.IOUtil;
-import org.wooddog.dao.StockService;
-import org.wooddog.dao.service.StockServiceDao;
-import org.wooddog.domain.Stock;
-
 import java.util.Calendar;
-import java.util.List;
+import java.util.Date;
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,6 +13,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class StockJob extends Thread {
+    private static final Logger LOGGER = Logger.getLogger(StockJob.class);
     private static final StockJob INSTANCE = new StockJob();
     private boolean signal;
     private StockUpdater updater = new StockUpdater();
@@ -32,16 +29,22 @@ public class StockJob extends Thread {
     public void run() {
         long nextRun;
 
+        LOGGER.info("stock job started");
+
         nextRun = System.currentTimeMillis() - 1;
 
         do {
             if (System.currentTimeMillis() > nextRun) {
                 updater.update();
                 nextRun = getNextRun();
+
+                LOGGER.info("next run " + new Date(nextRun).toGMTString());
             } else {
                 IOUtil.sleep(1000 * 60);
             }
         } while (!signal);
+
+        LOGGER.info("stock job terminated");
     }
 
     public void kill() {
