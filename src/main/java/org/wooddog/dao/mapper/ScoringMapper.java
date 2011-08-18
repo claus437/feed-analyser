@@ -17,4 +17,6 @@ public interface ScoringMapper {
     List<Scoring> getScorings();
     Integer getLastScoredArticleIdForCompanyId(int companyId);
     List<Scoring> getScoringsInPeriodForCompany(Map<Integer, Object> parameters);
+
+    List<String> getKeyWordsByCompanyId(int companyId);
 }

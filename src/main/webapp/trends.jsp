@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
-<%@ page import="org.wooddog.dao.CompanyService" %>
+<%@ page import="org.wooddog.dao.service.CompanyServiceDao" %>
 <%@ page import="org.wooddog.domain.Company" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.util.List" %>
@@ -30,7 +30,7 @@
         return;
     }
 
-    companyList = CompanyService.getInstance().getCompanies();
+    companyList = CompanyServiceDao.getInstance().getCompanies();
 %>
 <html>
     <head>

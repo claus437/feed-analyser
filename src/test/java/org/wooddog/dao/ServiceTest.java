@@ -3,6 +3,7 @@ package org.wooddog.dao;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.wooddog.dao.service.ArticleServiceDao;
 import org.wooddog.domain.Article;
 import org.wooddog.domain.Channel;
 
@@ -62,7 +63,7 @@ public class ServiceTest {
         article.setPublished(new Date());
         article.setSource("source1");
         article.setTitle("title1");
-        ArticleService.getInstance().storeArticle(article);
+        ArticleServiceDao.getInstance().storeArticle(article);
 
         boundaryId = article.getId();
 
@@ -72,10 +73,10 @@ public class ServiceTest {
         article.setPublished(new Date());
         article.setSource("source2");
         article.setTitle("title2");
-        ArticleService.getInstance().storeArticle(article);
+        ArticleServiceDao.getInstance().storeArticle(article);
 
 
-        actuals = ArticleService.getInstance().getArticlesFromId(boundaryId);
+        actuals = ArticleServiceDao.getInstance().getArticlesFromId(boundaryId);
         Assert.assertEquals(1, actuals.size());
         Assert.assertEquals(article.getId(), actuals.get(0).getId());
     }
@@ -83,6 +84,6 @@ public class ServiceTest {
     @Before
     public void clean() {
         ChannelService.getInstance().deleteChannels();
-        ArticleService.getInstance().deleteArticles();
+        ArticleServiceDao.getInstance().deleteArticles();
     }
 }

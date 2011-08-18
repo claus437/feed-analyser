@@ -1,6 +1,6 @@
 package org.wooddog.servlets;
 
-import org.wooddog.dao.CompanyService;
+import org.wooddog.dao.service.CompanyServiceDao;
 import org.wooddog.dao.service.ScoringServiceDao;
 import org.wooddog.domain.Company;
 import org.wooddog.domain.Scoring;
@@ -19,7 +19,7 @@ public class TrendModel {
     private List<Company> companyList;
 
     public TrendModel() {
-        companyList = CompanyService.getInstance().getCompanies();
+        companyList = CompanyServiceDao.getInstance().getCompanies();
     }
 
     public List<Company> getCompanies() {

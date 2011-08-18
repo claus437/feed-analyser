@@ -6,7 +6,6 @@ import org.wooddog.Config;
 import org.wooddog.ScoreRunner;
 import org.wooddog.config.BackgroundJobs;
 import org.wooddog.dao.Service;
-import org.wooddog.stock.StockJob;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;

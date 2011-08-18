@@ -87,4 +87,18 @@ public class ScoringServiceDao implements ScoringService {
         return scorings;
     }
 
+    @Override
+    public List<String> getKeyWords(int companyId) {
+        SqlSession session;
+        List<String> keywords;
+
+        session = factory.openSession();
+        try {
+            keywords = session.getMapper(ScoringMapper.class).getKeyWordsByCompanyId(companyId);
+        } finally {
+            session.close();
+        }
+
+        return keywords;
+    }
 }

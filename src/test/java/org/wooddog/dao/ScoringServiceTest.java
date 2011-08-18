@@ -89,8 +89,8 @@ public class ScoringServiceTest extends DaoTestCase {
 
         for (Scoring scoring : scorings) {
             Assert.assertEquals(1, scoring.getCompanyId());
-            Assert.assertTrue("scoring after given period " + scoring.getDate(), scoring.getDate().getTime() >= from.getTimeInMillis());
-            Assert.assertTrue("scoring before given period", scoring.getDate().before(to.getTime()));
+            Assert.assertTrue("score after given period " + scoring.getDate(), scoring.getDate().getTime() >= from.getTimeInMillis());
+            Assert.assertTrue("score before given period", scoring.getDate().before(to.getTime()));
         }
     }
 

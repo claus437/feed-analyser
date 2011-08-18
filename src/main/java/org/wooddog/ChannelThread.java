@@ -1,7 +1,7 @@
 package org.wooddog;
 
 import org.apache.log4j.Logger;
-import org.wooddog.dao.ArticleService;
+import org.wooddog.dao.service.ArticleServiceDao;
 import org.wooddog.dao.ChannelService;
 import org.wooddog.dao.Service;
 import org.wooddog.domain.Article;
@@ -64,7 +64,7 @@ public class ChannelThread {
                     LOGGER.debug("fetched " + articles.size());
 
                     if (!articles.isEmpty()) {
-                        ArticleService.getInstance().storeArticles(articles);
+                        ArticleServiceDao.getInstance().storeArticles(articles);
                     }
 
                     channelFetcher.getChannel().setFetched(new Date());

@@ -36,8 +36,6 @@ public class DaoTestCase {
                 Config.get(Config.DB_USERNAME),
                 Config.get(Config.DB_PASSWORD));
 
-        Service.execute(database.getConnection().getConnection(), "database-schema.xml");
-
         connection = database.getConnection();
     }
 

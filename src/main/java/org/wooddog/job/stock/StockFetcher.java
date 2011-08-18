@@ -1,4 +1,4 @@
-package org.wooddog.stock;
+package org.wooddog.job.stock;
 
 import org.wooddog.IOUtil;
 import org.wooddog.domain.Stock;

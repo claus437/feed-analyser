@@ -1,14 +1,9 @@
 package org.wooddog.servlets.actions;
 
-import org.wooddog.ChannelManager;
-import org.wooddog.dao.ChannelService;
-import org.wooddog.dao.CompanyService;
-import org.wooddog.domain.Channel;
+import org.wooddog.dao.service.CompanyServiceDao;
 import org.wooddog.domain.Company;
 import org.wooddog.servlets.PageAction;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Map;
 
 /**
@@ -28,6 +23,6 @@ public class AddCompanyAction implements PageAction {
         company = new Company();
         company.setName(name);
 
-        CompanyService.getInstance().storeCompany(company);
+        CompanyServiceDao.getInstance().storeCompany(company);
     }
 }

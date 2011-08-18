@@ -102,21 +102,4 @@ public class ScheduleTest {
             time.add(timeField, timeStep);
         }
     }
-
-    public void testSome() {
-        int every;
-        int next;
-        int current;
-
-
-        every = 7;
-        current = 0;
-
-        current = (int) System.currentTimeMillis();
-
-        for (; current < 60; current++) {
-            next = current - current % every + every;
-            System.out.println(current + " " + next);
-        }
-    }
 }

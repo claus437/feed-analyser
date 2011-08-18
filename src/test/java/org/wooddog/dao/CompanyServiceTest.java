@@ -3,12 +3,13 @@ package org.wooddog.dao;
 import junit.framework.Assert;
 import org.dbunit.operation.DatabaseOperation;
 import org.junit.Test;
+import org.wooddog.dao.service.CompanyServiceDao;
 import org.wooddog.domain.Company;
 
 import java.util.List;
 
 public class CompanyServiceTest extends DaoTestCase {
-    private CompanyService service = CompanyService.getInstance();
+    private CompanyServiceDao service = CompanyServiceDao.getInstance();
 
 
     @Test

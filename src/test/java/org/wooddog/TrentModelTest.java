@@ -78,6 +78,11 @@ public class TrentModelTest {
             index ++;
             return scoringList;
         }
+
+        @Override
+        public List<String> getKeyWords(int id) {
+            return null;
+        }
     }
 }
 

@@ -1,7 +1,7 @@
 package org.wooddog;
 
 import org.junit.Test;
-import org.wooddog.stock.StockFetcher;
+import org.wooddog.job.stock.StockFetcher;
 
 /**
  * Created by IntelliJ IDEA.

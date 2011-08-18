@@ -42,4 +42,8 @@
             DATE &gt;= #{1} and
             DATE &lt;=#{2}
     </select>
+
+    <select id="getKeyWordsByCompanyId" parameterType="int" resultType="List">
+        SELECT KEYWORD FROM SCORE_KEYWORDS WHERE COMPANY_ID = #{value}
+    </select>
 </mapper>
