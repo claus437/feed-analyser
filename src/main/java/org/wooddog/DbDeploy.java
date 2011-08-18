@@ -17,7 +17,9 @@ import java.sql.Statement;
  * To change this template use File | Settings | File Templates.
  */
 public class DbDeploy {
-    private static String url = "";
+    private static String local = "jdbc:mysql://localhost:3306/feedanalyser?user=feedanalyser&password=feedanalyser_";
+    private static String pub = "jdbc:mysql://193.219.27.193:3306/feedanalyser?user=feedanalyser&password=feedanalyser_";
+    private static String url = local;
 
     public static void main(String[] args) throws Exception {
         Connection connection;
@@ -28,7 +30,7 @@ public class DbDeploy {
         int line;
 
         Class.forName ("com.mysql.jdbc.Driver").newInstance ();
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/feedanalyser?user=feedanalyser&password=feedanalyser_");
+        connection = DriverManager.getConnection(url);
 
         try {
             line = 0;
