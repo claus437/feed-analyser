@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.wooddog.ChannelManager;
 import org.wooddog.Config;
 import org.wooddog.ScoreRunner;
+import org.wooddog.config.BackgroundJobs;
 import org.wooddog.dao.Service;
 import org.wooddog.stock.StockJob;
 
@@ -27,23 +28,11 @@ public class ConfigServlet extends HttpServlet {
 
         Config.load("org/wooddog/config/mysql.properties");
 
-        try {
-            StockJob.getInstance().start();
-        } catch (RuntimeException x) {
-            LOGGER.error("failed starting stock job " + x.getMessage(), x);
-        }
+        BackgroundJobs.getInstance().start();
 
-        try {
-            ScoreRunner.getInstance().start();
-        } catch (RuntimeException x) {
-            LOGGER.error("failed starting score job, " + x.getMessage(), x);
-        }
+        ScoreRunner.getInstance().start();
+        ChannelManager.getInstance().start();
 
-        try {
-            ChannelManager.getInstance().start();
-        } catch (RuntimeException x) {
-            LOGGER.error("failed starting channel fetcher, " + x.getMessage(), x);
-        }
     }
 
     @Override
@@ -51,7 +40,7 @@ public class ConfigServlet extends HttpServlet {
         super.destroy();
         ScoreRunner scoreRunner;
 
-        StockJob.getInstance().kill();
+        BackgroundJobs.getInstance().stop();
 
         scoreRunner = ScoreRunner.getInstance();
         scoreRunner.kill();
