@@ -19,7 +19,11 @@ import java.sql.Statement;
 public class DbDeploy {
     private static String local = "jdbc:mysql://localhost:3306/feedanalyser?user=feedanalyser&password=feedanalyser_";
     private static String pub = "jdbc:mysql://193.219.27.193:3306/feedanalyser?user=feedanalyser&password=feedanalyser_";
-    private static String url = local;
+    private static String schema = "mysql-schema.xml";
+    private static String data = "data.txt";
+
+    private static String url = pub;
+    private static String resource = data;
 
     public static void main(String[] args) throws Exception {
         Connection connection;
@@ -34,7 +38,7 @@ public class DbDeploy {
 
         try {
             line = 0;
-            stream = DbDeploy.class.getClassLoader().getResourceAsStream("mysql-schema.xml");
+            stream = DbDeploy.class.getClassLoader().getResourceAsStream(resource);
             reader = new BufferedReader(new InputStreamReader(stream));
 
             while ((command = reader.readLine()) != null) {
