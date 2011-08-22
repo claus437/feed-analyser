@@ -7,6 +7,7 @@
         <result column="ID" property="id"/>
         <result column="URL" property="url" typeHandler="UrlTypeHandler"/>
         <result column="FETCHED" property="fetched"/>
+        <result column="TYPE" property="type"/>
     </resultMap>
 
     <select id="select" resultMap="ChannelMap">
@@ -18,7 +19,7 @@
     </select>
 
     <insert id="insert" parameterType="org.wooddog.domain.Channel" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO CHANNELS (URL, FETCHED) values (#{url,typeHandler=UrlTypeHandler}, #{fetched})
+        INSERT INTO CHANNELS (URL, FETCHED, TYPE) values (#{url,typeHandler=UrlTypeHandler}, #{fetched}, #{type})
     </insert>
 
     <update id="updateFetched" parameterType="Map">

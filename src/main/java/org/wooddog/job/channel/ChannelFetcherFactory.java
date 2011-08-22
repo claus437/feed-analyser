@@ -17,7 +17,7 @@ import java.util.Map;
 public class ChannelFetcherFactory {
     private static final Map<String, ChannelFetcher> FETCHERS = new HashMap<String, ChannelFetcher>();
 
-    private ChannelFetcherFactory() {
+    static {
         FETCHERS.put("RSS", new RssChannelFetcher());
         FETCHERS.put("ATOM", new AtomChannelFetcher());
     }
