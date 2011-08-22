@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.wooddog.dao.service.ArticleServiceDao;
+import org.wooddog.dao.service.ChannelServiceDao;
 import org.wooddog.domain.Article;
 import org.wooddog.domain.Channel;
 
@@ -27,7 +28,7 @@ public class ServiceTest {
         channel = new Channel();
         channel.setFetched(new Date());
         channel.setUrl(new URL("http://www.amiga.dk"));
-        ChannelService.getInstance().storeChannel(channel);
+        ChannelServiceDao.getInstance().storeChannel(channel);
 
         Assert.assertNotSame(0, channel.getId());
     }
@@ -40,13 +41,13 @@ public class ServiceTest {
         channel = new Channel();
         channel.setFetched(new Date());
         channel.setUrl(new URL("http://www.amiga.dk"));
-        ChannelService.getInstance().storeChannel(channel);
+        ChannelServiceDao.getInstance().storeChannel(channel);
 
         channel.setFetched(new Date());
         channel.setUrl(new URL("http://www.amiga2.dk"));
-        ChannelService.getInstance().storeChannel(channel);
+        ChannelServiceDao.getInstance().storeChannel(channel);
 
-        channels = ChannelService.getInstance().getChannels();
+        channels = ChannelServiceDao.getInstance().getChannels();
 
         Assert.assertEquals(2, channels.size());
     }
@@ -83,7 +84,7 @@ public class ServiceTest {
 
     @Before
     public void clean() {
-        ChannelService.getInstance().deleteChannels();
+        ChannelServiceDao.getInstance().deleteChannels();
         ArticleServiceDao.getInstance().deleteArticles();
     }
 }

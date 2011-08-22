@@ -1,23 +1,21 @@
 package org.wooddog.job;
 
+import org.apache.log4j.Logger;
 import java.util.Date;
 
-/**
- * Created by IntelliJ IDEA.
- * User: dencbr
- * Date: 17-08-11
- * Time: 08:51
- * To change this template use File | Settings | File Templates.
- */
 public class JobThread extends Thread {
+    public enum Status {INITIALIZED, SLEEPING, EXECUTING, TERMINATING, TERMINATED}
+    private static final Logger LOGGER = Logger.getLogger(JobThread.class);
     private Job job;
     private JobPlan plan;
     private boolean signal;
     private Date lastRun;
     private Date nextRun;
+    private Status status;
+    private long executingTime;
 
     public JobThread() {
-        this.job = job;
+        status = Status.INITIALIZED;
     }
 
     public Job getJob() {
@@ -37,26 +35,34 @@ public class JobThread extends Thread {
     }
 
     public void run() {
-        lastRun = new Date();
-        nextRun = plan.getNextRun(lastRun);
-
         while (!signal) {
-            if (System.currentTimeMillis() > nextRun.getTime()) {
-                execute();
-            } else {
+            execute();
+
+            while (System.currentTimeMillis() < nextRun.getTime() && !signal) {
                 sleep();
             }
         }
+
+        status = Status.TERMINATED;
     }
 
     public void execute() {
+        long now;
+        status = Status.EXECUTING;
+
+        LOGGER.info("executing " + job.getName());
+
+        now = System.currentTimeMillis();
         job.execute();
+        executingTime = System.currentTimeMillis() - now;
 
         lastRun = new Date();
         nextRun = plan.getNextRun(lastRun);
     }
 
     public void sleep() {
+        status = Status.SLEEPING;
+
         try {
             Thread.sleep(1000);
         } catch (InterruptedException x) {
@@ -64,7 +70,25 @@ public class JobThread extends Thread {
         }
     }
 
+    public Date getLastRun() {
+        return lastRun;
+    }
+
+    public Date getNextRun() {
+        return nextRun;
+    }
+
     public void kill() {
+        status = Status.TERMINATING;
+
         signal = true;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public long getExecutingTime() {
+        return executingTime;
     }
 }

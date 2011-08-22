@@ -2,7 +2,7 @@ package org.wooddog.servlets.actions;
 
 import org.apache.log4j.Logger;
 import org.wooddog.ChannelManager;
-import org.wooddog.dao.ChannelService;
+import org.wooddog.dao.service.ChannelServiceDao;
 import org.wooddog.domain.Channel;
 import org.wooddog.servlets.PageAction;
 
@@ -24,11 +24,11 @@ public class DeleteChannelAction implements PageAction {
 
         id = Integer.parseInt(parameters.get("id")[0]);
 
-        channel = ChannelService.getInstance().getChannelById(id);
+        channel = ChannelServiceDao.getInstance().getChannelById(id);
 
         LOGGER.info("loaded channel" + channel.getId() + " " + channel.getUrl());
 
-        ChannelService.getInstance().deleteChannel(id);
+        ChannelServiceDao.getInstance().deleteChannel(id);
         ChannelManager.getInstance().removeChannel(channel);
     }
 }

@@ -3,7 +3,7 @@ package org.wooddog.servlets.actions;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.wooddog.dao.ChannelService;
+import org.wooddog.dao.service.ChannelServiceDao;
 import org.wooddog.domain.Channel;
 import org.wooddog.servlets.PageAction;
 import org.wooddog.servlets.PageActionFactory;
@@ -23,7 +23,7 @@ public class AddChannelActionTest {
 
     @Before
     public void clean() {
-        ChannelService.getInstance().deleteChannels();
+        ChannelServiceDao.getInstance().deleteChannels();
     }
 
     @Test
@@ -38,7 +38,7 @@ public class AddChannelActionTest {
         action = PageActionFactory.getInstance().getAction("AddChannel");
         action.execute(parameters);
 
-        channels = ChannelService.getInstance().getChannels();
+        channels = ChannelServiceDao.getInstance().getChannels();
         for (Channel channel : channels) {
             if (channel.getUrl() == null) {
                 continue;

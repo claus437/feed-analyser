@@ -14,6 +14,7 @@ public class Channel {
     private int id;
     private URL url;
     private Date fetched;
+    private String type;
 
     public int getId() {
         return id;
@@ -37,6 +38,14 @@ public class Channel {
 
     public void setFetched(Date fetched) {
         this.fetched = fetched;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Override

@@ -109,6 +109,11 @@ public class ScoreJobTest {
         }
 
         @Override
+        public Date getLatestPublishDate(String source) {
+            return null;
+        }
+
+        @Override
         public List<Article> getArticlesFromId(int id) {
             Article article;
 

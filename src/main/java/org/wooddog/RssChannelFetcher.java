@@ -4,6 +4,7 @@ import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
+import org.wooddog.dao.ChannelService;
 import org.wooddog.domain.Article;
 import org.wooddog.domain.Channel;
 
@@ -103,7 +104,7 @@ public class RssChannelFetcher implements ChannelFetcher {
                 article = new Article();
                 article.setTitle(getText(item, "title"));
                 article.setDescription(getText(item, "summary"));
-                article.setLink(getText(item, "link"));
+                article.setLink(getText(item, "link", "href"));
                 article.setPublished(publishDate);
                 articles.add(article);
             }
@@ -120,4 +121,12 @@ public class RssChannelFetcher implements ChannelFetcher {
         item = element.element(elementName);
         return item == null ? null : item.getText();
     }
+
+    private String getText(Element element, String elementName, String attribute) {
+        Element item;
+
+        item = element.element(elementName);
+        return item == null ? null : item.attributeValue(attribute);
+    }
+
 }

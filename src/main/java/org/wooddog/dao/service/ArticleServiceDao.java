@@ -7,6 +7,7 @@ import org.wooddog.dao.Service;
 import org.wooddog.dao.mapper.ArticleMapper;
 import org.wooddog.domain.Article;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -109,4 +110,21 @@ public class ArticleServiceDao implements ArticleService {
         return article;
     }
 
+    @Override
+    public Date getLatestPublishDate(String source) {
+        SqlSession session;
+        Date published;
+
+        session = factory.openSession();
+        try {
+            published = session.getMapper(ArticleMapper.class).getLatestPublishDate(source);
+            if (published == null) {
+                published = new Date(0);
+            }
+        } finally {
+            session.close();
+        }
+
+        return published;
+    }
 }

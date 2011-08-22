@@ -3,7 +3,6 @@ package org.wooddog.servlets;
 import org.apache.log4j.Logger;
 import org.wooddog.ChannelManager;
 import org.wooddog.Config;
-import org.wooddog.ScoreRunner;
 import org.wooddog.config.BackgroundJobs;
 import org.wooddog.dao.Service;
 
@@ -21,37 +20,30 @@ import java.sql.SQLException;
  */
 public class ConfigServlet extends HttpServlet {
     private static final Logger LOGGER = Logger.getLogger(ConfigServlet.class);
+
     @Override
     public void init(ServletConfig config) throws ServletException {
+        BackgroundJobs jobs;
+
         super.init(config);
 
         Config.load("org/wooddog/config/mysql.properties");
 
-        BackgroundJobs.getInstance().start();
-
-        ScoreRunner.getInstance().start();
-        ChannelManager.getInstance().start();
-
+        jobs = BackgroundJobs.getInstance();
+        jobs.start();
     }
 
     @Override
     public void destroy() {
+        BackgroundJobs jobs;
+
         super.destroy();
-        ScoreRunner scoreRunner;
 
-        BackgroundJobs.getInstance().stop();
-
-        scoreRunner = ScoreRunner.getInstance();
-        scoreRunner.kill();
-        ChannelManager.getInstance().stop();
-
-        while (scoreRunner.isAlive()) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException x) {
-                throw new RuntimeException(x);
-            }
-        }
+        LOGGER.info("shutting down background tasks");
+        jobs = BackgroundJobs.getInstance();
+        jobs.stop();
+        jobs.waitForTermination();
+        LOGGER.info("background tasks terminated");
 
         try {
             Service.getInstance().shutdown();

@@ -1,0 +1,986 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>All all builds</title>
+    <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/" rel="alternate"/>
+    <updated>2011-08-22T10:32:26Z</updated>
+    <author>
+        <name>Hudson Server</name>
+    </author>
+    <id>urn:uuid:903deee0-7bfa-11db-9fe1-0800200c9a66</id>
+    <entry>
+        <title>title</title>
+        <link type="text/html" href="http://link" rel="alternate"/>
+        <summary>description</summary>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-22_12-32-26</id>
+        <published>2011-08-22T10:32:26Z</published>
+        <updated>2011-08-22T10:32:26Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #172 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/172/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-22_12-26-25</id>
+        <published>2011-08-22T10:26:25Z</published>
+        <updated>2011-08-22T10:26:25Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #351 (broken since build #345)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/351/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-22_12-24-13</id>
+        <published>2011-08-22T10:24:13Z</published>
+        <updated>2011-08-22T10:24:13Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #171 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/171/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-22_12-23-44</id>
+        <published>2011-08-22T10:23:44Z</published>
+        <updated>2011-08-22T10:23:44Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #350 (broken since build #345)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/350/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-22_12-20-25</id>
+        <published>2011-08-22T10:20:25Z</published>
+        <updated>2011-08-22T10:20:25Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #170 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/170/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-22_12-19-52</id>
+        <published>2011-08-22T10:19:52Z</published>
+        <updated>2011-08-22T10:19:52Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #349 (broken since build #345)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/349/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-22_12-16-29</id>
+        <published>2011-08-22T10:16:29Z</published>
+        <updated>2011-08-22T10:16:29Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #169 (back to normal)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/169/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-22_12-15-53</id>
+        <published>2011-08-22T10:15:53Z</published>
+        <updated>2011-08-22T10:15:53Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #168 (broken since this build)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/168/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-22_12-07-06</id>
+        <published>2011-08-22T10:07:06Z</published>
+        <updated>2011-08-22T10:07:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #348 (broken since build #345)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/348/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-22_12-04-51</id>
+        <published>2011-08-22T10:04:51Z</published>
+        <updated>2011-08-22T10:04:51Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #167 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/167/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-22_12-04-01</id>
+        <published>2011-08-22T10:04:01Z</published>
+        <updated>2011-08-22T10:04:01Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #347 (broken since build #345)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/347/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-22_12-02-16</id>
+        <published>2011-08-22T10:02:16Z</published>
+        <updated>2011-08-22T10:02:16Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #166 (back to normal)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/166/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-22_12-01-39</id>
+        <published>2011-08-22T10:01:39Z</published>
+        <updated>2011-08-22T10:01:39Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #165 (broken since this build)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/165/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-22_12-00-06</id>
+        <published>2011-08-22T10:00:06Z</published>
+        <updated>2011-08-22T10:00:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #346 (broken since build #345)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/346/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-22_09-59-07</id>
+        <published>2011-08-22T07:59:07Z</published>
+        <updated>2011-08-22T07:59:07Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #345 (broken since this build)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/345/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-22_09-41-06</id>
+        <published>2011-08-22T07:41:06Z</published>
+        <updated>2011-08-22T07:41:06Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-WS-BRROADBAND 1.0 RELEASE #14 (stable)</title>
+        <link type="text/html"
+              href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-WS-BRROADBAND%201.0%20RELEASE/14/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-WS-BRROADBAND 1.0 RELEASE:2011-08-21_16-46-07</id>
+        <published>2011-08-21T14:46:07Z</published>
+        <updated>2011-08-21T14:46:07Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-BROADBAND #58 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-BROADBAND/58/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-BROADBAND:2011-08-21_14-53-40</id>
+        <published>2011-08-21T12:53:40Z</published>
+        <updated>2011-08-21T12:53:40Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-BROADBAND #57 (back to normal)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-BROADBAND/57/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-BROADBAND:2011-08-21_14-48-09</id>
+        <published>2011-08-21T12:48:09Z</published>
+        <updated>2011-08-21T12:48:09Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-BROADBAND #56 (broken since build #46)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-BROADBAND/56/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-BROADBAND:2011-08-21_14-08-17</id>
+        <published>2011-08-21T12:08:17Z</published>
+        <updated>2011-08-21T12:08:17Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-BROADBAND #55 (broken since build #46)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-BROADBAND/55/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-BROADBAND:2011-08-21_14-07-31</id>
+        <published>2011-08-21T12:07:31Z</published>
+        <updated>2011-08-21T12:07:31Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-BROADBAND #54 (broken since build #46)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-BROADBAND/54/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-BROADBAND:2011-08-21_14-02-06</id>
+        <published>2011-08-21T12:02:06Z</published>
+        <updated>2011-08-21T12:02:06Z</updated>
+    </entry>
+    <entry>
+        <title>UTILS-MAVEN-FITNESSE 1.0 RELEASE #8 (stable)</title>
+        <link type="text/html"
+              href="http://cia.ascore.denmark.nordic.x/hudson/job/UTILS-MAVEN-FITNESSE%201.0%20RELEASE/8/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:UTILS-MAVEN-FITNESSE 1.0 RELEASE:2011-08-21_14-00-43</id>
+        <published>2011-08-21T12:00:43Z</published>
+        <updated>2011-08-21T12:00:43Z</updated>
+    </entry>
+    <entry>
+        <title>UTILS-MAVEN-FITNESSE #16 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/UTILS-MAVEN-FITNESSE/16/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:UTILS-MAVEN-FITNESSE:2011-08-21_14-00-06</id>
+        <published>2011-08-21T12:00:06Z</published>
+        <updated>2011-08-21T12:00:06Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-BROADBAND #53 (broken since build #46)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-BROADBAND/53/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-BROADBAND:2011-08-21_12-40-06</id>
+        <published>2011-08-21T10:40:06Z</published>
+        <updated>2011-08-21T10:40:06Z</updated>
+    </entry>
+    <entry>
+        <title>UTILS-MAVEN-FITNESSE 1.0 RELEASE #7 (stable)</title>
+        <link type="text/html"
+              href="http://cia.ascore.denmark.nordic.x/hudson/job/UTILS-MAVEN-FITNESSE%201.0%20RELEASE/7/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:UTILS-MAVEN-FITNESSE 1.0 RELEASE:2011-08-21_12-37-52</id>
+        <published>2011-08-21T10:37:52Z</published>
+        <updated>2011-08-21T10:37:52Z</updated>
+    </entry>
+    <entry>
+        <title>UTILS-MAVEN-FITNESSE #15 (back to normal)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/UTILS-MAVEN-FITNESSE/15/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:UTILS-MAVEN-FITNESSE:2011-08-21_12-37-06</id>
+        <published>2011-08-21T10:37:06Z</published>
+        <updated>2011-08-21T10:37:06Z</updated>
+    </entry>
+    <entry>
+        <title>UTILS-MAVEN-FITNESSE #14 (broken since build #13)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/UTILS-MAVEN-FITNESSE/14/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:UTILS-MAVEN-FITNESSE:2011-08-21_12-34-06</id>
+        <published>2011-08-21T10:34:06Z</published>
+        <updated>2011-08-21T10:34:06Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-WS-BRROADBAND 1.0 RELEASE #13 (stable)</title>
+        <link type="text/html"
+              href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-WS-BRROADBAND%201.0%20RELEASE/13/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-WS-BRROADBAND 1.0 RELEASE:2011-08-20_11-46-08</id>
+        <published>2011-08-20T09:46:08Z</published>
+        <updated>2011-08-20T09:46:08Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 RELEASE #59 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33%20RELEASE/59/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33 RELEASE:2011-08-19_16-46-09</id>
+        <published>2011-08-19T14:46:09Z</published>
+        <updated>2011-08-19T14:46:09Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-BROADBAND #52 (broken since build #46)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-BROADBAND/52/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-BROADBAND:2011-08-19_15-01-06</id>
+        <published>2011-08-19T13:01:06Z</published>
+        <updated>2011-08-19T13:01:06Z</updated>
+    </entry>
+    <entry>
+        <title>UTILS-MAVEN-FITNESSE 1.0 RELEASE #6 (stable)</title>
+        <link type="text/html"
+              href="http://cia.ascore.denmark.nordic.x/hudson/job/UTILS-MAVEN-FITNESSE%201.0%20RELEASE/6/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:UTILS-MAVEN-FITNESSE 1.0 RELEASE:2011-08-19_14-59-33</id>
+        <published>2011-08-19T12:59:33Z</published>
+        <updated>2011-08-19T12:59:33Z</updated>
+    </entry>
+    <entry>
+        <title>UTILS-MAVEN-FITNESSE #13 (broken since this build)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/UTILS-MAVEN-FITNESSE/13/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:UTILS-MAVEN-FITNESSE:2011-08-19_14-59-06</id>
+        <published>2011-08-19T12:59:06Z</published>
+        <updated>2011-08-19T12:59:06Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-BROADBAND #51 (broken since build #46)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-BROADBAND/51/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-BROADBAND:2011-08-19_14-31-06</id>
+        <published>2011-08-19T12:31:06Z</published>
+        <updated>2011-08-19T12:31:06Z</updated>
+    </entry>
+    <entry>
+        <title>UTILS-MAVEN-FITNESSE 1.0 RELEASE #5 (stable)</title>
+        <link type="text/html"
+              href="http://cia.ascore.denmark.nordic.x/hudson/job/UTILS-MAVEN-FITNESSE%201.0%20RELEASE/5/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:UTILS-MAVEN-FITNESSE 1.0 RELEASE:2011-08-19_14-28-54</id>
+        <published>2011-08-19T12:28:54Z</published>
+        <updated>2011-08-19T12:28:54Z</updated>
+    </entry>
+    <entry>
+        <title>UTILS-MAVEN-FITNESSE #12 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/UTILS-MAVEN-FITNESSE/12/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:UTILS-MAVEN-FITNESSE:2011-08-19_14-27-30</id>
+        <published>2011-08-19T12:27:30Z</published>
+        <updated>2011-08-19T12:27:30Z</updated>
+    </entry>
+    <entry>
+        <title>UTILS-MAVEN-FITNESSE #11 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/UTILS-MAVEN-FITNESSE/11/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:UTILS-MAVEN-FITNESSE:2011-08-19_14-23-06</id>
+        <published>2011-08-19T12:23:06Z</published>
+        <updated>2011-08-19T12:23:06Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-BROADBAND #50 (broken since build #46)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-BROADBAND/50/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-BROADBAND:2011-08-19_13-38-58</id>
+        <published>2011-08-19T11:38:58Z</published>
+        <updated>2011-08-19T11:38:58Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-BROADBAND #49 (broken since build #46)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-BROADBAND/49/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-BROADBAND:2011-08-19_13-34-33</id>
+        <published>2011-08-19T11:34:33Z</published>
+        <updated>2011-08-19T11:34:33Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-BROADBAND #48 (broken since build #46)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-BROADBAND/48/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-BROADBAND:2011-08-19_13-27-06</id>
+        <published>2011-08-19T11:27:06Z</published>
+        <updated>2011-08-19T11:27:06Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-BROADBAND #47 (broken since build #46)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-BROADBAND/47/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-BROADBAND:2011-08-19_12-29-06</id>
+        <published>2011-08-19T10:29:06Z</published>
+        <updated>2011-08-19T10:29:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 RELEASE #97 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33%20RELEASE/97/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33 RELEASE:2011-08-19_12-28-21</id>
+        <published>2011-08-19T10:28:21Z</published>
+        <updated>2011-08-19T10:28:21Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #344 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/344/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-19_12-12-15</id>
+        <published>2011-08-19T10:12:15Z</published>
+        <updated>2011-08-19T10:12:15Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #343 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/343/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-19_11-57-29</id>
+        <published>2011-08-19T09:57:29Z</published>
+        <updated>2011-08-19T09:57:29Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #164 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/164/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-19_11-57-06</id>
+        <published>2011-08-19T09:57:06Z</published>
+        <updated>2011-08-19T09:57:06Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-BROADBAND #46 (broken since this build)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-BROADBAND/46/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-BROADBAND:2011-08-19_11-40-06</id>
+        <published>2011-08-19T09:40:06Z</published>
+        <updated>2011-08-19T09:40:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 RELEASE #96 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33%20RELEASE/96/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33 RELEASE:2011-08-18_16-46-09</id>
+        <published>2011-08-18T14:46:09Z</published>
+        <updated>2011-08-18T14:46:09Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 RELEASE #58 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33%20RELEASE/58/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33 RELEASE:2011-08-18_16-46-09</id>
+        <published>2011-08-18T14:46:09Z</published>
+        <updated>2011-08-18T14:46:09Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #342 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/342/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-18_14-38-31</id>
+        <published>2011-08-18T12:38:31Z</published>
+        <updated>2011-08-18T12:38:31Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #163 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/163/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-18_14-38-07</id>
+        <published>2011-08-18T12:38:07Z</published>
+        <updated>2011-08-18T12:38:07Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #341 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/341/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-18_14-03-33</id>
+        <published>2011-08-18T12:03:33Z</published>
+        <updated>2011-08-18T12:03:33Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #162 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/162/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-18_14-03-07</id>
+        <published>2011-08-18T12:03:07Z</published>
+        <updated>2011-08-18T12:03:07Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #340 (back to normal)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/340/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-18_13-40-40</id>
+        <published>2011-08-18T11:40:40Z</published>
+        <updated>2011-08-18T11:40:40Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #161 (back to normal)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/161/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-18_13-40-07</id>
+        <published>2011-08-18T11:40:07Z</published>
+        <updated>2011-08-18T11:40:07Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #160 (broken since build #159)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/160/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-18_12-34-06</id>
+        <published>2011-08-18T10:34:06Z</published>
+        <updated>2011-08-18T10:34:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #159 (broken since this build)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/159/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-18_11-47-06</id>
+        <published>2011-08-18T09:47:06Z</published>
+        <updated>2011-08-18T09:47:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 RELEASE #95 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33%20RELEASE/95/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33 RELEASE:2011-08-18_11-46-16</id>
+        <published>2011-08-18T09:46:16Z</published>
+        <updated>2011-08-18T09:46:16Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-DATABASE 2.33 RELEASE #15 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-DATABASE%202.33%20RELEASE/15/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-DATABASE 2.33 RELEASE:2011-08-18_11-46-08</id>
+        <published>2011-08-18T09:46:08Z</published>
+        <updated>2011-08-18T09:46:08Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #339 (broken since build #338)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/339/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-18_11-37-54</id>
+        <published>2011-08-18T09:37:54Z</published>
+        <updated>2011-08-18T09:37:54Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 RELEASE #57 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33%20RELEASE/57/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33 RELEASE:2011-08-18_11-35-12</id>
+        <published>2011-08-18T09:35:12Z</published>
+        <updated>2011-08-18T09:35:12Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #158 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/158/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-18_11-34-06</id>
+        <published>2011-08-18T09:34:06Z</published>
+        <updated>2011-08-18T09:34:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #338 (broken since this build)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/338/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-18_11-23-37</id>
+        <published>2011-08-18T09:23:37Z</published>
+        <updated>2011-08-18T09:23:37Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #157 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/157/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-18_11-23-06</id>
+        <published>2011-08-18T09:23:06Z</published>
+        <updated>2011-08-18T09:23:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 RELEASE #56 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33%20RELEASE/56/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33 RELEASE:2011-08-18_11-17-47</id>
+        <published>2011-08-18T09:17:47Z</published>
+        <updated>2011-08-18T09:17:47Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #337 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/337/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-18_10-01-36</id>
+        <published>2011-08-18T08:01:36Z</published>
+        <updated>2011-08-18T08:01:36Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #156 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/156/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-18_10-01-06</id>
+        <published>2011-08-18T08:01:06Z</published>
+        <updated>2011-08-18T08:01:06Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-DATABASE 2.33 #51 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-DATABASE%202.33/51/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-DATABASE 2.33:2011-08-18_09-57-06</id>
+        <published>2011-08-18T07:57:06Z</published>
+        <updated>2011-08-18T07:57:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 RELEASE #94 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33%20RELEASE/94/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33 RELEASE:2011-08-17_16-46-08</id>
+        <published>2011-08-17T14:46:08Z</published>
+        <updated>2011-08-17T14:46:08Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 RELEASE #55 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33%20RELEASE/55/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33 RELEASE:2011-08-17_15-38-43</id>
+        <published>2011-08-17T13:38:43Z</published>
+        <updated>2011-08-17T13:38:43Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #336 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/336/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-17_15-38-37</id>
+        <published>2011-08-17T13:38:37Z</published>
+        <updated>2011-08-17T13:38:37Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #155 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/155/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-17_15-38-06</id>
+        <published>2011-08-17T13:38:06Z</published>
+        <updated>2011-08-17T13:38:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #335 (back to normal)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/335/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-17_15-13-10</id>
+        <published>2011-08-17T13:13:10Z</published>
+        <updated>2011-08-17T13:13:10Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #154 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/154/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-17_15-11-06</id>
+        <published>2011-08-17T13:11:06Z</published>
+        <updated>2011-08-17T13:11:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #153 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/153/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-17_15-07-06</id>
+        <published>2011-08-17T13:07:06Z</published>
+        <updated>2011-08-17T13:07:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 RELEASE #54 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33%20RELEASE/54/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33 RELEASE:2011-08-17_14-59-55</id>
+        <published>2011-08-17T12:59:55Z</published>
+        <updated>2011-08-17T12:59:55Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #334 (broken since build #333)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/334/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-17_14-59-24</id>
+        <published>2011-08-17T12:59:24Z</published>
+        <updated>2011-08-17T12:59:24Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #152 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/152/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-17_14-57-54</id>
+        <published>2011-08-17T12:57:54Z</published>
+        <updated>2011-08-17T12:57:54Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #333 (broken since this build)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/333/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-17_14-44-07</id>
+        <published>2011-08-17T12:44:07Z</published>
+        <updated>2011-08-17T12:44:07Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 RELEASE #53 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33%20RELEASE/53/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33 RELEASE:2011-08-17_14-41-57</id>
+        <published>2011-08-17T12:41:57Z</published>
+        <updated>2011-08-17T12:41:57Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #151 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/151/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-17_14-40-56</id>
+        <published>2011-08-17T12:40:56Z</published>
+        <updated>2011-08-17T12:40:56Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 RELEASE #52 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33%20RELEASE/52/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33 RELEASE:2011-08-17_14-29-39</id>
+        <published>2011-08-17T12:29:39Z</published>
+        <updated>2011-08-17T12:29:39Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #332 (back to normal)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/332/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-17_14-29-18</id>
+        <published>2011-08-17T12:29:18Z</published>
+        <updated>2011-08-17T12:29:18Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #150 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/150/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-17_14-18-06</id>
+        <published>2011-08-17T12:18:06Z</published>
+        <updated>2011-08-17T12:18:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 RELEASE #51 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33%20RELEASE/51/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33 RELEASE:2011-08-17_14-05-03</id>
+        <published>2011-08-17T12:05:03Z</published>
+        <updated>2011-08-17T12:05:03Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #331 (broken since build #330)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/331/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-17_14-04-29</id>
+        <published>2011-08-17T12:04:29Z</published>
+        <updated>2011-08-17T12:04:29Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-DATABASE 2.33 RELEASE #14 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-DATABASE%202.33%20RELEASE/14/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-DATABASE 2.33 RELEASE:2011-08-17_14-04-21</id>
+        <published>2011-08-17T12:04:21Z</published>
+        <updated>2011-08-17T12:04:21Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE4B-DATABASE 2.33 RELEASE #11 (stable)</title>
+        <link type="text/html"
+              href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE4B-DATABASE%202.33%20RELEASE/11/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE4B-DATABASE 2.33 RELEASE:2011-08-17_14-04-13</id>
+        <published>2011-08-17T12:04:13Z</published>
+        <updated>2011-08-17T12:04:13Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #149 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/149/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-17_14-04-06</id>
+        <published>2011-08-17T12:04:06Z</published>
+        <updated>2011-08-17T12:04:06Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-DATABASE 2.33 #50 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-DATABASE%202.33/50/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-DATABASE 2.33:2011-08-17_14-02-06</id>
+        <published>2011-08-17T12:02:06Z</published>
+        <updated>2011-08-17T12:02:06Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE4B-DATABASE 2.33 #33 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE4B-DATABASE%202.33/33/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE4B-DATABASE 2.33:2011-08-17_14-02-06</id>
+        <published>2011-08-17T12:02:06Z</published>
+        <updated>2011-08-17T12:02:06Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-DATABASE 2.33 #49 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-DATABASE%202.33/49/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-DATABASE 2.33:2011-08-17_14-00-06</id>
+        <published>2011-08-17T12:00:06Z</published>
+        <updated>2011-08-17T12:00:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 RELEASE #93 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33%20RELEASE/93/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33 RELEASE:2011-08-17_11-46-15</id>
+        <published>2011-08-17T09:46:15Z</published>
+        <updated>2011-08-17T09:46:15Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 RELEASE #50 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33%20RELEASE/50/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33 RELEASE:2011-08-17_11-46-08</id>
+        <published>2011-08-17T09:46:08Z</published>
+        <updated>2011-08-17T09:46:08Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #330 (broken since this build)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/330/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-17_11-40-29</id>
+        <published>2011-08-17T09:40:29Z</published>
+        <updated>2011-08-17T09:40:29Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #148 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/148/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-17_11-40-06</id>
+        <published>2011-08-17T09:40:06Z</published>
+        <updated>2011-08-17T09:40:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #329 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/329/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-17_10-47-29</id>
+        <published>2011-08-17T08:47:29Z</published>
+        <updated>2011-08-17T08:47:29Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #147 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/147/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-17_10-47-06</id>
+        <published>2011-08-17T08:47:06Z</published>
+        <updated>2011-08-17T08:47:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #328 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/328/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-17_10-19-06</id>
+        <published>2011-08-17T08:19:06Z</published>
+        <updated>2011-08-17T08:19:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 RELEASE #49 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33%20RELEASE/49/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33 RELEASE:2011-08-17_00-22-47</id>
+        <published>2011-08-16T22:22:47Z</published>
+        <updated>2011-08-16T22:22:47Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE4B-DATABASE 2.33 RELEASE #10 (stable)</title>
+        <link type="text/html"
+              href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE4B-DATABASE%202.33%20RELEASE/10/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE4B-DATABASE 2.33 RELEASE:2011-08-17_00-22-28</id>
+        <published>2011-08-16T22:22:28Z</published>
+        <updated>2011-08-16T22:22:28Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-DATABASE 2.33 RELEASE #13 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-DATABASE%202.33%20RELEASE/13/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-DATABASE 2.33 RELEASE:2011-08-17_00-22-18</id>
+        <published>2011-08-16T22:22:18Z</published>
+        <updated>2011-08-16T22:22:18Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #327 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/327/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-17_00-22-09</id>
+        <published>2011-08-16T22:22:09Z</published>
+        <updated>2011-08-16T22:22:09Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #146 (back to normal)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/146/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-17_00-21-41</id>
+        <published>2011-08-16T22:21:41Z</published>
+        <updated>2011-08-16T22:21:41Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE4B-DATABASE 2.33 #32 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE4B-DATABASE%202.33/32/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE4B-DATABASE 2.33:2011-08-17_00-17-06</id>
+        <published>2011-08-16T22:17:06Z</published>
+        <updated>2011-08-16T22:17:06Z</updated>
+    </entry>
+    <entry>
+        <title>JOICE-DATABASE 2.33 #48 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/JOICE-DATABASE%202.33/48/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:JOICE-DATABASE 2.33:2011-08-17_00-16-06</id>
+        <published>2011-08-16T22:16:06Z</published>
+        <updated>2011-08-16T22:16:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #145 (broken since this build)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/145/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-17_00-13-06</id>
+        <published>2011-08-16T22:13:06Z</published>
+        <updated>2011-08-16T22:13:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 RELEASE #92 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33%20RELEASE/92/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33 RELEASE:2011-08-16_16-46-08</id>
+        <published>2011-08-16T14:46:08Z</published>
+        <updated>2011-08-16T14:46:08Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 RELEASE #91 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33%20RELEASE/91/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33 RELEASE:2011-08-16_11-46-07</id>
+        <published>2011-08-16T09:46:07Z</published>
+        <updated>2011-08-16T09:46:07Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #326 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/326/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-16_11-40-06</id>
+        <published>2011-08-16T09:40:06Z</published>
+        <updated>2011-08-16T09:40:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 RELEASE #48 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33%20RELEASE/48/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33 RELEASE:2011-08-16_10-34-58</id>
+        <published>2011-08-16T08:34:58Z</published>
+        <updated>2011-08-16T08:34:58Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #325 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/325/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-16_10-33-31</id>
+        <published>2011-08-16T08:33:31Z</published>
+        <updated>2011-08-16T08:33:31Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #144 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/144/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-16_10-32-06</id>
+        <published>2011-08-16T08:32:06Z</published>
+        <updated>2011-08-16T08:32:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #324 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/324/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-16_10-18-30</id>
+        <published>2011-08-16T08:18:30Z</published>
+        <updated>2011-08-16T08:18:30Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #143 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/143/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-16_10-17-06</id>
+        <published>2011-08-16T08:17:06Z</published>
+        <updated>2011-08-16T08:17:06Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 RELEASE #90 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33%20RELEASE/90/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33 RELEASE:2011-08-15_16-46-08</id>
+        <published>2011-08-15T14:46:08Z</published>
+        <updated>2011-08-15T14:46:08Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 RELEASE #47 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33%20RELEASE/47/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33 RELEASE:2011-08-15_15-25-54</id>
+        <published>2011-08-15T13:25:54Z</published>
+        <updated>2011-08-15T13:25:54Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-GUI 2.33 #323 (stable)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-GUI%202.33/323/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-GUI 2.33:2011-08-15_15-25-26</id>
+        <published>2011-08-15T13:25:26Z</published>
+        <updated>2011-08-15T13:25:26Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #142 (back to normal)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/142/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-15_15-23-56</id>
+        <published>2011-08-15T13:23:56Z</published>
+        <updated>2011-08-15T13:23:56Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #141 (broken since build #139)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/141/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-15_15-16-11</id>
+        <published>2011-08-15T13:16:11Z</published>
+        <updated>2011-08-15T13:16:11Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #140 (broken since build #139)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/140/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-15_15-16-01</id>
+        <published>2011-08-15T13:16:01Z</published>
+        <updated>2011-08-15T13:16:01Z</updated>
+    </entry>
+    <entry>
+        <title>CAS-DATABASE 2.33 #139 (broken since this build)</title>
+        <link type="text/html" href="http://cia.ascore.denmark.nordic.x/hudson/job/CAS-DATABASE%202.33/139/"
+              rel="alternate"/>
+        <id>tag:hudson.dev.java.net,2011:CAS-DATABASE 2.33:2011-08-15_15-10-06</id>
+        <published>2011-08-15T13:10:06Z</published>
+        <updated>2011-08-15T13:10:06Z</updated>
+    </entry>
+</feed>

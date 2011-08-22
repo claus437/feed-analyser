@@ -23,7 +23,7 @@ public class RssChannelFetcherTest {
         List<Article> articles;
 
         channel = new Channel();
-        channel.setUrl(new URL("http://www.dr.dk/nyheder/service/feeds/allenyheder"));
+        channel.setUrl(new URL("file://http://www.dr.dk/nyheder/service/feeds/allenyheder"));
 
         fetcher = new RssChannelFetcher(channel);
         fetcher.fetch();

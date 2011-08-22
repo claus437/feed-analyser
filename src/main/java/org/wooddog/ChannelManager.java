@@ -1,6 +1,6 @@
 package org.wooddog;
 
-import org.wooddog.dao.ChannelService;
+import org.wooddog.dao.service.ChannelServiceDao;
 import org.wooddog.domain.Channel;
 
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class ChannelManager {
         List<Channel> channels;
         channelFetchers = new ArrayList<ChannelThread>();
 
-        channels = ChannelService.getInstance().getChannels();
+        channels = ChannelServiceDao.getInstance().getChannels();
         for (Channel channel : channels) {
             channelFetchers.add(new ChannelThread(new RssChannelFetcher(channel)));
         }

@@ -2,6 +2,7 @@ package org.wooddog.dao.mapper;
 
 import org.wooddog.domain.Article;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -16,4 +17,5 @@ public interface ArticleMapper {
     void store(Article article);
     List<Article> selectFromId(int id);
     List<Article> getLastScoredArticle();
+    Date getLatestPublishDate(String source);
 }

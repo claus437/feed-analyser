@@ -6,6 +6,8 @@
 <%@ page import="org.wooddog.servlets.PageAction" %>
 <%@ page import="org.wooddog.servlets.PageActionFactory" %>
 <%@ page import="java.util.List" %>
+<%@ page import="org.wooddog.config.BackgroundJobs" %>
+<%@ page import="org.wooddog.job.JobThread" %>
 <%
     List<Channel> channels;
     PageAction action;
@@ -22,39 +24,61 @@
     }
 
     channels = ChannelServiceDao.getInstance().getChannels();
+
+    List<JobThread> jobs;
+    BackgroundJobs backgroundJobs;
+
+    try {
+        backgroundJobs = BackgroundJobs.getInstance();
+    } catch (Throwable x) {
+        x.printStackTrace();
+        return;
+    }
+
+    jobs = backgroundJobs.getManager().getJobList();
+
+
 %>
 <html>
     <head>
-        <title>feeds</title>
+        <title>jobs</title>
         <link rel="stylesheet" href="css/default.css" media="screen" type="text/css"/>
     </head>
 
     <body>
         <div class="content">
             <jsp:include page="header.jsp">
-                <jsp:param name="title" value="CHANNELS"/>
+                <jsp:param name="title" value="JOBS"/>
             </jsp:include>
 
             <jsp:include page="error.jsp"/>
 
-            <form action="?action=AddChannel" method="POST" style="margin-top: 30px;">
-                <div style="float: right; background-color: #505050; color: white; border: 1px solid #505050">
-                    <input type="text" name="url" style="border: 0; height: 20px"/>
-                    <input type="submit" value="ADD" style="border: 0px; background-color: #505050; color: #FFFFFF; height: 20px;">
-                </div>
-            </form>
+            <style>
+                td {
+                    white-space: nowrap;
+                }
+
+                th {
+                    white-space: nowrap;
+                }
+            </style>
 
             <table style="margin-top: 40px; width: 100%">
                 <tr>
-                    <th>URL</th>
-                    <th>FETCHED</th>
-                    <th></th>
+                    <th>JOB</th>
+                    <th>LAST RUN</th>
+                    <th>NEXT RUN</th>
+                    <th>STATUS</th>
+                    <th>EXECUTION TIME</th>
                 </tr>
-                <% for (Channel channel : channels) { %>
+
+                <% for (JobThread job : jobs) { %>
                     <tr>
-                        <td><%=channel.getUrl()%></td>
-                        <td><nobr><%=JspTool.formatFullDate(channel.getFetched())%></nobr></td>
-                        <td><a href="?action=DeleteChannel&id=<%=channel.getId()%>">delete</a></td>
+                        <td><%=job.getJob().getName()%></td>
+                        <td><%=job.getLastRun()%></td>
+                        <td><%=job.getNextRun()%></td>
+                        <td><%=job.getStatus()%></td>
+                        <td><%=job.getExecutingTime()%></td>
                     </tr>
                 <% } %>
             </table>

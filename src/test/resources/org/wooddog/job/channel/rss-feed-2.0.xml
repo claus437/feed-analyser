@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="iso-8859-1"?><?xml-stylesheet title="XSL_formatting" type="text/xsl" href="http://www.dr.dk/nyheder/htm/service/rss/rssfeed.xsl"?>
+<rss version="2.0" xmlns:DR="http://dr.dk/rss/2.0/modules/dr/">
+    <channel>
+        <title><![CDATA[DR Nyheder - Alle nyheder]]></title>
+        <link>http://www.dr.dk/nyheder/?rss=true</link>
+        <DR:Year>2011</DR:Year>
+        <description><![CDATA[Alle nyheder - 24 timer]]></description>
+        <language>da</language>
+        <item>
+            <title>title</title>
+            <description>description</description>
+            <link>http://link</link>
+            <pubDate>Mon, 22 Aug 2011 08:48:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Oprørere i heftige kampe nær Gaddafis bolig]]></title>
+            <description>
+                <![CDATA[Gaddafis hovedkvarter er formentlig under angreb, og der meldes om voldsomme skyderier flere steder i Tripoli.]]></description>
+            <link>http://www.dr.dk/Nyheder/Udland/2011/08/22/075845.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 08:22:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Oliepris falder på Libysk slutspil]]></title>
+            <description>
+                <![CDATA[Libyen var før borgerkrigen Europas største enkeltleverandør af olie. Landet har Afrikas største oliereserver.]]></description>
+            <link>http://www.dr.dk/Nyheder/Penge/2011/08/22/080409.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 08:06:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[En Gaddafi-søn anholdt og en i husarrest]]></title>
+            <description>
+                <![CDATA[Gaddafis højst profilerede søn Saif al-Islam er anholdt af oprørerne og en anden søn har overgivet sig og holdes i husarrest.]]></description>
+            <link>http://www.dr.dk/Nyheder/Udland/2011/08/22/070956.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 07:17:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Tab på huskøb udlignes tidligst år 2024]]></title>
+            <description>
+                <![CDATA[BRF-kredit har for Politiken regnet ud, hvornår en huskøber, der købte "på toppen" i 2007, får udjævnet de kraftige prisfald.]]></description>
+            <link>http://www.dr.dk/Nyheder/Penge/2011/08/22/070322.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 07:09:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Lene E.: Husk menneskerettighederne]]></title>
+            <description>
+                <![CDATA[Udenrigsminister Lene Espersen understreger, at alle parter i Libyen skal respektere menneskerettighederne.]]></description>
+            <link>http://www.dr.dk/Nyheder/Udland/2011/08/22/070101.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 07:05:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Behov for undersøgelse af bankerne]]></title>
+            <description>
+                <![CDATA[Ingen ved hvor galt det egentlig står til i de danske banker - og det skaber mistillid. En samlet undersøgelse er derfor vejen frem. ]]></description>
+            <link>http://www.dr.dk/Nyheder/Penge/2011/08/19/131110.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 07:00:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Hedgefonde scorer kassen på kursfald]]></title>
+            <description>
+                <![CDATA[De faldende aktiekurser vil give de borgere, der snart skal på pension, en fattigere alderdom. Samtidig tjener hedgefonde kassen på kursfaldene.]]></description>
+            <link>http://www.dr.dk/Nyheder/Penge/2011/08/19/174516.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 07:00:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Lykke Friis i front i V-valgkamp]]></title>
+            <description>
+                <![CDATA[Lykke Friis, der har været aktiv i politik i mindre end to år, skal have en hovedrolle i den kommende valgkamp.]]></description>
+            <link>http://www.dr.dk/Nyheder/Politik/2011/08/22/063806.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 06:53:19 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dystre udsigter for industrien i Danmark]]></title>
+            <description>
+                <![CDATA[Industriarbejdspladserne vil fortsætte med at forsvinde ud af landet i de kommende år. Sådan lyder den dystre melding fra virksomhederne.]]></description>
+            <link>http://www.dr.dk/Nyheder/Penge/2011/08/21/175049.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 06:00:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dom over Greenpeace-aktivister i dag]]></title>
+            <description><![CDATA[I dag falder der dom i retssagen mod de 11 Greenpeace-aktivister, der snød sig i på Christiansborg under klimatopmødet i København i 2009.
+
+]]></description>
+            <link>http://www.dr.dk/Nyheder/Indland/2011/08/21/190142.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 06:00:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Arbejdsløse klager som aldrig før]]></title>
+            <description>
+                <![CDATA[Rekordmange ledige klager over de tilbud og krav, som de bliver mødt med i jobcentrene. Fra 2007 til 2010 er antallet af klager næsten fordoblet.]]></description>
+            <link>http://www.dr.dk/Nyheder/Indland/2011/08/21/193826.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 06:00:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Institutioner berørt af vandforurening]]></title>
+            <description>
+                <![CDATA[Københavns kommune har travlt med at bringe rent vand ud til de mange daginstitutioner og folkeskoler der stadig er berørt af vandforureningen.]]></description>
+            <link>http://www.dr.dk/Nyheder/Indland/2011/08/21/215246.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 06:00:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Stadig kampe i dele af Tripoli]]></title>
+            <description>
+                <![CDATA[Oprørsstyrker i Libyen har ikke kontrol med hele Tripoli, og der er rapporter om kampe i nogle dele af hovedstaden.]]></description>
+            <link>http://www.dr.dk/Nyheder/Udland/2011/08/22/052628.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 05:38:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Lars Løkke glæder sig med libyerne]]></title>
+            <description>
+                <![CDATA[Statsminister Lars Løkke Rasmussen glæder sig med libyerne over, at Gaddafis regime er slut, og han håber den afsluttende fase bliver værdig.]]></description>
+            <link>http://www.dr.dk/Nyheder/Udland/2011/08/22/051057.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 05:26:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Hugo Chavez støtter stadig Gaddafi]]></title>
+            <description><![CDATA[]]></description>
+            <link>http://www.dr.dk/Nyheder/Udland/2011/08/22/044430.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 05:10:45 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Obama: Nu må Gaddafi gå af]]></title>
+            <description>
+                <![CDATA[Præsident Obama siger, at Gaddafi må erkende, at han ikke længere har kontrol med Libyen og går af.]]></description>
+            <link>http://www.dr.dk/Nyheder/Udland/2011/08/22/042033.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 04:28:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Oprørsleder: Kampen er ikke ovre]]></title>
+            <description>
+                <![CDATA[Ifølge en fremtrædende oprørsleder kan der stadig være lommer af modstand i og omkring Tripoli, så kampen er ikke ovre endnu.]]></description>
+            <link>http://www.dr.dk/Nyheder/Udland/2011/08/22/040042.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 04:16:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Oprørere indtager store dele af Tripoli]]></title>
+            <description>
+                <![CDATA[Ifølge den libyske FN-ambassadør har libyske oprørere overtaget mere end 90 procent af hovedstaden Tripoli.]]></description>
+            <link>http://www.dr.dk/Nyheder/Udland/2011/08/21/234344.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 03:17:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dansk soldat lettere såret i Helmand]]></title>
+            <description>
+                <![CDATA[En dansk soldat blev lettere såret, da afghanske oprørere affyrede en granat mod hans patruljebase i Helmandprovinsen.]]></description>
+            <link>http://www.dr.dk/Nyheder/Udland/2011/08/22/022227.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 02:27:06 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Fogh: Nu smuldrer Gaddafi-styret]]></title>
+            <description>
+                <![CDATA[Den mangeårige hersker over Libyen går i disse timer sin undergang i møde, siger Natos danske generalsekretær.]]></description>
+            <link>http://www.dr.dk/Nyheder/Udland/2011/08/22/012734.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 01:36:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Ekspert: Tripoli er ikke tro mod Gadaffi]]></title>
+            <description>
+                <![CDATA[I følge Libyen-ekspert, Ulla Prien fra Københavns Universitet, venter mange libyere bare på, at Gadaffi bliver væltet af pinden.]]></description>
+            <link>http://www.dr.dk/Nyheder/Udland/2011/08/21/235007.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 00:53:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[LIVE: Følg udviklingen i Libyen]]></title>
+            <description><![CDATA[dr.dk giver dig seneste nyt fra Libyen i vores live-blog.]]></description>
+            <link>http://www.dr.dk/Nyheder/Udland/2011/08/22/004949.htm?rss=true</link>
+            <pubDate>Mon, 22 Aug 2011 00:53:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Gaddafis præsidentgarde overgiver sig]]></title>
+            <description>
+                <![CDATA[Muammar Gaddafis præsidentgarde overgiver sig til de libyske oprørere, rapporterer tv-stationen al-Arabiya.]]></description>
+            <link>http://www.dr.dk/Nyheder/Udland/2011/08/21/224935.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 22:50:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Vicki Berlin er årets Dirch]]></title>
+            <description>
+                <![CDATA[Ved Revyernes Revy er Vicki Berlin kåret til Årets Revykunstner for sin præstation i Nykøbing Falster Revyen.]]></description>
+            <link>http://www.dr.dk/Nyheder/Indland/2011/08/21/223736.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 22:39:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Vicki Berlin er årets Dirch]]></title>
+            <description>
+                <![CDATA[Ved Revyernes Revy er Vicki Berlin kåret til Årets Revykunstner for sin præstation i Nykøbing Falster Revyen.]]></description>
+            <link>http://www.dr.dk/Nyheder/Kultur/2011/08/21/220817.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 22:31:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Assad: Jeg er ikke bekymret]]></title>
+            <description><![CDATA[Sikkerhedssituationen i Syrien er blevet værre, men Syriens præsident er ikke bekymret.
+
+]]></description>
+            <link>http://www.dr.dk/Nyheder/Indland/2011/08/21/213955.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 21:43:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Regeringen vil gøre væksten grøn]]></title>
+            <description><![CDATA[Fødevarevirksomheder skal belønnes for at købe vedvarende energi, lyder et forslag i regeringens vækstplan.
+]]></description>
+            <link>http://www.dr.dk/Nyheder/Indland/2011/08/21/195541.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 21:34:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Tusinde oprørere marcherer mod Tripoli]]></title>
+            <description><![CDATA[Libyske oprørere i tusindvis har indledt march mod Gaddafis højborg, Tripoli, men Gaddafi nægter fortsat at gå.
+]]></description>
+            <link>http://www.dr.dk/Nyheder/Indland/2011/08/21/200050.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 20:51:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Kog fortsat vandet på Nørrebro]]></title>
+            <description><![CDATA[Drikkevandet skal fortsat koges på indre Nørrebro og i indre by. Foreløbig indtil tirsdag aften, lyder meldingen.
+
+]]></description>
+            <link>http://www.dr.dk/Nyheder/Indland/2011/08/21/201959.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 20:27:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Tyrkisk luftangreb dræber civile irakere]]></title>
+            <description>
+                <![CDATA[Syv irakere har mistet livet efter et tyrkisk luftangreb i det nordlige Irak.]]></description>
+            <link>http://www.dr.dk/Nyheder/Indland/2011/08/21/192448.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 19:46:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Oprørere når Tripoli fra søvejen]]></title>
+            <description>
+                <![CDATA[De libyske oprørere nær Gaddafis højborg i Tripoli har fået forstærkninger ad søvejen fra Misrata.]]></description>
+            <link>http://www.dr.dk/Nyheder/Indland/2011/08/21/184154.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 18:44:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Brian Mikkelsen: Boligpakke bør gælde nu]]></title>
+            <description>
+                <![CDATA[Hjælpepakker til boligkøbere, som både regeringen og oppositionen har præsenteret, bør gælde fra og med i går, mener erhvervsminsteren.]]></description>
+            <link>http://www.dr.dk/Nyheder/Indland/2011/08/21/164626.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 18:03:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Vestager: Stop lettelser i boligskatten]]></title>
+            <description>
+                <![CDATA[Radikale afviser boligpakker fra Løkke og Thorning: Drop i stedet skattestop for boligejere og sænk skat på arbejde, lyder det.]]></description>
+            <link>http://www.dr.dk/Nyheder/Indland/2011/08/21/174519.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 18:03:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[- De sidste fire uger har været tunge]]></title>
+            <description>
+                <![CDATA[Det var en stærkt bevæget norsk konge, der talte ved mindehøjtideligheden for 22. juli-ofrene. 6.700 var mødt op i Oslos multiarena Spektrum.]]></description>
+            <link>http://www.dr.dk/Nyheder/Udland/2011/08/21/175316.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 17:54:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Kvinde bed mand i testiklerne]]></title>
+            <description><![CDATA[Fynsk kvinde er anholdt og sigtet for grov vold mod sin mand.
+
+]]></description>
+            <link>http://www.dr.dk/Nyheder/Indland/2011/08/21/162100.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 16:41:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Mæglere: Boligpakke giver flere handler]]></title>
+            <description>
+                <![CDATA[Ejendomsmæglerne er ikke i tvivl: En boligpakke vil føre til flere handler. Men den skal gennemføres nu, lyder det.]]></description>
+            <link>http://www.dr.dk/Nyheder/Indland/2011/08/21/151757.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 15:35:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Fangelov skal strammes]]></title>
+            <description><![CDATA[Fængselsindsatte skal kunne afsone længere væk fra hjemmet, og de skal kunne nægtes adgang til gudstjenester.
+
+]]></description>
+            <link>http://www.dr.dk/Nyheder/Indland/2011/08/21/143618.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 14:57:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[22. juli-ofrene blev mindet i Oslo]]></title>
+            <description>
+                <![CDATA[6.700 mennesker samles i eftermiddag til mindehøjtidelighed i Oslo Spektrum for at ære ofrene for angrebet 22. juli.]]></description>
+            <link>http://www.dr.dk/Nyheder/Udland/2011/08/21/133814.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 14:08:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Tropisk orkan i Caribien]]></title>
+            <description>
+                <![CDATA[Den tropiske storm, Irene, er under udvikling og forventes at ramme Den dominikanske Republiks kyst som en tropisk orkan mandag. ]]></description>
+            <link>http://www.dr.dk/Nyheder/Vejret/2011/08/21/134153.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 13:59:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Sorgfyldt Stoltenberg besøger Utøya]]></title>
+            <description><![CDATA[Den norske statsminister Jens Stoltenberg glæder sig over, at de unge Utøya-overlevere støtter hinanden.
+]]></description>
+            <link>http://www.dr.dk/Nyheder/Udland/2011/08/21/134300.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 13:50:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Oprørere vil isolere Gaddafi i Tripoli]]></title>
+            <description><![CDATA[Mindst 31 af Gaddafis soldater er blevet dræbt under kampe i den libyske hovedstad og 42 er taget til fange.
+]]></description>
+            <link>http://www.dr.dk/Nyheder/Udland/2011/08/21/130932.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 13:18:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Barfoed klar til kompromis om boligpakke]]></title>
+            <description>
+                <![CDATA[Lars Barfoed er klar til boligaftale med S og SF. Men partierne skal tilslutte sig efterlønsreformen, sier han.]]></description>
+            <link>http://www.dr.dk/Nyheder/Politik/2011/08/21/130451.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 13:13:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Libyen-ekspert: Tripoli falder ikke nu]]></title>
+            <description>
+                <![CDATA[Oprørerne i Libyen siger, at de har nået udkanten af Tripoli, men Muammar Gaddafis regime falder næppe nu, siger Libyen-ekspert]]></description>
+            <link>http://www.dr.dk/Nyheder/Udland/2011/08/21/122629.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 12:32:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Rapport: Gaddafi har måske forladt Tripoli]]></title>
+            <description><![CDATA[Kampe i Tripoli har måske fået den libyske leder til at flygte til et område nær den algeriske grænse.
+]]></description>
+            <link>http://www.dr.dk/Nyheder/Udland/2011/08/21/121019.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 12:16:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Lægevagt maner til ro efter vandforurening]]></title>
+            <description>
+                <![CDATA[Lægevagten mærker ikke ret meget til sygdomme som følge af vandforureningen. ]]></description>
+            <link>http://www.dr.dk/Nyheder/Indland/2011/08/21/114026.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 11:49:00 +0200</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Så mange eneboere lever i de danske skove]]></title>
+            <description><![CDATA[Ny rundspørge sætter tal på, hvor mange eneboere, der har lever i landet private og offentlige skove.
+]]></description>
+            <link>http://www.dr.dk/Nyheder/Indland/2011/08/21/102526.htm?rss=true</link>
+            <pubDate>Sun, 21 Aug 2011 11:09:31 +0200</pubDate>
+        </item>
+    </channel>
+</rss>

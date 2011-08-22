@@ -4,6 +4,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.wooddog.dao.mapper.ArticleMapper;
 import org.wooddog.domain.Article;
 
+import java.net.URL;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -14,9 +16,10 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public interface ArticleService {
-    public void deleteArticles();
-    public void storeArticles(List<Article> articles);
-    public void storeArticle(Article article);
-    public List<Article> getArticlesFromId(int id);
-    public Article getLastScoredArticle();
+    void deleteArticles();
+    void storeArticles(List<Article> articles);
+    void storeArticle(Article article);
+    List<Article> getArticlesFromId(int id);
+    Article getLastScoredArticle();
+    Date getLatestPublishDate(String source);
 }

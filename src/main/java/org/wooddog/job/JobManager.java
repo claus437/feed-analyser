@@ -2,6 +2,7 @@ package org.wooddog.job;
 
 import org.apache.log4j.Logger;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,22 +31,40 @@ public class JobManager {
         threads.add(thread);
     }
 
+    public List<JobThread> getJobList() {
+        return threads;
+    }
+
     public void start() {
         for (JobThread thread : threads) {
             try {
                 thread.start();
+                LOGGER.info("started " + thread.getJob().getName());
             } catch (Throwable x) {
                 LOGGER.error("failed starting " + thread.getJob().getName());
             }
         }
     }
 
-    public void stop() {} {
+    public void stop() {
         for (JobThread thread : threads) {
             try {
                 thread.kill();
+                LOGGER.info("stopping " + thread.getJob().getName());
             } catch (Throwable x) {
                 LOGGER.error("failed stopping " + thread.getJob().getName());
+            }
+        }
+    }
+
+    public void waitForTermination() {
+        for (JobThread thread : threads) {
+            while(thread.isAlive()) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException x) {
+                    LOGGER.info("retreived interuption but waiting for " + thread.getName() + " to terminate");
+                }
             }
         }
     }

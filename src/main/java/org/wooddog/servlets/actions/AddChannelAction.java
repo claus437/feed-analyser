@@ -1,7 +1,7 @@
 package org.wooddog.servlets.actions;
 
 import org.wooddog.ChannelManager;
-import org.wooddog.dao.ChannelService;
+import org.wooddog.dao.service.ChannelServiceDao;
 import org.wooddog.domain.Channel;
 import org.wooddog.servlets.PageAction;
 
@@ -30,7 +30,7 @@ public class AddChannelAction implements PageAction {
         channel = new Channel();
         channel.setUrl(url);
 
-        ChannelService.getInstance().storeChannel(channel);
+        ChannelServiceDao.getInstance().storeChannel(channel);
         ChannelManager.getInstance().addChannel(channel);
     }
 }

@@ -2,7 +2,7 @@ package org.wooddog;
 
 import org.apache.log4j.Logger;
 import org.wooddog.dao.service.ArticleServiceDao;
-import org.wooddog.dao.ChannelService;
+import org.wooddog.dao.service.ChannelServiceDao;
 import org.wooddog.dao.Service;
 import org.wooddog.domain.Article;
 import org.wooddog.domain.Channel;
@@ -68,7 +68,7 @@ public class ChannelThread {
                     }
 
                     channelFetcher.getChannel().setFetched(new Date());
-                    ChannelService.getInstance().setChannelFetched(channelFetcher.getChannel().getId(), channelFetcher.getChannel().getFetched());
+                    ChannelServiceDao.getInstance().setChannelFetched(channelFetcher.getChannel().getId(), channelFetcher.getChannel().getFetched());
                     LOGGER.debug("fetching updated " + channelFetcher.getChannel().getUrl().toExternalForm());
 
                 } catch (Throwable x) {

@@ -3,7 +3,7 @@ package org.wooddog.servlets.actions;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.wooddog.dao.ChannelService;
+import org.wooddog.dao.service.ChannelServiceDao;
 import org.wooddog.domain.Channel;
 import org.wooddog.servlets.PageAction;
 import org.wooddog.servlets.PageActionFactory;
@@ -23,7 +23,7 @@ public class DeleteChannelActionTest {
 
     @Before
     public void clean() {
-        ChannelService.getInstance().deleteChannels();
+        ChannelServiceDao.getInstance().deleteChannels();
     }
 
     @Test
@@ -34,7 +34,7 @@ public class DeleteChannelActionTest {
 
         channel = new Channel();
         channel.setUrl(new URL("http://www.google.com"));
-        ChannelService.getInstance().storeChannel(channel);
+        ChannelServiceDao.getInstance().storeChannel(channel);
         System.out.println("stored " + channel.getId() + " " + channel.getUrl());
 
 
@@ -44,6 +44,6 @@ public class DeleteChannelActionTest {
         action = PageActionFactory.getInstance().getAction("DeleteChannel");
         action.execute(parameters);
 
-        Assert.assertTrue(ChannelService.getInstance().getChannels().isEmpty());
+        Assert.assertTrue(ChannelServiceDao.getInstance().getChannels().isEmpty());
     }
 }

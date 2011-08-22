@@ -35,6 +35,10 @@
         SELECT * FROM ARTICLES WHERE ID > #{value}
     </select>
 
+    <select id="getLatestPublishDate" parameterType="String" resultType="Date">
+        SELECT PUBLISHED FROM ARTICLES WHERE SOURCE=#{VALUE} ORDER BY PUBLISHED LIMIT 1
+    </select>
+
     <delete id="delete">
         DELETE FROM ARTICLES
     </delete>
