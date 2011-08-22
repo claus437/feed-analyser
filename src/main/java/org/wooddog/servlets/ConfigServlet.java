@@ -1,7 +1,6 @@
 package org.wooddog.servlets;
 
 import org.apache.log4j.Logger;
-import org.wooddog.ChannelManager;
 import org.wooddog.Config;
 import org.wooddog.config.BackgroundJobs;
 import org.wooddog.dao.Service;

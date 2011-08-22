@@ -1,40 +1,53 @@
 package org.wooddog.config;
 
-import org.wooddog.domain.Channel;
 import org.wooddog.job.JobManager;
 import org.wooddog.job.JobPlan;
 import org.wooddog.job.channel.ChannelJob;
-import org.wooddog.job.channel.fetcher.ChannelFetcher;
 import org.wooddog.job.score.ScoreJob;
 import org.wooddog.job.stock.StockLoaderJob;
 
-/**
- * Created by IntelliJ IDEA.
- * User: dencbr
- * Date: 18-08-11
- * Time: 17:43
- * To change this template use File | Settings | File Templates.
- */
+import static org.wooddog.job.JobPlan.Frequency.EVERY;
+
 public class BackgroundJobs {
     private static final BackgroundJobs INSTANCE = new BackgroundJobs();
+    private StockLoaderJob stockLoaderJob;
+    private ScoreJob scoreJob;
+    private ChannelJob channelJob;
+
     private JobManager manager;
 
     private BackgroundJobs() {
         JobPlan plan;
 
+        stockLoaderJob = new StockLoaderJob();
+        scoreJob = new ScoreJob();
+        channelJob = new ChannelJob();
+
         manager = new JobManager();
 
         plan = new JobPlan();
-        plan.setMinute(JobPlan.Frequency.EVERY, 15);
-        manager.addJob(new StockLoaderJob(), plan);
+        plan.setMinute(EVERY, 15);
+        manager.addJob(stockLoaderJob, plan);
 
         plan = new JobPlan();
-        plan.setHour(JobPlan.Frequency.EVERY, 1);
+        plan.setHour(EVERY, 1);
         manager.addJob(new ScoreJob(), plan);
 
         plan = new JobPlan();
-        plan.setHour(JobPlan.Frequency.EVERY, 1);
+        plan.setHour(EVERY, 1);
         manager.addJob(new ChannelJob(), plan);
+    }
+
+    public StockLoaderJob getStockLoaderJob() {
+        return stockLoaderJob;
+    }
+
+    public ScoreJob getScoreJob() {
+        return scoreJob;
+    }
+
+    public ChannelJob getChannelJob() {
+        return channelJob;
     }
 
     public static BackgroundJobs getInstance() {
