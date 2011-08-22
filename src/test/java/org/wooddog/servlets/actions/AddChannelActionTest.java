@@ -3,11 +3,15 @@ package org.wooddog.servlets.actions;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.wooddog.dao.ChannelService;
 import org.wooddog.dao.service.ChannelServiceDao;
 import org.wooddog.domain.Channel;
 import org.wooddog.servlets.PageAction;
 import org.wooddog.servlets.PageActionFactory;
 
+import java.io.File;
+import java.net.URL;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,36 +23,54 @@ import java.util.Map;
  * Time: 09:23
  * To change this template use File | Settings | File Templates.
  */
-public class AddChannelActionTest {
+public class AddChannelActionTest implements ChannelService {
+    private AddChannelAction subject;
+    private URL url;
 
     @Before
-    public void clean() {
-        ChannelServiceDao.getInstance().deleteChannels();
+    public void setup() throws Exception {
+        subject = new AddChannelAction();
+        subject.setChannelService(this);
+
+        url = new File("src/test/resources/org/wooddog/job/channel/rss-feed-2.0.xml").toURI().toURL();
     }
 
     @Test
-    public void testAddChannel() {
-        PageAction action;
+    public void testAddChannel() throws Exception {
         Map<String, String[]> parameters;
-        List<Channel> channels;
 
         parameters = new HashMap<String, String[]>();
-        parameters.put("url", new String[]{"http://www.google.com"});
+        parameters.put("url", new String[]{url.toExternalForm()});
 
-        action = PageActionFactory.getInstance().getAction("AddChannel");
-        action.execute(parameters);
+        subject.execute(parameters);
+    }
 
-        channels = ChannelServiceDao.getInstance().getChannels();
-        for (Channel channel : channels) {
-            if (channel.getUrl() == null) {
-                continue;
-            }
 
-            if ("http://www.google.com".equals(channel.getUrl().toExternalForm())) {
-                return;
-            }
-        }
+    @Override
+    public void storeChannel(Channel channel) {
+        Assert.assertEquals(url, channel.getUrl());
+        Assert.assertEquals("RSS", channel.getType());
+    }
 
-        Assert.fail();
+    @Override
+    public List<Channel> getChannels() {
+        return null;
+    }
+
+    @Override
+    public void setChannelFetched(int id, Date date) {
+    }
+
+    @Override
+    public Channel getChannelById(int id) {
+        return null;
+    }
+
+    @Override
+    public void deleteChannels() {
+    }
+
+    @Override
+    public void deleteChannel(int id) {
     }
 }

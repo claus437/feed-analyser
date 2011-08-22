@@ -1,6 +1,7 @@
 package org.wooddog.servlets.actions;
 
 import org.apache.log4j.Logger;
+import org.wooddog.dao.ChannelService;
 import org.wooddog.dao.service.ChannelServiceDao;
 import org.wooddog.domain.Channel;
 import org.wooddog.servlets.PageAction;
@@ -16,17 +17,16 @@ import java.util.Map;
  */
 public class DeleteChannelAction implements PageAction {
     private static final Logger LOGGER = Logger.getLogger(DeleteChannelAction.class);
+    private ChannelService channelService = ChannelServiceDao.getInstance();
 
     public void execute(Map<String, String[]> parameters) {
-        Channel channel;
         int id;
 
         id = Integer.parseInt(parameters.get("id")[0]);
+        channelService.deleteChannel(id);
+    }
 
-        channel = ChannelServiceDao.getInstance().getChannelById(id);
-
-        LOGGER.info("loaded channel" + channel.getId() + " " + channel.getUrl());
-
-        ChannelServiceDao.getInstance().deleteChannel(id);
+    public void setChannelService(ChannelService channelService) {
+        this.channelService = channelService;
     }
 }

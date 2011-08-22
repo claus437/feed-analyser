@@ -80,8 +80,8 @@ public class JobThread extends Thread {
 
     public void kill() {
         status = Status.TERMINATING;
-
         signal = true;
+        job.terminate();
     }
 
     public Status getStatus() {

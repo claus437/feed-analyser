@@ -1,6 +1,7 @@
 package org.wooddog.servlets.actions;
 
 import org.wooddog.ChannelInspector;
+import org.wooddog.dao.ChannelService;
 import org.wooddog.dao.service.ChannelServiceDao;
 import org.wooddog.domain.Channel;
 import org.wooddog.servlets.PageAction;
@@ -10,6 +11,8 @@ import java.net.URL;
 import java.util.Map;
 
 public class AddChannelAction implements PageAction {
+    private ChannelService channelService = ChannelServiceDao.getInstance();
+
     public void execute(Map<String, String[]> parameters) {
         URL url;
         Channel channel;
@@ -30,6 +33,10 @@ public class AddChannelAction implements PageAction {
         channel.setUrl(url);
         channel.setType(type);
 
-        ChannelServiceDao.getInstance().storeChannel(channel);
+        channelService.storeChannel(channel);
+    }
+
+    public void setChannelService(ChannelService channelService) {
+        this.channelService = channelService;
     }
 }

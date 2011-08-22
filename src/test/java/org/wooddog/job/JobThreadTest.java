@@ -14,8 +14,7 @@ import org.wooddog.IOUtil;
 public class JobThreadTest implements Job {
     private JobThread subject = new JobThread();
     private int executed;
-
-
+    private int terminated;
 
     @Test
     public void testSetSchedule() {
@@ -29,20 +28,48 @@ public class JobThreadTest implements Job {
         Assert.assertEquals(plan, subject.getPlan());
     }
 
-    @Test
-    public void testStart() throws Exception {
+    @Test (timeout = 5000)
+    public void testExecute() throws Exception {
+        JobPlan plan;
+
+        plan = new JobPlan();
+        plan.setSecond(JobPlan.Frequency.EVERY, 1);
+
+        subject.setJob(this);
+        subject.setPlan(plan);
         subject.start();
-        subject.kill();
 
         while (executed == 0) {
-            Thread.sleep(100);
+            Thread.sleep(10);
         }
 
-        IOUtil.wait(subject);
+        subject.kill();
+        subject.join();
 
         Assert.assertEquals(1, executed);
     }
 
+    @Test (timeout = 5000)
+    public void testTerminate() throws Exception {
+        JobPlan plan;
+
+        plan = new JobPlan();
+        plan.setHour(JobPlan.Frequency.EVERY, 1);
+
+        subject.setJob(this);
+        subject.setPlan(plan);
+        subject.start();
+        subject.kill();
+
+        while (terminated == 0) {
+            Thread.sleep(10);
+        }
+
+        subject.join();
+
+        Assert.assertEquals(1, terminated);
+        Assert.assertEquals(0, executed);
+    }
 
     @Override
     public void execute() {
@@ -51,11 +78,11 @@ public class JobThreadTest implements Job {
 
     @Override
     public void terminate() {
-
+        terminated++;
     }
 
     @Override
     public String getName() {
-        return null;
+        return "MyJob";
     }
 }

@@ -11,13 +11,6 @@ import org.wooddog.job.channel.fetcher.ChannelFetcher;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: dencbr
- * Date: 19-08-11
- * Time: 10:50
- * To change this template use File | Settings | File Templates.
- */
 public class ChannelJob implements Job {
     private ChannelServiceDao channelService = ChannelServiceDao.getInstance();
     private ArticleService articleService = ArticleServiceDao.getInstance();
