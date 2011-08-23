@@ -40,6 +40,8 @@ public class ScoreJob implements Job {
         progress.setNumberOfUnits(companyList.size());
 
         rateCompanies(companyList);
+
+        progress.done();
     }
 
     @Override
