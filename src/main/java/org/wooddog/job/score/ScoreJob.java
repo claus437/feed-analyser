@@ -1,6 +1,7 @@
 package org.wooddog.job.score;
 
 
+import org.wooddog.Progress;
 import org.wooddog.dao.ArticleService;
 import org.wooddog.dao.service.ArticleServiceDao;
 import org.wooddog.dao.CompanyService;
@@ -20,7 +21,9 @@ public class ScoreJob implements Job {
     private ScoringService scoringService = ScoringServiceDao.getInstance();
     private ArticleService articleService = ArticleServiceDao.getInstance();
     private ScoreFinder scoreFinder = new ScoreFinder();
+    private Progress progress = new Progress();
     private boolean terminate;
+
 
     @Override
     public String getName() {
@@ -31,7 +34,11 @@ public class ScoreJob implements Job {
     public void execute() {
         List<Company> companyList;
 
+        progress.reset();
+
         companyList = companyService.getCompanies();
+        progress.setNumberOfUnits(companyList.size());
+
         rateCompanies(companyList);
     }
 
@@ -56,12 +63,24 @@ public class ScoreJob implements Job {
         this.scoreFinder = scoreFinder;
     }
 
+    @Override
+    public int progress() {
+        return progress.getPercentDone();
+    }
+
     private void rateCompanies(List<Company> companyList) {
         List<Article> articleList;
 
+
         for (Company company : companyList) {
             articleList = getArticlesToScore(company.getId());
-            rateArticles(company, articleList);
+            if (articleList.isEmpty()) {
+                progress.setStepsPerUnit(companyList.size());
+                progress.step();
+            } else {
+                progress.setStepsPerUnit(articleList.size());
+                rateArticles(company, articleList);
+            }
 
             if (terminate) {
                 return;
@@ -73,6 +92,7 @@ public class ScoreJob implements Job {
         List<String> keywords;
         Scoring score;
         int points;
+
 
         keywords = scoringService.getKeyWords(company.getId());
         scoreFinder.setKeywords(keywords);
@@ -87,18 +107,23 @@ public class ScoreJob implements Job {
             score.setScore(points);
 
             scoringService.store(score);
-
             if (terminate) {
                 return;
             }
+
+            progress.step();
         }
     }
 
     private List<Article> getArticlesToScore(int companyId) {
-        int lastScored;
+        Integer lastScored;
         List<Article> articleList;
 
         lastScored = scoringService.getLastScoredArticleIdForCompany(companyId);
+        if (lastScored == null) {
+            lastScored = 0;
+        }
+
         articleList = articleService.getArticlesFromId(lastScored);
 
         return articleList;

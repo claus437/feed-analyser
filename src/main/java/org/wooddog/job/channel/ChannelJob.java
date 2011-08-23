@@ -1,5 +1,6 @@
 package org.wooddog.job.channel;
 
+import org.wooddog.Progress;
 import org.wooddog.dao.ArticleService;
 import org.wooddog.dao.service.ArticleServiceDao;
 import org.wooddog.dao.service.ChannelServiceDao;
@@ -14,7 +15,9 @@ import java.util.List;
 public class ChannelJob implements Job {
     private ChannelServiceDao channelService = ChannelServiceDao.getInstance();
     private ArticleService articleService = ArticleServiceDao.getInstance();
+    private Progress progress = new Progress();
     private boolean terminate;
+
 
 
     @Override
@@ -29,7 +32,14 @@ public class ChannelJob implements Job {
         ChannelFetcher fetcher;
         Date latest;
 
+        progress.reset();
+
         channelList = channelService.getChannels();
+        if (channelList.isEmpty()) {
+            progress.done();
+        }
+
+        progress.setNumberOfUnits(channelList.size());
 
         for (Channel channel : channelList) {
 
@@ -43,11 +53,18 @@ public class ChannelJob implements Job {
             if (terminate) {
                 break;
             }
+
+            progress.step();
         }
     }
 
     @Override
     public void terminate() {
         terminate = true;
+    }
+
+    @Override
+    public int progress() {
+        return progress.getPercentDone();
     }
 }

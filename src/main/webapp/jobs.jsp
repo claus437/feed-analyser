@@ -68,7 +68,7 @@
                     <th>JOB</th>
                     <th>LAST RUN</th>
                     <th>NEXT RUN</th>
-                    <th>STATUS</th>
+                    <th colspan="2">STATUS</th>
                     <th>EXECUTION TIME</th>
                 </tr>
 
@@ -78,6 +78,7 @@
                         <td><%=job.getLastRun()%></td>
                         <td><%=job.getNextRun()%></td>
                         <td><%=job.getStatus()%></td>
+                        <td>(<%=job.getJob().progress()%>%)</td>
                         <td><%=job.getExecutingTime()%></td>
                     </tr>
                 <% } %>

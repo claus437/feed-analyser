@@ -1,6 +1,7 @@
 package org.wooddog.job.stock;
 
 import org.apache.log4j.Logger;
+import org.wooddog.Progress;
 import org.wooddog.dao.StockService;
 import org.wooddog.dao.service.StockServiceDao;
 import org.wooddog.domain.Stock;
@@ -20,6 +21,7 @@ public class StockLoaderJob implements Job {
     private static final Logger LOGGER = Logger.getLogger(StockLoaderJob.class);
     private StockService stockService = StockServiceDao.getInstance();
     private StockFetcher fetcher = new StockFetcher();
+    private Progress progress = new Progress();
 
     @Override
     public void execute() {
@@ -27,17 +29,29 @@ public class StockLoaderJob implements Job {
         List<Stock> latestStockList;
         Date now;
 
+        progress.reset();
+        progress.setNumberOfUnits(4);
+
         now = new Date();
 
         currentStockList = stockService.getStocksByDate(now);
+        progress.step();
         LOGGER.info("current stocks for " + now + ": " + currentStockList.size() + " ");
 
         latestStockList = fetcher.getStocks();
+        progress.step();
         LOGGER.info("found stocks for " + now + ": " + latestStockList.size() + " ");
 
         copyIds(currentStockList, latestStockList);
+        progress.step();
 
         stockService.storeStocks(latestStockList);
+        progress.step();
+    }
+
+    @Override
+    public int progress() {
+        return progress.getPercentDone();
     }
 
     private void copyIds(List<Stock> source, List<Stock> target) {

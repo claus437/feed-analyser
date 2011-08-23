@@ -7,6 +7,7 @@
  */
 public class Test {
     String message;
+    static double progress;
 
     public Test() {
         message = "Hello";
@@ -24,8 +25,30 @@ public class Test {
 
 
     public static void main(String[] args) {
-
-        Test test = new Test();
-        test.run();
+        rateCompanies();
     }
+
+    public static void rateCompanies() {
+        int companySize = 6;
+
+        for (int i = 0; i < companySize; i++) {
+            progress = 100D / companySize * (i + 1);
+            System.out.print("\nprogress: " + (int) progress + " : ");
+
+            rateArticles(100D / companySize);
+        }
+    }
+
+    public static void rateArticles(double scale) {
+        int articles = 20;
+        double progressBase;
+
+        progressBase = progress;
+
+        for (int i = 0; i < articles; i++) {
+            progress = ((100D / scale) / articles) * (i + 1) + progressBase;
+            System.out.print((int) progress + ", ");
+        }
+    }
+
 }

@@ -85,4 +85,9 @@ public class JobThreadTest implements Job {
     public String getName() {
         return "MyJob";
     }
+
+    @Override
+    public int progress() {
+        return 0;
+    }
 }

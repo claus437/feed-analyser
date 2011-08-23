@@ -11,4 +11,5 @@ public interface Job {
     String getName();
     void execute();
     void terminate();
+    int progress();
 }
