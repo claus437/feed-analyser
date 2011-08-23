@@ -37,10 +37,11 @@
     </select>
 
     <select id="getScoringsInPeriodForCompany" parameterType="Map" resultMap="ScoreMap">
-        SELECT * FROM SCORINGS WHERE
-            COMPANY_ID = #{0} and
-            DATE &gt;= #{1} and
-            DATE &lt;=#{2}
+        SELECT SCORINGS.* FROM SCORINGS, ARTICLES WHERE
+            SCORINGS.ARTICLE_ID = ARTICLES.ID AND
+            SCORINGS.COMPANY_ID = #{0} AND
+            ARTICLES.PUBLISHED &gt;= #{1} AND
+            ARTICLES.PUBLISHED &lt;= #{2}
     </select>
 
     <select id="getKeyWordsByCompanyId" parameterType="int" resultType="String">
