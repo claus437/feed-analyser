@@ -21,7 +21,7 @@ public class DbDeploy {
     private static String schema = "mysql-schema.xml";
     private static String data = "data.txt";
 
-    private static String url = pub;
+    private static String url = local;
     private static String resource = data;
 
     public static void main(String[] args) throws Exception {
