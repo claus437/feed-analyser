@@ -1,8 +1,14 @@
 package org.wooddog;
 
 import org.junit.Test;
+import org.wooddog.graph.Graph;
+import org.wooddog.graph.LineGraph;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
 
 /**
  * Created by IntelliJ IDEA.
@@ -22,15 +28,15 @@ public class GraphTest {
         Window window;
 
         graph1 = new LineGraph();
-        graph1.setData(new int[]{10, 50, 15, 25, 30, 49, 32, 1, 32, 23, 43});
+        graph1.setData(new double[]{10, 50, 15, 25, 30, 49, 32, 1, 32, 23, 43, 10});
         graph1.setColor(new Color(200, 130, 130));
 
         graph2 = new LineGraph();
-        graph2.setData(new int[]{0, 100, 10, 20, 50, 70, 60, 30, 24, 32, 65});
+        graph2.setData(new double[]{0, 100, 10, 20, 50, 70, 60, 30, 24, 32, 65});
         graph2.setColor(new Color(130, 200, 130));
 
         graph3 = new LineGraph();
-        graph3.setData(new int[]{19, 73, 20, 11, 55, 11, -10, 8, 73, 10, 11});
+        graph3.setData(new double[]{19, 73, 20, 11, 55, 11, -10, 8, 73, 10, 11});
         graph3.setColor(new Color(130, 130, 200));
 
         graph = new Graph();
@@ -48,6 +54,43 @@ public class GraphTest {
         while (window.isShowing()) {
             Thread.sleep(100);
         }
+    }
+
+    @Test
+    public void testCreateGif() throws Exception {
+        BufferedImage image;
+        Graph graph;
+        LineGraph lineGraph;
+        int width;
+        int height;
+        Graphics2D graphics;
+
+        width = 500;
+        height = 200;
+
+        image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+
+        lineGraph = new LineGraph();
+        lineGraph.setColor(Color.RED);
+        lineGraph.setData(new double[]{1,2,5,3,4});
+
+        graph = new Graph();
+        graph.addGraph(lineGraph);
+        graph.setWidth(width);
+        graph.setHeight(height);
+        graph.setColumns(5);
+        graph.setRows(5);
+        graph.setGridColor(Color.LIGHT_GRAY);
+
+        graphics = image.createGraphics();
+        graphics.setComposite(AlphaComposite.Clear);
+        graphics.fillRect(0, 0, width, height);
+        graphics.setComposite(AlphaComposite.SrcOver);
+
+        graph.draw(graphics);
+
+        ImageIO.write(image, "png", new File("graph-red.png"));
+        ImageIO.write(image, "gif", new File("graph.gif"));
     }
 
 
@@ -68,6 +111,5 @@ public class GraphTest {
 
             add(panel);
         }
-
     }
 }

@@ -84,6 +84,15 @@
                     margin-top: 40px;
                 }
 
+                table.company a {
+                    color: white;
+                    text-decoration: none;
+                }
+
+                a : hover {
+                    text-decoration: underline;
+                }
+
                 tr.header td:first-child {
                     font-weight: bold;
                     color: white;
@@ -125,7 +134,7 @@
             <% for (Company company : companyList) { %>
                 <table class="company">
                     <tr class="header">
-                        <td colspan="4"><%=company.getName()%></td>
+                        <td colspan="4"><a href="company.jsp?companyId=<%=company.getId()%>"><%=company.getName()%></a></td>
                         <td colspan="<%=HISTORY_COUNT - 3%>"></td>
                     </tr>
                     <tr class="month">

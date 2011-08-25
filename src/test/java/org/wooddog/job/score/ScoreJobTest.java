@@ -156,7 +156,11 @@ public class ScoreJobTest {
 
         @Override
         public void storeCompany(Company company) {
+        }
 
+        @Override
+        public Company getCompany(int companyId) {
+            return null;
         }
     }
 
@@ -172,6 +176,8 @@ public class ScoreJobTest {
             return 100;
         }
     }
+
+
 
 
 }

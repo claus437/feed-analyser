@@ -8,6 +8,7 @@ import org.wooddog.dao.Service;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
+import java.io.File;
 import java.sql.SQLException;
 
 /**
@@ -19,6 +20,7 @@ import java.sql.SQLException;
  */
 public class ConfigServlet extends HttpServlet {
     private static final Logger LOGGER = Logger.getLogger(ConfigServlet.class);
+    private static ServletConfig servletConfig;
 
     @Override
     public void init(ServletConfig config) throws ServletException {
@@ -26,6 +28,7 @@ public class ConfigServlet extends HttpServlet {
 
         super.init(config);
 
+        servletConfig = config;
         Config.load("org/wooddog/config/mysql.properties");
 
         jobs = BackgroundJobs.getInstance();
@@ -49,5 +52,9 @@ public class ConfigServlet extends HttpServlet {
         } catch (SQLException x) {
             x.printStackTrace();
         }
+    }
+
+    public static String getRealPath(String path) {
+        return servletConfig.getServletContext().getRealPath(path);
     }
 }

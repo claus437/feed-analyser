@@ -55,4 +55,19 @@ public class CompanyServiceDao implements CompanyService {
         }
     }
 
+    public Company getCompany(int id) {
+        SqlSession session;
+        Company company;
+
+        session = factory.openSession();
+        try {
+            company = session.getMapper(CompanyMapper.class).getCompany(id);
+            session.commit();
+        } finally {
+            session.close();
+        }
+
+        return company;
+    }
+
 }

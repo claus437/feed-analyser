@@ -14,4 +14,5 @@ import java.util.List;
 public interface CompanyService {
     List<Company> getCompanies();
     void storeCompany(Company company);
+    Company getCompany(int companyId);
 }

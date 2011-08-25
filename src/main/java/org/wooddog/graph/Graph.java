@@ -1,19 +1,9 @@
-package org.wooddog;
+package org.wooddog.graph;
 
 import java.awt.*;
-import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.wooddog.XLabel.Align;
-
-/**
- * Created by IntelliJ IDEA.
- * User: dencbr
- * Date: 23-08-11
- * Time: 16:00
- * To change this template use File | Settings | File Templates.
- */
 public class Graph {
     private List<LineGraph> graphList;
     private int columns;
@@ -76,26 +66,13 @@ public class Graph {
     }
 
     public void draw(Graphics2D graphics) {
-        XLabel xlabel;
-        int gridOffset;
 
-        xlabel = new XLabel(height);
-        for (LineGraph graph : graphList) {
-            xlabel.addLabel(Integer.toString(graph.getHighestValue()), Align.TOP, graph.getColor());
-            xlabel.addLabel(Integer.toString(graph.getMiddleValue()), Align.MIDDLE, graph.getColor());
-            xlabel.addLabel(Integer.toString(graph.getLowestValue()), Align.BOTTOM, graph.getColor());
-        }
-
-        xlabel.draw(graphics);
-
-        gridOffset = xlabel.getWidth() + 5;
-
-        drawGrid(graphics, gridOffset, 0, width - gridOffset, height);
+        drawGrid(graphics, 0, 0, width, height);
 
         for (LineGraph graph : graphList) {
             graph.setHeight(height);
-            graph.setWidth(width - gridOffset);
-            graph.setOffsetX(gridOffset);
+            graph.setWidth(width);
+            graph.setOffsetX(0);
 
             graph.draw(graphics);
         }
@@ -109,12 +86,7 @@ public class Graph {
 
         cellWidth = (double) width / columns;
         cellHeight = (double) height / rows;
-        /*
-        graphics.drawLine(x, 0, x, 40);
-        graphics.drawLine(x + width, 0, x + width, 40);
-        graphics.drawLine(0, y, 40, y);
-        graphics.drawLine(0, y + height, 40, y + height);
-        */
+
         graphics.setColor(gridColor);
 
         pos = 0;
