@@ -15,6 +15,10 @@
         SELECT * FROM COMPANIES
     </select>
 
+    <select id="getCompany" resultType="org.wooddog.domain.Company" parameterType="int">
+        SELECT * FROM COMPANIES WHERE ID = #{id}
+    </select>
+
     <insert id="storeCompany" parameterType="org.wooddog.domain.Company" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO COMPANIES (NAME) VALUES (#{company})
     </insert>

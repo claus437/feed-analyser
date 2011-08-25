@@ -1,4 +1,4 @@
-package org.wooddog;
+package org.wooddog.graph;
 
 import java.awt.*;
 import java.awt.color.ColorSpace;
@@ -39,8 +39,11 @@ public class LineGraph {
         return data;
     }
 
-    public void setData(int[] data) {
-        this.data = data;
+    public void setData(double[] data) {
+        this.data = new int[data.length];
+        for (int i = 0; i < data.length; i++) {
+            this.data[i] = (int) data[i];
+        }
     }
 
     public Color getColor() {
@@ -74,7 +77,13 @@ public class LineGraph {
         graphics.setColor(color);
 
         resolutionX = width / (data.length - 1);
-        resolutionY = height / (high(data) - low(data));
+
+        // TODO: clean up
+        if ((high(data) - low(data)) == 0) {
+            resolutionY = 0;
+        } else {
+            resolutionY = height / (high(data) - low(data));
+        }
 
         Stroke stroke = graphics.getStroke();
         graphics.setStroke(new BasicStroke(3,2,1));
