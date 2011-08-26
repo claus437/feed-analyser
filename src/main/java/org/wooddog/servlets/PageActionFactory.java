@@ -3,6 +3,7 @@ package org.wooddog.servlets;
 import org.wooddog.servlets.actions.AddChannelAction;
 import org.wooddog.servlets.actions.AddCompanyAction;
 import org.wooddog.servlets.actions.DeleteChannelAction;
+import org.wooddog.servlets.actions.ReadArticleAction;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,6 +24,7 @@ public class PageActionFactory {
         actions.put("AddChannel", AddChannelAction.class);
         actions.put("DeleteChannel", DeleteChannelAction.class);
         actions.put("AddCompany", AddCompanyAction.class);
+        actions.put("ReadArticle", ReadArticleAction.class);
     }
 
     public static PageActionFactory getInstance() {

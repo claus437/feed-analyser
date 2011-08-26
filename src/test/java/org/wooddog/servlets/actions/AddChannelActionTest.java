@@ -42,7 +42,8 @@ public class AddChannelActionTest implements ChannelService {
         parameters = new HashMap<String, String[]>();
         parameters.put("url", new String[]{url.toExternalForm()});
 
-        subject.execute(parameters);
+        subject.setParameters(parameters);
+        subject.execute();
     }
 
 

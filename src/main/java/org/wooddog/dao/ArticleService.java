@@ -22,4 +22,5 @@ public interface ArticleService {
     List<Article> getArticlesFromId(int id);
     Article getLastScoredArticle();
     Date getLatestPublishDate(String source);
+    Article getArticle(int id);
 }

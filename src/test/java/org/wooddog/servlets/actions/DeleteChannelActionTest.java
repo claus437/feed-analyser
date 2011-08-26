@@ -39,7 +39,8 @@ public class DeleteChannelActionTest implements ChannelService {
         parameters = new HashMap<String, String[]>();
         parameters.put("id", new String[]{"1"});
 
-        subject.execute(parameters);
+        subject.setParameters(parameters);
+        subject.execute();
 
         Assert.assertEquals(1, deletedChannelId);
     }

@@ -9,6 +9,7 @@ import org.wooddog.dao.ScoringService;
 import org.wooddog.domain.Article;
 import org.wooddog.domain.Company;
 import org.wooddog.domain.Scoring;
+import support.service.ArticleServiceStub;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -47,13 +48,13 @@ public class ScoreJobTest {
 
         expected = new String[] {
                 "ScoringService.getLastScoredArticleIdForCompany(1)",
-                "ArticleService.getArticlesFromId(10)",
+                "ArticleService.getArticles(10)",
                 "ScoringService.getKeyWords(1)",
                 "ScoreFinder.setKeywords([key_1_1, key_2_1])",
                 "ScoreFinder.setKeywords(title description)",
                 "ScoringService.store(aid:3, cId:1, score:100)",
                 "ScoringService.getLastScoredArticleIdForCompany(2)",
-                "ArticleService.getArticlesFromId(20)",
+                "ArticleService.getArticles(20)",
                 "ScoringService.getKeyWords(2)",
                 "ScoreFinder.setKeywords([key_1_2, key_2_2])",
                 "ScoreFinder.setKeywords(title description)",
@@ -90,34 +91,20 @@ public class ScoreJobTest {
             assertions.add("ScoringService.getKeyWords(" + id + ")");
             return Arrays.asList("key_1_" + id, "key_2_" + id);
         }
-    }
-
-    class ArticleServiceMock implements ArticleService {
-        @Override
-        public void deleteArticles() {
-
-        }
 
         @Override
-        public void storeArticles(List<Article> articles) {
-
-        }
-
-        @Override
-        public void storeArticle(Article article) {
-
-        }
-
-        @Override
-        public Date getLatestPublishDate(String source) {
+        public List<Scoring> getScoringsOlderThan(int companyId, Date date, int count) {
             return null;
         }
+    }
+
+    class ArticleServiceMock extends ArticleServiceStub {
 
         @Override
         public List<Article> getArticlesFromId(int id) {
             Article article;
 
-            assertions.add("ArticleService.getArticlesFromId(" + id + ")");
+            assertions.add("ArticleService.getArticles(" + id + ")");
 
             article = new Article();
             article.setId(3);
@@ -125,11 +112,6 @@ public class ScoreJobTest {
             article.setDescription("description");
 
             return Arrays.asList(article);
-        }
-
-        @Override
-        public Article getLastScoredArticle() {
-            return null;
         }
     }
 
@@ -176,8 +158,4 @@ public class ScoreJobTest {
             return 100;
         }
     }
-
-
-
-
 }

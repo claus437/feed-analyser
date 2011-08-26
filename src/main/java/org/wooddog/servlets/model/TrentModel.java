@@ -1,6 +1,7 @@
 package org.wooddog.servlets.model;
 
 import org.wooddog.DateUtil;
+import org.wooddog.dao.ArticleService;
 import org.wooddog.dao.ScoringService;
 import org.wooddog.dao.StockService;
 import org.wooddog.dao.service.ScoringServiceDao;
@@ -29,6 +30,7 @@ public class TrentModel {
     private Date date;
     private ScoringService scoringService;
     private StockService stockService;
+    private ArticleService articleService;
 
     public TrentModel(Date date, int historyCount) {
         this.date = date;

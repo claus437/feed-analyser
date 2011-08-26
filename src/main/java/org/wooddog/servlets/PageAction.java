@@ -10,5 +10,6 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public interface PageAction {
-    void execute(Map<String, String[]> parameters);
+    void setParameters(Map<String, String[]> parameters);
+    void execute();
 }

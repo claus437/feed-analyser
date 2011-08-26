@@ -1,118 +1,119 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<%@ page import="org.wooddog.dao.service.CompanyServiceDao" %>
-<%@ page import="org.wooddog.domain.Company" %>
 <%@ page import="java.util.Date" %>
-<%@ page import="java.util.List" %>
 <%@ page import="org.wooddog.servlets.PageAction" %>
 <%@ page import="org.wooddog.servlets.PageActionFactory" %>
-<%@ page import="org.wooddog.servlets.model.TrentModel" %>
-<%@ page import="org.wooddog.servlets.model.CompanyModel" %>
-<%@ page import="java.awt.*" %>
+<%@ page import="org.wooddog.servlets.model.CompanyModel2" %>
+<%@ page import="org.wooddog.domain.History" %>
+<%@ page import="java.util.Map" %>
 
 <%!
-    static final int HISTORY_COUNT = 10;
     static final String SHARE_COLOR = "#995050";
     static final String SCORE_COLOR = "#509950";
     static final String RECOMMENDATION_COLOR = "#505099";
+    static final String SHARE = History.Field.SHARE.name();
+    static final String SCORE = History.Field.SCORE.name();
+    static final String RECOMMENDATION = History.Field.RECOMMENDATION.name();
 %>
 
 <%
     PageAction action;
-    CompanyModel model;
+    CompanyModel2 model;
     int companyId;
+
+    if (request.getParameter("companyId") != null) {
+        companyId = Integer.parseInt(request.getParameter("companyId"));
+    } else {
+        companyId = 6;
+    }
+
+
+    model = (CompanyModel2) session.getAttribute(getClass().getName());
+    if (model == null) {
+        CompanyModel2.ModelProperties properties = CompanyModel2.create();
+        properties.graphCount = 50;
+        properties.summaryCount = 10;
+        properties.graphCount = 50;
+        properties.graphHeight = 140;
+        properties.graphWidth = 550;
+        properties.setGraphColor(SCORE, SCORE_COLOR);
+        properties.setGraphColor(SHARE, SHARE_COLOR);
+        properties.setGraphColor(RECOMMENDATION, RECOMMENDATION_COLOR);
+
+        model = properties.initialize();
+        model.loadHistory(new Date(), companyId);
+        session.setAttribute(getClass().getName(), model);
+    }
+
+    pageContext.setAttribute("model", model);
 
 
     action = PageActionFactory.getInstance().getAction(request.getParameter("action"));
+
     if (action != null) {
         try {
-            action.execute(request.getParameterMap());
+            action.setParameters(request.getParameterMap());
+            model.execute(action);
         } catch (Throwable x) {
-            session.setAttribute("error", "failed adding company, " + x.getMessage());
+            session.setAttribute("error", x.getMessage());
         }
-        response.sendRedirect("trends.jsp");
+        response.sendRedirect("company.jsp");
         return;
     }
 
-    if (request.getParameter("companyId") == null) {
-        companyId = 6;
-    } else {
-        companyId = Integer.parseInt(request.getParameter("companyId"));
-    }
 
-    model = new CompanyModel();
-    model.setColor(CompanyModel.GraphElement.SHARE, SHARE_COLOR);
-    model.setColor(CompanyModel.GraphElement.SCORE, SCORE_COLOR);
-    model.setColor(CompanyModel.GraphElement.RECOMMENDATION, RECOMMENDATION_COLOR);
-    model.setDate(new Date());
-    model.setWidth(550);
-    model.setHeight(200);
-    model.setGraphCount(50);
-    model.setSummaryCount(10);
-    model.setCompanyId(companyId);
 
-    model.load();
 %>
+
 <html>
     <head>
-        <title>trends</title>
+        <title>company</title>
         <link rel="stylesheet" href="css/default.css" media="screen" type="text/css"/>
         <script src="js/Graph.js" type="text/javascript"></script>
 
         <script type="text/javascript">
             var graph;
 
+
             function init() {
                 var minValues = document.getElementById("minValues");
                 var midValues = document.getElementById("midValues");
                 var maxValues = document.getElementById("maxValues");
+                var data;
 
                 graph = new Graph(minValues, midValues, maxValues);
 
-                graph.add("share",
-                    new GraphData(
-                        document.getElementById("shareImg"),
-                        "<%=SHARE_COLOR%>",
-                        <%=model.getGraphMinValue(CompanyModel.GraphElement.SHARE)%>,
-                        <%=model.getGraphMidValue(CompanyModel.GraphElement.SHARE)%>,
-                        <%=model.getGraphMaxValue(CompanyModel.GraphElement.SHARE)%>
-                    )
-                );
+                data = new GrapData();
+                data.setImage(document.getElementById("shareImg"));
+                data.setColor("<%=SHARE_COLOR%>");
+                data.setMinValue(${model.graphs['SHARE'].minValue});
+                data.setMidValue(${model.graphs['SHARE'].midValue});
+                data.setMaxValue(${model.graphs['SHARE'].maxValue});
+                graph.add("share", data);
 
-                graph.add("score",
-                        new GraphData(
-                            document.getElementById("scoreImg"),
-                            "<%=SCORE_COLOR%>",
-                            <%=model.getGraphMinValue(CompanyModel.GraphElement.SCORE)%>,
-                            <%=model.getGraphMidValue(CompanyModel.GraphElement.SCORE)%>,
-                            <%=model.getGraphMaxValue(CompanyModel.GraphElement.SCORE)%>
-                        )
-                );
+                data = new GrapData();
+                data.setImage(document.getElementById("scoreImg"));
+                data.setColor("<%=SCORE_COLOR%>");
+                data.setMinValue(${model.graphs['SCORE'].minValue});
+                data.setMidValue(${model.graphs['SCORE'].midValue});
+                data.setMaxValue(${model.graphs['SCORE'].maxValue});
+                graph.add("score", data);
 
-                graph.add("recommendation",
-                        new GraphData(
-                            document.getElementById("recommendationImg"),
-                            "<%=RECOMMENDATION_COLOR%>",
-                            <%=model.getGraphMinValue(CompanyModel.GraphElement.RECOMMENDATION)%>,
-                            <%=model.getGraphMidValue(CompanyModel.GraphElement.RECOMMENDATION)%>,
-                            <%=model.getGraphMaxValue(CompanyModel.GraphElement.RECOMMENDATION)%>
-                        )
-                );
+                data = new GrapData();
+                data.setImage(document.getElementById("recommendationImg"));
+                data.setColor("<%=RECOMMENDATION_COLOR%>");
+                data.setMinValue(${model.graphs['RECOMMENDATION'].minValue});
+                data.setMidValue(${model.graphs['RECOMMENDATION'].midValue});
+                data.setMaxValue(${model.graphs['RECOMMENDATION'].maxValue});
+                graph.add("recommendation", data);
 
                 graph.refresh();
             }
         </script>
 
         <style type="text/css">
-
-            td.split {
-                border-right: 1px solid #dddddd;
-            }
-
-            td.hard-split {
-                border-right: 2px solid #dddddd;
-            }
-
             tr.header td {
                 vertical-align: bottom;
             }
@@ -130,70 +131,18 @@
     <body onload="init()">
         <div class="content">
             <jsp:include page="header.jsp">
-                <jsp:param name="title" value="TRENDS"/>
+                <jsp:param name="title" value="COMPANY"/>
             </jsp:include>
 
             <jsp:include page="error.jsp"/>
 
-            <form action="?action=AddCompany" method="POST" style="margin-top: 30px;">
+            <form action="?action=FindCompany" method="POST" style="margin-top: 30px;">
                 <div style="float: right; background-color: #505050; color: white; border: 1px solid #505050">
                     <input type="text" name="name" style="border: 0; height: 20px"/>
-                    <input type="submit" value="ADD" style="border: 0px; background-color: #505050; color: #FFFFFF; height: 20px;">
+                    <input type="submit" value="FIND" style="border: 0; background-color: #505050; color: #FFFFFF; height: 20px;">
                 </div>
             </form>
 
-            <style>
-                table.company {
-                    border-left: 2px solid #999999;
-                    width: 100%;
-                    clear: both;
-                    border-collapse: collapse;
-                    margin-top: 40px;
-                }
-
-                tr.header td:first-child {
-                    font-weight: bold;
-                    color: white;
-                    background-color: #999999;
-                }
-
-                table.company td {
-                    padding: 3px;
-                    vertical-align: top;
-                }
-
-                tr.month td {
-                    width: 70px;
-                    border-right: 1px solid #999999;
-                    font-weight: bold;
-                }
-
-                tr.month td:first-child {
-                    width: auto;
-                }
-
-                tr.score td {
-                    border-right: 1px solid #999999;
-                }
-
-                tr.stock td {
-                    border-right: 1px solid #999999;
-                }
-
-                tr.recommendation td {
-                    border-right: 1px solid #999999;
-                    font-weight: bold;
-                }
-
-                tr.border-top td {
-                    border-top: 1px solid #999999;
-                }
-
-                tr.border-bottom td {
-                    border-bottom: 1px solid #999999;
-                }
-
-            </style>
             <table class="company">
                 <tbody>
                 <tr class="header">
@@ -202,94 +151,116 @@
                 </tr>
                 <tr class="month">
                     <td></td>
-                    <% for (CompanyModel.History history : model.getSummaryList()) { %>
-                        <td><%=history.getDate()%></td>
-                    <% } %>
+                    <c:forEach items="${model.summaryList}" var="history"><td><fmt:formatDate value="${history.date}" pattern="dd MMM"/></td></c:forEach>
                 </tr>
                 <tr class="score">
                     <td>POINTS</td>
-                    <% for (CompanyModel.History history : model.getSummaryList()) { %>
-                        <td><%=history.getScore()%></td>
-                    <% } %>
+                    <c:forEach items="${model.summaryList}" var="history"><td><fmt:formatNumber value="${history.score}" pattern="#.##" /></td></c:forEach>
                 </tr>
                 <tr class="score">
                     <td></td>
-                    <% for (CompanyModel.History history : model.getSummaryList()) { %>
-                        <td><%=history.getScoreChanged()%></td>
-                    <% } %>
+                    <c:forEach items="${model.summaryList}" var="history"><td><fmt:formatNumber value="${history.scoreChanged}" pattern="#.##"/></td></c:forEach>
                 </tr>
                 <tr class="stock">
                     <td>SHARE</td>
-                    <% for (CompanyModel.History history : model.getSummaryList()) { %>
-                        <td><%=history.getShare()%></td>
-                    <% } %>
+                    <c:forEach items="${model.summaryList}" var="history"><td><fmt:formatNumber value="${history.share}" pattern="#,##0.###"/></td></c:forEach>
                 </tr>
                 <tr class="stock">
                     <td></td>
-                    <% for (CompanyModel.History history : model.getSummaryList()) { %>
-                        <td><%=history.getShareChanged()%></td>
-                    <% } %>
+                    <c:forEach items="${model.summaryList}" var="history"><td><fmt:formatNumber value="${history.shareChanged}" pattern="#,##0.###"/></td></c:forEach>
                 </tr>
                 <tr class="recommendation border-top">
                     <td>REC</td>
-                    <% for (CompanyModel.History history : model.getSummaryList()) { %>
-                        <td><%=history.getRecommendation()%></td>
-                    <% } %>
+                    <c:forEach items="${model.summaryList}" var="history"><td>${history.recommendation}</td></c:forEach>
                 </tr>
                 <tr class="recommendation border-bottom">
                     <td></td>
-                    <% for (CompanyModel.History history : model.getSummaryList()) { %>
-                        <td><%=history.getRecommendationChanged()%></td>
-                    <% } %>
+                    <c:forEach items="${model.summaryList}" var="history"><td>${history.recommendationChanged}</td></c:forEach>
                 </tr>
                 </tbody>
             </table>
 
-            <style>
-                table.graph {
-                    border: 1px solid #999999;
-                    width: 100%;
-                    clear: both;
-                    border-collapse: collapse;
-                    margin-top: 20px;
-                }
-
-                td.graphMax {
-                    vertical-align: top;
-                    text-align: right;
-                    width: 60px;
-                }
-
-                td.graphMid {
-                    vertical-align: middle;
-                    text-align: right;
-                }
-
-                td.graphLow {
-                    vertical-align: bottom;
-                    text-align: right;
-                }
-
-            </style>
-
             <table class="graph">
                 <tr>
-                    <td valign="top" rowspan="3" style="background-color: #999999; color: white; font-weight: bold;">
-                        <input type="checkbox" onclick="graph.show('share', this.checked)" checked="true"/> POINTS<br/>
-                        <input type="checkbox" onclick="graph.show('score', this.checked)" checked="true"/> SHARE<br/>
-                        <input type="checkbox" onclick="graph.show('recommendation', this.checked)" checked="true"/> REC.<br/>
+                    <td valign="top" rowspan="4" style="background-color: #999999; color: white; font-weight: bold;">
+                        <input type="checkbox" onclick="graph.show('share', this.checked)" checked="checked"/> POINTS<br/>
+                        <input type="checkbox" onclick="graph.show('score', this.checked)" checked="checked"/> SHARE<br/>
+                        <input type="checkbox" onclick="graph.show('recommendation', this.checked)" checked="checked"/> REC.<br/>
                     </td>
                     <td class="graphMax"><div id="maxValues"></div></td>
-                    <td  valign="top" rowspan="3" align="right" style="width: 0px">
-                        <div style="position: relative; width: 550px; height: 200px">
-                            <img id="shareImg" style="position: absolute; top: 0px; left:0px; margin: 0; padding: 0; width: 550px; height: 200px;" src="<%=model.getImage(CompanyModel.GraphElement.SHARE)%>"/>
-                            <img id="scoreImg" style="position: absolute; top: 0px; left:0px; margin: 0; padding: 0; width: 550px; height: 200px;" src="<%=model.getImage(CompanyModel.GraphElement.SCORE)%>"/>
-                            <img id="recommendationImg" style="position: absolute; top: 0px; left:0px; margin: 0; padding: 0; width: 550px; height: 200px;" src="<%=model.getImage(CompanyModel.GraphElement.RECOMMENDATION)%>"/>
+                    <td  valign="top" rowspan="3" align="right" style="width: 0">
+                        <div style="position: relative; width: 550px; height: 100px">
+                            <img alt="" id="shareImg" style="position: absolute; top: 0; left:0; margin: 0; padding: 0; width: 550px; height: 100px;" src="img/${model.graphs['SHARE'].image}"/>
+                            <img alt="" id="scoreImg" style="position: absolute; top: 0; left:0; margin: 0; padding: 0; width: 550px; height: 100px;" src="img/${model.graphs['SCORE'].image}"/>
+                            <img alt="" id="recommendationImg" style="position: absolute; top: 0; left:0; margin: 0; padding: 0; width: 550px; height: 100px;" src="img/${model.graphs['RECOMMENDATION'].image}"/>
                         </div>
                     </td>
                 </tr>
                 <tr><td class="graphMid"><div id="midValues"></div></td></tr>
                 <tr><td class="graphLow"><div id="minValues"></div></td></tr>
+                <tr><td colspan="2" align="right"><br/>SUB</td></tr>
+            </table>
+
+
+            <style>
+                table.articles td {
+                    vertical-align: top;
+                }
+
+                table.articles tr : first-child {
+                    white-space: nowrap;
+                }
+            </style>
+
+            <form action="?action=ArticleList" method="POST" style="margin-top: 30px;">
+                <div style="float: right; background-color: #505050; color: white; border: 1px solid #505050">
+                    <input type="text" name="name" style="border: 0; height: 20px"/>
+                    <input type="submit" value="JUMP" style="border: 0px; background-color: #505050; color: #FFFFFF; height: 20px;">
+                </div>
+            </form>
+            <br/>
+
+
+            <table style="margin-top: 20px; border-bottom: 1px solid #999999; border-collapse: collapse; width: 100%">
+                <tr>
+                    <td valign="top" style="padding-bottom: 10px;">
+                        <table class="articles">
+                            <c:forEach items="${model.articleList}" var="article" begin="0" end="10">
+                                <c:choose>
+                                    <c:when test="${article != null}">
+                                        <tr>
+                                            <td style="white-space: nowrap;"><fmt:formatDate value="${article.published}" pattern="MMM dd yyyy"/></td>
+                                            <td><a href="article.jsp?scoreId=${model.articleScore[article.id].id}&articleId=${article.id}">${article.title}</a></td>
+                                            <td>${model.articleScore[article.id].score}</td>
+                                        </tr>
+                                    </c:when>
+                                    <c:otherwise><td colspan="3">&nbsp;</td></c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+                        </table>
+                    </td>
+
+                    <td>&nbsp;</td><td style="border-left: 1px solid #999999">&nbsp;</td>
+
+                    <td valign="top" style="padding-bottom: 10px;">
+                        <table class="articles">
+                            <c:forEach items="${model.articleList}" var="article" begin="0" end="10">
+                                <c:choose>
+                                    <c:when test="${article != null}">
+                                        <tr>
+                                            <td style="white-space: nowrap;"><fmt:formatDate value="${article.published}" pattern="MMM dd yyyy"/></td>
+                                            <td><a href="article.jsp?scoreId=${model.articleScore[article.id].id}&articleId=${article.id}">${article.title}</a></td>
+                                            <td>${model.articleScore[article.id].score}</td>
+                                        </tr>
+                                    </c:when>
+                                    <c:otherwise><td colspan="3">&nbsp;</td></c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr><td colspan="4" align="right">PREV | NEXT</td></tr>
             </table>
          </div>
     </body>

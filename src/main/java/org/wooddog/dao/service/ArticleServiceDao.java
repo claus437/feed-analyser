@@ -8,7 +8,9 @@ import org.wooddog.dao.mapper.ArticleMapper;
 import org.wooddog.domain.Article;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -126,5 +128,23 @@ public class ArticleServiceDao implements ArticleService {
         }
 
         return published;
+    }
+
+    @Override
+    public Article getArticle(int id) {
+        SqlSession session;
+        ArticleMapper mapper;
+        Article article;
+
+        session = factory.openSession();
+        try {
+            mapper = session.getMapper(ArticleMapper.class);
+
+            article = mapper.select(id);
+        } finally {
+            session.close();
+        }
+
+        return article;
     }
 }

@@ -19,4 +19,5 @@ public interface ScoringService {
     Integer getLastScoredArticleIdForCompany(int companyId);
     List<Scoring> getScoringsInPeriodForCompany(int companyId, Date from, Date to);
     List<String> getKeyWords(int id);
+    List<Scoring> getScoringsOlderThan(int companyId, Date date, int count);
 }

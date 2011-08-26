@@ -12,8 +12,15 @@ import java.util.Map;
 
 public class AddChannelAction implements PageAction {
     private ChannelService channelService = ChannelServiceDao.getInstance();
+    private Map<String, String[]> parameters;
 
-    public void execute(Map<String, String[]> parameters) {
+    @Override
+    public void setParameters(Map<String, String[]> parameters) {
+        this.parameters = parameters;
+    }
+
+    @Override
+    public void execute() {
         URL url;
         Channel channel;
         String type;

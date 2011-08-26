@@ -6,6 +6,29 @@ function GraphData(image, color, minValue, midValue, maxValue) {
     this.maxValue = maxValue;
 }
 
+GraphData.prototype.setImage = function(image) {
+    this.image = image;
+};
+
+GraphData.prototype.setColor = function(color) {
+    this.color = color;
+};
+
+GraphData.prototype.setMinValue = function(value) {
+    this.minValue = value;
+};
+
+GraphData.prototype.setMidValue = function(value) {
+    this.midValue = value;
+};
+
+GraphData.prototype.setMaxValue = function(value) {
+    this.value = value;
+};
+
+
+
+
 
 function Graph(minContainer, midContainer, maxContainer) {
     this.data = new Array();

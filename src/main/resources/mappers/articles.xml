@@ -31,6 +31,10 @@
         SELECT * FROM ARICLES
     </select>
 
+    <select id="select" parameterType="int" resultType="org.wooddog.domain.Article">
+        SELECT * FROM ARTICLES WHERE ID = #{value}
+    </select>
+
     <select id="selectFromId" parameterType="int" resultMap="ArticleResultMap">
         SELECT * FROM ARTICLES WHERE ID > #{value}
     </select>

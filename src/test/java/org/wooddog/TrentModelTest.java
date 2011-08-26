@@ -83,6 +83,11 @@ public class TrentModelTest {
         public List<String> getKeyWords(int id) {
             return null;
         }
+
+        @Override
+        public List<Scoring> getScoringsOlderThan(int companyId, Date date, int count) {
+            return null;
+        }
     }
 }
 

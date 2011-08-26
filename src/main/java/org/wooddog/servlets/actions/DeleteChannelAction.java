@@ -18,8 +18,16 @@ import java.util.Map;
 public class DeleteChannelAction implements PageAction {
     private static final Logger LOGGER = Logger.getLogger(DeleteChannelAction.class);
     private ChannelService channelService = ChannelServiceDao.getInstance();
+    private Map<String, String[]> parameters;
 
-    public void execute(Map<String, String[]> parameters) {
+
+    @Override
+    public void setParameters(Map<String, String[]> parameters) {
+        this.parameters = parameters;
+    }
+
+    @Override
+    public void execute() {
         int id;
 
         id = Integer.parseInt(parameters.get("id")[0]);

@@ -56,3 +56,78 @@ div.error {
     color: #AA5050;
 }
 
+table.company {
+    border-left: 2px solid #999999;
+    width: 100%;
+    clear: both;
+    border-collapse: collapse;
+    margin-top: 40px;
+}
+
+table.company tr.header td:first-child {
+    font-weight: bold;
+    color: white;
+    background-color: #999999;
+}
+
+table.company td {
+    padding: 3px;
+    vertical-align: top;
+}
+
+table.company tr.month td {
+    width: 70px;
+    border-right: 1px solid #999999;
+    font-weight: bold;
+}
+
+table.company tr.month td:first-child {
+    width: auto;
+}
+
+table.company tr.score td {
+    border-right: 1px solid #999999;
+}
+
+table.company tr.stock td {
+    border-right: 1px solid #999999;
+}
+
+table.company tr.recommendation td {
+    border-right: 1px solid #999999;
+    font-weight: bold;
+}
+
+table.company tr.border-top td {
+    border-top: 1px solid #999999;
+}
+
+table.company tr.border-bottom td {
+    border-bottom: 1px solid #999999;
+}
+
+table.graph {
+    border: 1px solid #999999;
+    width: 100%;
+    clear: both;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table.graph td.graphMax {
+    vertical-align: top;
+    text-align: right;
+    width: 60px;
+}
+
+table.graph td.graphMid {
+    vertical-align: middle;
+    text-align: right;
+}
+
+table.graph td.graphLow {
+    vertical-align: bottom;
+    text-align: right;
+}
+
+

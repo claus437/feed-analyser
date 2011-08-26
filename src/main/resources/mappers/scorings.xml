@@ -47,4 +47,14 @@
     <select id="getKeyWordsByCompanyId" parameterType="int" resultType="String">
         SELECT KEYWORD FROM SCORE_KEYWORDS WHERE COMPANY_ID = #{value}
     </select>
+
+    <select id="getScoringsOlderThan" parameterType="Map" resultMap="ScoreMap">
+        SELECT * FROM SCORINGS, ARTICLES WHERE
+            SCORINGS.ARTICLE_ID = articles.id AND
+            SCORINGS.COMPANY_ID = #{companyId} AND
+            ARTICLES.PUBLISHED &lt; #{date}
+        ORDER BY
+            ARTICLES.PUBLISHED
+        LIMIT #{count}
+    </select>
 </mapper>

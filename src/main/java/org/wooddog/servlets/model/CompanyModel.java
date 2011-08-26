@@ -1,6 +1,7 @@
 package org.wooddog.servlets.model;
 
 import org.wooddog.DateUtil;
+import org.wooddog.dao.ArticleService;
 import org.wooddog.dao.CompanyService;
 import org.wooddog.dao.ScoringService;
 import org.wooddog.dao.StockService;
@@ -8,19 +9,20 @@ import org.wooddog.dao.service.CompanyServiceDao;
 import org.wooddog.dao.service.ScoringServiceDao;
 import org.wooddog.dao.service.StockServiceDao;
 import org.wooddog.domain.Company;
+import org.wooddog.domain.History;
 import org.wooddog.domain.Scoring;
 import org.wooddog.domain.Stock;
 import org.wooddog.graph.Graph;
 import org.wooddog.graph.LineGraph;
 import org.wooddog.servlets.ConfigServlet;
+import org.wooddog.servlets.PageAction;
+import org.wooddog.servlets.actions.FindCompanyAction;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -29,6 +31,7 @@ import java.util.List;
 import java.util.Map;
 
 public class CompanyModel {
+    /*
     public enum GraphElement {SCORE, SHARE, RECOMMENDATION}
 
     private Map<GraphElement, Color> graphColors;
@@ -40,8 +43,10 @@ public class CompanyModel {
     private ScoringService scoringService;
     private StockService stockService;
     private CompanyService companyService;
+    private ArticleService articleService;
 
     private List<History> summaryList;
+    private List<Company> foundCompanies;
 
     private File base;
     private Date date;
@@ -52,6 +57,9 @@ public class CompanyModel {
     private int width;
     private int height;
 
+
+
+    private ArticleModel articleModel;
 
     public CompanyModel() {
         base = new File(ConfigServlet.getRealPath("img"));
@@ -67,7 +75,17 @@ public class CompanyModel {
         stockService = StockServiceDao.getInstance();
         companyService = CompanyServiceDao.getInstance();
 
+        articleModel = new ArticleModel();
     }
+
+
+    public void execute(PageAction action) {
+        if (action instanceof FindCompanyAction) {
+            action.execute();
+            foundCompanies = ((FindCompanyAction) action).getResult();
+        }
+    }
+
 
     public String getImage(GraphElement element) {
         return "img/" + graphImages.get(element);
@@ -166,6 +184,10 @@ public class CompanyModel {
 
     public String getGraphMinValue(GraphElement element) {
         return Double.toString(graphMinValues.get(element));
+    }
+
+    public ArticleModel getArticleModel() {
+        return articleModel;
     }
 
     public void load() {
@@ -364,46 +386,5 @@ public class CompanyModel {
 
         return values;
     }
-
-    public class History {
-        private Date date;
-        private double score;
-        private double scoreChanged;
-        private double share;
-        private double shareChanged;
-        private double recommendation;
-        private double recommendationChanged;
-
-
-        public String getDate() {
-            DateFormat format;
-
-            format = new SimpleDateFormat("MMM dd");
-            return format.format(date);
-        }
-
-        public String getScore() {
-            return Double.toString(score);
-        }
-
-        public String getScoreChanged() {
-            return scoreChanged < 0 ? "" + scoreChanged : "+" + scoreChanged;
-        }
-
-        public String getShare() {
-            return Double.toString(share);
-        }
-
-        public String getShareChanged() {
-            return shareChanged < 0 ? "" + shareChanged : "+" + shareChanged;
-        }
-
-        public String getRecommendation() {
-            return Double.toString(recommendation);
-        }
-
-        public String getRecommendationChanged() {
-            return recommendationChanged < 0 ? "" + recommendationChanged : "+" + recommendationChanged;
-        }
-    }
+      */
 }

@@ -8,6 +8,7 @@ import org.wooddog.dao.mapper.ScoringMapper;
 import org.wooddog.domain.Scoring;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -100,5 +101,26 @@ public class ScoringServiceDao implements ScoringService {
         }
 
         return keywords;
+    }
+
+    @Override
+    public List<Scoring> getScoringsOlderThan(int companyId, Date date, int count) {
+        SqlSession session;
+        List<Scoring> scorings;
+        Map<String, Object> parameters;
+
+        parameters = new HashMap<String, Object>();
+        parameters.put("companyId", companyId);
+        parameters.put("date", date);
+        parameters.put("count", count);
+
+        session = factory.openSession();
+        try {
+            scorings = session.getMapper(ScoringMapper.class).getScoringsOlderThan(parameters);
+        } finally {
+            session.close();
+        }
+
+        return scorings;
     }
 }

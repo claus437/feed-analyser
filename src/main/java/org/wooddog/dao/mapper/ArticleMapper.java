@@ -4,6 +4,7 @@ import org.wooddog.domain.Article;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -18,4 +19,5 @@ public interface ArticleMapper {
     List<Article> selectFromId(int id);
     List<Article> getLastScoredArticle();
     Date getLatestPublishDate(String source);
+    Article select(int id);
 }

@@ -14,7 +14,14 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public class AddCompanyAction implements PageAction {
-    public void execute(Map<String, String[]> parameters) {
+    private Map<String, String[]> parameters;
+
+    @Override
+    public void setParameters(Map<String, String[]> parameters) {
+        this.parameters = parameters;
+    }
+
+    public void execute() {
         String name;
         Company company;
 

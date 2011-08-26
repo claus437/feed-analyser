@@ -13,7 +13,8 @@
     action = PageActionFactory.getInstance().getAction(request.getParameter("action"));
     if (action != null) {
         try {
-            action.execute(request.getParameterMap());
+            action.setParameters(request.getParameterMap());
+            action.execute();
         } catch (Throwable x) {
             session.setAttribute("error", x.getMessage());
         }
