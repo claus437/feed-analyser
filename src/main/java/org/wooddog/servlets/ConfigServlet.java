@@ -55,6 +55,10 @@ public class ConfigServlet extends HttpServlet {
     }
 
     public static String getRealPath(String path) {
-        return servletConfig.getServletContext().getRealPath(path);
+        if (servletConfig == null) {
+            return path;
+        } else {
+            return servletConfig.getServletContext().getRealPath(path);
+        }
     }
 }

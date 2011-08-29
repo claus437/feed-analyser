@@ -1,10 +1,14 @@
 import org.junit.Test;
+import org.wooddog.domain.History;
+import sun.plugin.javascript.navig.Array;
 
 import java.awt.*;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -19,6 +23,27 @@ public class MyTest {
     static double progress;
 
 
+    @Test
+    public void testList() {
+        History a;
+        History b;
+        List<History> l1 = new ArrayList<History>();
+        List<History> l2 = new ArrayList<History>();
+
+        a = new History();
+        a.set(History.Field.SCORE, 10);
+
+        b = new History();
+        b.set(History.Field.SCORE, 10);
+        l1.add(a);
+
+        l2.add(a);
+
+        System.out.println(l1.equals(l2));
+
+
+
+    }
 
     @Test
     public void testIt() {

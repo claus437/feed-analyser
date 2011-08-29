@@ -8,6 +8,7 @@
 <%@ page import="org.wooddog.servlets.model.CompanyModel2" %>
 <%@ page import="org.wooddog.domain.History" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="org.wooddog.servlets.model.CompanyPageController" %>
 
 <%!
     static final String SHARE_COLOR = "#995050";
@@ -20,7 +21,7 @@
 
 <%
     PageAction action;
-    CompanyModel2 model;
+    CompanyPageController controller;
     int companyId;
 
     if (request.getParameter("companyId") != null) {
@@ -30,24 +31,27 @@
     }
 
 
-    model = (CompanyModel2) session.getAttribute(getClass().getName());
-    if (model == null) {
-        CompanyModel2.ModelProperties properties = CompanyModel2.create();
-        properties.graphCount = 50;
-        properties.summaryCount = 10;
-        properties.graphCount = 50;
-        properties.graphHeight = 140;
-        properties.graphWidth = 550;
-        properties.setGraphColor(SCORE, SCORE_COLOR);
-        properties.setGraphColor(SHARE, SHARE_COLOR);
-        properties.setGraphColor(RECOMMENDATION, RECOMMENDATION_COLOR);
-
-        model = properties.initialize();
-        model.loadHistory(new Date(), companyId);
-        session.setAttribute(getClass().getName(), model);
+    controller = (CompanyPageController) session.getAttribute(getClass().getName());
+    if (controller == null) {
+        System.out.println("creating controller");
+        controller = new CompanyPageController();
+        controller.setDate(new Date());
+        session.setAttribute(getClass().getName(), controller);
     }
 
-    pageContext.setAttribute("model", model);
+    controller.setSummaryCount(10);
+    controller.setGraphCount(50);
+    controller.setGraphHeight(140);
+    controller.setGraphWidth(550);
+    controller.setGraphColor(SCORE, SCORE_COLOR);
+    controller.setGraphColor(SHARE, SHARE_COLOR);
+    controller.setGraphColor(RECOMMENDATION, RECOMMENDATION_COLOR);
+
+
+    controller.setCompanyId(companyId);
+
+
+    pageContext.setAttribute("model", controller);
 
 
     action = PageActionFactory.getInstance().getAction(request.getParameter("action"));
@@ -55,7 +59,7 @@
     if (action != null) {
         try {
             action.setParameters(request.getParameterMap());
-            model.execute(action);
+            controller.execute(action);
         } catch (Throwable x) {
             session.setAttribute("error", x.getMessage());
         }
@@ -146,7 +150,7 @@
             <table class="company">
                 <tbody>
                 <tr class="header">
-                    <td colspan="4"><%=model.getCompanyName()%></td>
+                    <td colspan="4">${model.company.name}</td>
                     <td colspan="7"></td>
                 </tr>
                 <tr class="month">
@@ -215,7 +219,7 @@
             <form action="?action=ArticleList" method="POST" style="margin-top: 30px;">
                 <div style="float: right; background-color: #505050; color: white; border: 1px solid #505050">
                     <input type="text" name="name" style="border: 0; height: 20px"/>
-                    <input type="submit" value="JUMP" style="border: 0px; background-color: #505050; color: #FFFFFF; height: 20px;">
+                    <input type="submit" value="JUMP" style="border: 0; background-color: #505050; color: #FFFFFF; height: 20px;">
                 </div>
             </form>
             <br/>
